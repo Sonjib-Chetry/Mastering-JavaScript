@@ -18,7 +18,7 @@ The goal of this challenge is to:
 ## 🗓️ Challenge Duration
 
 **Start Date:** June 30, 2025
-**End Date:** 
+**End Date:** September 30, 2025 (Tentative)
 **Duration:** 90 days
 
 ---
