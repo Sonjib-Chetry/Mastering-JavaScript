@@ -99,7 +99,7 @@ console.log(typeof variable);
 let data = null;
 
 console.log(data);        // null
-console.log(typeof data); // "object" ❌ (misleading)
+console.log(typeof data); // "object" (misleading)
 
 
 // 6: Bigint
