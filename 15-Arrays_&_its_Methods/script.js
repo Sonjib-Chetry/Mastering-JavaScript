@@ -231,5 +231,20 @@ console.log(ticTacToe);
 console.log(ticTacToe[2]);
 console.log(ticTacToe[1][2]);
 
+
+//Copying Array:
+
+const fruits = ['mango', 'apple', 'orange']
+console.log(fruits);
+
+const myFruits = fruits   //this will create same address in memory for both fruits and myFruits array
+console.log(myFruits);
+
+myFruits.push('dates', 'grapes')  //updating myFruits value
+
+console.log(myFruits);
+console.log(fruits);   //in such case JS will also change variable fruits although we have push value in myFruits 
+// because address is same, updating any one will impact both
+
 // Program termination indicator
 console.log('Program Ended...............!');

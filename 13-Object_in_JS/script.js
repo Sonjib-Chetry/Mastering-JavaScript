@@ -278,3 +278,21 @@ How optional chaining works:
   ?.[] - bracket notation
   ?.() - function calls
 */
+
+
+//Copying Objects
+
+const user12 = {
+    firstName : 'sonex',
+    lastName : 'karki'
+}
+console.log(user12); 
+
+const user13 = user12        //this will create same address in memory for both user13 and user12 object
+console.log(user13);
+
+user12.lastName = 'chetry'  //updating user12 value
+
+console.log(user12);   
+console.log(user13);   //in such case JS will also change variable user13 although we have update value in user12
+// because address is same, updating any one will impact both
