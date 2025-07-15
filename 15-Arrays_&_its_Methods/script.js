@@ -207,5 +207,29 @@ console.log(numbers2);
 console.log(numbers2.splice(4, 2, 'X', 'XI', 'XII'));   // Removes 'V','VI', adds three
 console.log(numbers2);                            // Final modified array
 
+
+//Multi Dimensional Array
+
+const studentNameAndMark = [                   //array inside an array
+    ['Adarsh', 75], 
+    ['Sonex', 85], 
+    ['Gokul', 65]
+]                              
+console.log(studentNameAndMark);
+
+console.log(studentNameAndMark[1]);      //accessing particular index value in array 
+console.log(studentNameAndMark[1][0]);   //accessing particular index value in array inside an array
+
+
+const ticTacToe = [
+    ['X', null, null],
+    [null, null, 'O'],
+    ['O', null, 'X']
+]
+
+console.log(ticTacToe);
+console.log(ticTacToe[2]);
+console.log(ticTacToe[1][2]);
+
 // Program termination indicator
 console.log('Program Ended...............!');
