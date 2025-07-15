@@ -12,7 +12,7 @@ fortune5 = "It would be wise to avoid the color red today.";
 
 
 
-let randomNumber ;
+let randomNumber;
 randomNumber = Math.floor(Math.random() * 5) + 1;
 
 let selectedFortune;
