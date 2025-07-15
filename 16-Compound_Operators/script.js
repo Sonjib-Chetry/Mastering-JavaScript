@@ -1,140 +1,136 @@
 
-// long addition method
+// Long-form addition method
+let num = 1            // Declare variable with initial value
+console.log(num);      // Output: 1
 
-let num = 1            //let is used because we are changing the variable below
-console.log(num);
+num = num + 2          // Manual addition: num + 2
+console.log(num);      // Output: 3
 
-num = num + 2
-console.log(num);
-
-num = num + 2
-console.log(num);
-
-
-// short addition method
-
-//note this operators can't be applied directly on number like ++5
-
-let num1 = 1            //let is used because we are changing the variable below
-console.log(num1);
-
-num1 += 2                //+= Addition Assignment Operator
-console.log(num1);
-
-num1 += 2
-console.log(num1);       //+= Addition Assignment Operator
+num = num + 2          // Manual addition: num + 2
+console.log(num);      // Output: 5
 
 
-// short subtraction method
+// Short-form addition method (Addition Assignment Operator)
+let num1 = 1           // Declare variable with initial value
+console.log(num1);     // Output: 1
 
-let num2 = 10           //let is used because we are changing the variable below
-console.log(num2);
+num1 += 2              // Compound addition: equivalent to num1 = num1 + 2
+console.log(num1);     // Output: 3
 
-num2 -= 2                //-= Subtraction Assignment Operator.
-console.log(num2);
-
-num2 -= 2                //-= Subtraction Assignment Operator.
-console.log(num2);
-
-
-// short remainder  method
-
-let num3 = 10           //let is used because we are changing the variable below
-console.log(num3);
-
-num3 %= 2                //%= Remainder Assignment Operator
-console.log(num3);
-
-num3 %= 2                //%= Remainder Assignment Operator
-console.log(num3);
-
-// short multiplication  method
-
-let num4 = 10           //let is used because we are changing the variable below
-console.log(num4);
-
-num4 *= 2                //*= Multiplication Assignment Operator
-console.log(num4);
-
-num4 *= 2                //*= Multiplication Assignment Operator
-console.log(num4);
+num1 += 2              // Compound addition again
+console.log(num1);     // Output: 5
 
 
-// short division  method
+// Short-form subtraction method (Subtraction Assignment Operator)
+let num2 = 10          // Declare variable with initial value
+console.log(num2);     // Output: 10
 
-let num5 = 10           //let is used because we are changing the variable below
-console.log(num5);
+num2 -= 2              // Compound subtraction: equivalent to num2 = num2 - 2
+console.log(num2);     // Output: 8
 
-num5 /= 2                //   /= Division Assignment Operator.
-console.log(num5);
-
-num5 /= 2                //   /= Division Assignment Operator.
-console.log(num5);
-
-// short exponentiation   method
-
-let num6 = 10           //let is used because we are changing the variable below
-console.log(num6);
-
-num6 **= 2                //**= Exponentiation Assignment Operator
-console.log(num6);
-
-num6 **= 2                //**= Exponentiation Assignment Operator
-console.log(num6);
+num2 -= 2              // Compound subtraction again
+console.log(num2);     // Output: 6
 
 
+// Short-form remainder method (Remainder Assignment Operator)
+let num3 = 10          // Declare variable with initial value
+console.log(num3);     // Output: 10
+
+num3 %= 2              // Compound remainder: equivalent to num3 = num3 % 2
+console.log(num3);     // Output: 0 (10 divided by 2 has 0 remainder)
+
+num3 %= 2              // Compound remainder again (0 % 2)
+console.log(num3);     // Output: 0
 
 
-// short Increment method
+// Short-form multiplication method (Multiplication Assignment Operator)
+let num4 = 10          // Declare variable with initial value
+console.log(num4);     // Output: 10
 
-let num7 = 10           //let is used because we are changing the variable below
-console.log(num7);
+num4 *= 2              // Compound multiplication: equivalent to num4 = num4 * 2
+console.log(num4);     // Output: 20
 
-++num7               //++Increment Operator
-console.log(num7);
-
-++num7               //++Increment Operator
-console.log(num7);
-
-//note this operator can't be applied directly on number like ++5
-
-//using Increment++ backside of the variable
-
-let num9 = 10           //let is used because we are changing the variable below
-let newNum1 = num9++    //Increment++ Operator
-
-console.log(newNum1);    //putting Increment++ Operator backside of the variable will assign previous value of num9 to 
-console.log(num9);      //newNum1 variable but current value of num9 will change
-
-newNum1 = num9++        
-
-console.log(newNum1);  
-console.log(num9);     
+num4 *= 2              // Compound multiplication again
+console.log(num4);     // Output: 40
 
 
+// Short-form division method (Division Assignment Operator)
+let num5 = 10          // Declare variable with initial value
+console.log(num5);     // Output: 10
+
+num5 /= 2              // Compound division: equivalent to num5 = num5 / 2
+console.log(num5);     // Output: 5
+
+num5 /= 2              // Compound division again
+console.log(num5);     // Output: 2.5
 
 
-// short Decrement method
+// Short-form exponentiation method (Exponentiation Assignment Operator)
+let num6 = 10          // Declare variable with initial value
+console.log(num6);     // Output: 10
 
-let num8 = 10           //let is used because we are changing the variable below
-console.log(num8);
+num6 **= 2             // Compound exponentiation: equivalent to num6 = num6 ** 2
+console.log(num6);     // Output: 100 (10 squared)
 
---num8               //--Decrement Operator
-console.log(num8);
-
---num8               //--Decrement Operator
-console.log(num8);
+num6 **= 2             // Compound exponentiation again
+console.log(num6);     // Output: 10000 (100 squared)
 
 
-//using Decrement-- backside of the variable
+// Prefix Increment Operator (pre-increment)
+let num7 = 10          // Declare variable with initial value
+console.log(num7);     // Output: 10
 
-let num10 = 10           //let is used because we are changing the variable below
-let newNum2 = num10--    //Decrement-- Operator
+++num7                 // Pre-increment: increments THEN returns value
+console.log(num7);     // Output: 11
 
-console.log(newNum2);    //putting Decrement-- Operator backside of the variable will assign previous value of num10 to
-console.log(num10);     //newNum2 variable but current value of num10 will change
+++num7                 // Pre-increment again
+console.log(num7);     // Output: 12
 
-newNum2 = num10--        //Decrement-- Operator
 
-console.log(newNum2);
-console.log(num10);     
+// Postfix Increment Operator (post-increment)
+let num9 = 10          // Declare variable with initial value
+let newNum1 = num9++   // Post-increment: returns ORIGINAL value THEN increments
+/* 
+newNum1 gets original value (10)
+num9 becomes 11 after assignment
+*/
+console.log(newNum1);  // Output: 10 
+console.log(num9);     // Output: 11
+
+newNum1 = num9++       // Post-increment again
+/* 
+newNum1 gets current num9 value (11)
+num9 becomes 12 after assignment
+*/
+console.log(newNum1);  // Output: 11
+console.log(num9);     // Output: 12
+
+
+// Prefix Decrement Operator (pre-decrement)
+let num8 = 10          // Declare variable with initial value
+console.log(num8);     // Output: 10
+
+--num8                 // Pre-decrement: decrements THEN returns value
+console.log(num8);     // Output: 9
+
+--num8                 // Pre-decrement again
+console.log(num8);     // Output: 8
+
+
+// Postfix Decrement Operator (post-decrement)
+let num10 = 10         // Declare variable with initial value
+let newNum2 = num10--  // Post-decrement: returns ORIGINAL value THEN decrements
+/* 
+newNum2 gets original value (10)
+num10 becomes 9 after assignment
+*/
+console.log(newNum2);  // Output: 10
+console.log(num10);    // Output: 9
+
+newNum2 = num10--      // Post-decrement again
+/* 
+newNum2 gets current num10 value (9)
+num10 becomes 8 after assignment
+*/
+console.log(newNum2);  // Output: 9
+console.log(num10);    // Output: 8
