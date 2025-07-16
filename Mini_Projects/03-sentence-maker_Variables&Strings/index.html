@@ -5,15 +5,157 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sentence-Maker</title>
     <script src="script.js" defer></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        padding: 20px;
+        background-color: #f9f9f9;
+      }
+      code {
+        background-color: #eee;
+        padding: 2px 4px;
+        border-radius: 4px;
+        font-family: monospace;
+      }
+      pre {
+        background-color: #eee;
+        padding: 10px;
+        border-radius: 4px;
+        overflow-x: auto;
+      }
+    </style>
   </head>
   <body>
     <h1>Welcome to my **90 Days of JavaScript Revision Challenge**!</h1>
     <h2 style="color: red">
-      Please read the script file and understand the project and try to build your own.
+      Please read the script file and understand the project and try to build
+      your own.
     </h2>
     <h3>
-      In this mini project, you will continue practicing with strings and concatenation
-      by creating and customizing various stories.
+      In this mini project, you will continue practicing with strings and
+      concatenation by creating and customizing various stories.
     </h3>
+    <h2>User Stories</h2>
+    <ol>
+      <li>
+        You should declare the following variables using <code>let</code>:
+        <code>adjective</code>, <code>noun</code>, <code>verb</code>,
+        <code>place</code>, <code>adjective2</code>, and <code>noun2</code>.
+      </li>
+      <li>
+        You should assign the above variables some string values of your choice.
+      </li>
+      <li>You should declare a <code>firstStory</code> variable.</li>
+      <li>
+        You should use the following story template to create the first story
+        and assign it to the <code>firstStory</code> variable:<br />
+        <code
+          >"Once upon a time, there was a(n) [adjective] [noun] who loved to eat
+          [noun2]. The [noun] lived in a [place] and had [adjective2] nostrils
+          that blew fire when it was [verb]."</code
+        >
+      </li>
+      <li>
+        You should output your first story to the console using the message
+        <code>"First story: [firstStory]"</code>.
+      </li>
+      <li>
+        You should assign new values to your <code>adjective</code>,
+        <code>noun</code>, <code>verb</code>, <code>place</code>,
+        <code>adjective2</code>, and <code>noun2</code> variables.
+      </li>
+      <li>You should declare a <code>secondStory</code> variable.</li>
+      <li>
+        You should create another story using the same template and assign it to
+        the <code>secondStory</code> variable.
+      </li>
+      <li>
+        You should output your second story to the console using the message
+        <code>"Second story: [secondStory]"</code>.
+      </li>
+    </ol>
+    <h2>Tests</h2>
+    <ol>
+      <li>You should declare an <code>adjective</code> variable.</li>
+      <li>You should declare a <code>noun</code> variable.</li>
+      <li>You should declare a <code>verb</code> variable.</li>
+      <li>You should declare a <code>place</code> variable.</li>
+      <li>You should declare an <code>adjective2</code> variable.</li>
+      <li>You should declare a <code>noun2</code> variable.</li>
+      <li>
+        You should assign a string value to the <code>adjective</code> variable.
+      </li>
+      <li>
+        You should assign a string value to the <code>noun</code> variable.
+      </li>
+      <li>
+        You should assign a string value to the <code>verb</code> variable.
+      </li>
+      <li>
+        You should assign a string value to the <code>place</code> variable.
+      </li>
+      <li>
+        You should assign a string value to the
+        <code>adjective2</code> variable.
+      </li>
+      <li>
+        You should assign a string value to the <code>noun2</code> variable.
+      </li>
+      <li>You should declare a <code>firstStory</code> variable.</li>
+      <li>
+        You should use the correct story format for the first story:<br />
+        <code
+          >"Once upon a time, there was a(n) [adjective] [noun] who loved to eat
+          [noun2]. The [noun] lived in a [place] and had [adjective2] nostrils
+          that blew fire when it was [verb]."</code
+        ><br />
+        <strong>Pay attention to spaces.</strong>
+      </li>
+      <li>
+        You should log your first story using the message
+        <code>"First story: [firstStory]"</code>.
+      </li>
+      <li>You should declare a <code>secondStory</code> variable.</li>
+      <li>
+        You should reassign the <code>adjective</code> variable for the second
+        story.
+      </li>
+      <li>
+        You should reassign the <code>noun</code> variable for the second story.
+      </li>
+      <li>
+        You should reassign the <code>verb</code> variable for the second story.
+      </li>
+      <li>
+        You should reassign the <code>place</code> variable for the second
+        story.
+      </li>
+      <li>
+        You should reassign the <code>adjective2</code> variable for the second
+        story.
+      </li>
+      <li>
+        You should reassign the <code>noun2</code> variable for the second
+        story.
+      </li>
+      <li>
+        You should use the correct story format for the second story:<br />
+        <code
+          >"Once upon a time, there was a(n) [adjective] [noun] who loved to eat
+          [noun2]. The [noun] lived in a [place] and had [adjective2] nostrils
+          that blew fire when it was [verb]."</code
+        ><br />
+        <strong>Pay attention to spaces.</strong>
+      </li>
+      <li>
+        You should log your second story using the format
+        <code>"Second story: [secondStory]"</code>.
+      </li>
+      <li>
+        The <code>firstStory</code> should not be the same as the
+        <code>secondStory</code>.
+      </li>
+    </ol>
   </body>
 </html>

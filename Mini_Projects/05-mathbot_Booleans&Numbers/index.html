@@ -1,20 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mathbot</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MathBot</title>
     <script src="script.js" defer></script>
-</head>
-<body>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        padding: 20px;
+        background-color: #f9f9f9;
+      }
+      code {
+        background-color: #eee;
+        padding: 2px 4px;
+        border-radius: 4px;
+        font-family: monospace;
+      }
+      pre {
+        background-color: #eee;
+        padding: 10px;
+        border-radius: 4px;
+        overflow-x: auto;
+      }
+    </style>
+  </head>
+  <body>
     <h1>Welcome to my **90 Days of JavaScript Revision Challenge**!</h1>
     <h2 style="color: red">
-      Please read the script file and understand the project and try to build your own.
+      Please read the script file and understand the project and try to build
+      your own.
     </h2>
     <h3>
-      In this mini project, you will continue to learn more about JavaScript strings
-      by building a chatbot. You will learn how to work with template literals,
-      and the indexOf method.
+      In this mini project, you will continue to learn more about JavaScript
+      strings by building a chatbot. You will learn how to work with template
+      literals, and the indexOf method.
     </h3>
-</body>
+    <h2>User Stories:</h2>
+    <ol>
+      <li>
+        You should declare a variable <code>botName</code> and assign it a value
+        (e.g., "MathBot").
+      </li>
+      <li>
+        You should declare a variable <code>greeting</code> using template
+        literals to create a greeting message including <code>botName</code>,
+        and log it to the console.
+      </li>
+      <li>
+        You should log a message describing the purpose of
+        <code>Math.random()</code>.
+      </li>
+      <li>
+        You should declare <code>randomNum</code>, assign it a value using
+        <code>Math.random()</code>, and log it.
+      </li>
+      <li>
+        You should log a message indicating that a random number will be
+        generated between two values.
+      </li>
+      <li>
+        You should declare <code>min</code> and <code>max</code> and assign
+        numeric values (e.g., 1 and 100).
+      </li>
+      <li>
+        You should declare <code>randomNum2</code> and assign it a random number
+        between <code>min</code> and <code>max</code> using the formula
+        <code>Math.random() * (max - min) + min</code>, and log it.
+      </li>
+      <li>
+        You should log a message about <code>Math.floor()</code>, then declare
+        <code>numRoundedDown</code>, assign it a rounded-down value using
+        <code>Math.floor()</code>, and log it.
+      </li>
+      <li>
+        You should log a message about <code>Math.ceil()</code>, then declare
+        <code>numRoundedUp</code>, assign it a rounded-up value using
+        <code>Math.ceil()</code>, and log it.
+      </li>
+      <li>
+        You should log a message about <code>Math.round()</code>, then declare
+        and log two variables, <code>numRounded</code> and
+        <code>numRounded2</code>, using <code>Math.round()</code>.
+      </li>
+      <li>
+        You should log a message explaining <code>Math.max()</code> and
+        <code>Math.min()</code> methods.
+      </li>
+      <li>
+        You should declare <code>maxNum</code> using <code>Math.max()</code> on
+        a list of numbers and log it.
+      </li>
+      <li>
+        You should declare <code>minNum</code> using <code>Math.min()</code> on
+        a list of numbers and log it.
+      </li>
+      <li>
+        You should log a farewell message indicating that the bot enjoyed
+        teaching about Math methods.
+      </li>
+    </ol>
+
+    <h2>Tests:</h2>
+    <ol>
+      <li>
+        You should declare <code>botName</code> and assign it the string
+        "MathBot".
+      </li>
+      <li>
+        You should declare <code>greeting</code> using a template literal that
+        includes <code>botName</code> and log it.
+      </li>
+      <li>You should log a message explaining <code>Math.random()</code>.</li>
+      <li>
+        You should declare <code>randomNum</code> using
+        <code>Math.random()</code> and log it.
+      </li>
+      <li>
+        You should declare <code>min</code> and <code>max</code> with numeric
+        values and use them to calculate <code>randomNum2</code>.
+      </li>
+      <li>
+        <code>randomNum2</code> should be calculated with
+        <code>Math.random() * (max - min) + min</code> and logged.
+      </li>
+      <li>
+        You should explain and demonstrate <code>Math.floor()</code> with
+        <code>numRoundedDown</code>.
+      </li>
+      <li>
+        You should explain and demonstrate <code>Math.ceil()</code> with
+        <code>numRoundedUp</code>.
+      </li>
+      <li>
+        You should explain and demonstrate <code>Math.round()</code> with both
+        <code>numRounded</code> and <code>numRounded2</code>.
+      </li>
+      <li>
+        You should explain and demonstrate <code>Math.max()</code> with
+        <code>maxNum</code>.
+      </li>
+      <li>
+        You should explain and demonstrate <code>Math.min()</code> with
+        <code>minNum</code>.
+      </li>
+      <li>
+        You should log the farewell message:
+        <code
+          >"It was fun learning about the different Math methods with
+          you!"</code
+        >.
+      </li>
+    </ol>
+  </body>
 </html>

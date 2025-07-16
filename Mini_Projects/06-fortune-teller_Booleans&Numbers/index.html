@@ -5,6 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fortune Teller</title>
     <script src="script.js" defer></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        padding: 20px;
+        background-color: #f9f9f9;
+      }
+      code {
+        background-color: #eee;
+        padding: 2px 4px;
+        border-radius: 4px;
+        font-family: monospace;
+      }
+      pre {
+        background-color: #eee;
+        padding: 10px;
+        border-radius: 4px;
+        overflow-x: auto;
+      }
+    </style>
   </head>
   <body>
     <h1>Welcome to my **90 Days of JavaScript Revision Challenge**!</h1>
@@ -13,10 +33,76 @@
       your own.
     </h2>
     <h3>
-      In this mini project, you'll build a fortune teller by randomly selecting a fortune
-      from the available fortunes. You'll practice how to work with the
-      Math.random() method and the Math.floor() method to generate random
+      In this mini project, you'll build a fortune teller by randomly selecting
+      a fortune from the available fortunes. You'll practice how to work with
+      the Math.random() method and the Math.floor() method to generate random
       numbers.
     </h3>
+    <h2>User Stories:</h2>
+    <ol>
+      <li>
+        You should declare five variables: <code>fortune1</code>,
+        <code>fortune2</code>, <code>fortune3</code>, <code>fortune4</code>, and
+        <code>fortune5</code>, and assign each a string value.
+      </li>
+      <li>
+        You should declare a variable <code>randomNumber</code> and assign it a
+        random integer from 1 to 5 (inclusive).
+      </li>
+      <li>
+        You should declare a variable <code>selectedFortune</code> and assign it
+        one of the five fortune strings based on the value of
+        <code>randomNumber</code>:
+        <ul>
+          <li>
+            If <code>randomNumber</code> is 1, assign <code>fortune1</code>.
+          </li>
+          <li>
+            If <code>randomNumber</code> is 2, assign <code>fortune2</code>.
+          </li>
+          <li>
+            If <code>randomNumber</code> is 3, assign <code>fortune3</code>.
+          </li>
+          <li>
+            If <code>randomNumber</code> is 4, assign <code>fortune4</code>.
+          </li>
+          <li>
+            If <code>randomNumber</code> is 5, assign <code>fortune5</code>.
+          </li>
+        </ul>
+      </li>
+      <li>
+        You should log the value of <code>selectedFortune</code> to the console.
+      </li>
+    </ol>
+    <h2>Tests</h2>
+    <ul>
+      <li>You should initialize <code>fortune1</code> with a string value.</li>
+      <li>You should initialize <code>fortune2</code> with a string value.</li>
+      <li>You should initialize <code>fortune3</code> with a string value.</li>
+      <li>You should initialize <code>fortune4</code> with a string value.</li>
+      <li>You should initialize <code>fortune5</code> with a string value.</li>
+      <li>
+        You should use the <code>Math.random()</code> method to generate a
+        random number.
+      </li>
+      <li>
+        You should generate a random number between 1 and 5, inclusive, and
+        assign it to the variable <code>randomNumber</code>.
+      </li>
+      <li>
+        You should have a <code>selectedFortune</code> variable that is assigned
+        a value based on the value of <code>randomNumber</code>.
+      </li>
+      <li>
+        The <code>randomNumber</code> should correspond to its fortune. For
+        example, if <code>randomNumber</code> is 1, the
+        <code>selectedFortune</code> should be equal to
+        <code>fortune1</code> and so on.
+      </li>
+      <li>
+        You should output the <code>selectedFortune</code> to the console.
+      </li>
+    </ul>
   </body>
 </html>

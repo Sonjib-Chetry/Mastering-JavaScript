@@ -5,15 +5,138 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Trivia Bot</title>
     <script src="script.js" defer></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        padding: 20px;
+        background-color: #f9f9f9;
+      }
+      code {
+        background-color: #eee;
+        padding: 2px 4px;
+        border-radius: 4px;
+        font-family: monospace;
+      }
+      pre {
+        background-color: #eee;
+        padding: 10px;
+        border-radius: 4px;
+        overflow-x: auto;
+      }
+    </style>
   </head>
   <body>
     <h1>Welcome to my **90 Days of JavaScript Revision Challenge**!</h1>
     <h2 style="color: red">
-      Please read the script file and understand the project and try to build your own.
+      Please read the script file and understand the project and try to build
+      your own.
     </h2>
     <h3>
       In this mini project, you'll practice working with JavaScript variables
       and strings by building a trivia bot.
     </h3>
+    <h2>User Stories:</h2>
+    <ul>
+      <li>
+        You should log <code>"Hello! I'm your coding fun fact guide!"</code> to
+        the console as a greeting message to the user.
+      </li>
+      <li>
+        You should create three variables: <code>botName</code>,
+        <code>botLocation</code>, and <code>favoriteLanguage</code>, storing the
+        bot's name, origin, and favorite language.
+      </li>
+      <li>
+        You should use string concatenation to log
+        <code>"My name is (botName) and I live on (botLocation)."</code> to the
+        console.
+      </li>
+      <li>
+        You should use string concatenation to log
+        <code>"My favorite programming language is (favoriteLanguage)."</code>
+        to the console.
+      </li>
+      <li>
+        You should declare a <code>codingFact</code> variable with
+        <code>let</code> and assign a fun fact using the
+        <code>favoriteLanguage</code> variable.
+      </li>
+      <li>You should log the <code>codingFact</code> to the console.</li>
+      <li>
+        You should reassign <code>codingFact</code> to a new fact using
+        <code>favoriteLanguage</code> and log it again.
+      </li>
+      <li>
+        You should reassign <code>codingFact</code> a third time to another fact
+        using <code>favoriteLanguage</code> and log it again.
+      </li>
+      <li>
+        You should log
+        <code
+          >"It was fun sharing these facts with you. Goodbye! - (botName) from
+          (botLocation)."</code
+        >
+        to the console as a farewell message.
+      </li>
+    </ul>
+    <h2>Tests</h2>
+    <ol>
+      <li>
+        You should log <code>"Hello! I'm your coding fun fact guide!"</code> to
+        the console.
+      </li>
+      <li>
+        You should declare a <code>botName</code> variable. Double check for any
+        spelling or casing errors.
+      </li>
+      <li>Your <code>botName</code> variable should be a string.</li>
+      <li>
+        You should declare a <code>botLocation</code> variable. Double check for
+        any spelling or casing errors.
+      </li>
+      <li>Your <code>botLocation</code> variable should be a string.</li>
+      <li>
+        You should declare a <code>favoriteLanguage</code> variable. Double
+        check for any spelling or casing errors.
+      </li>
+      <li>Your <code>favoriteLanguage</code> variable should be a string.</li>
+      <li>
+        You should log to the console
+        <code>"My name is (botName) and I live on (botLocation)."</code> using
+        concatenation to add the variables to the string.
+      </li>
+      <li>
+        You should log to the console
+        <code>"My favorite programming language is (favoriteLanguage)."</code>
+        using concatenation to add the variable to the string.
+      </li>
+      <li>
+        You should use <code>let</code> to declare a new variable
+        <code>codingFact</code>.
+      </li>
+      <li>
+        You should give <code>codingFact</code> a value that includes
+        <code>favoriteLanguage</code> using concatenation.
+      </li>
+      <li>You should log <code>codingFact</code> to the console.</li>
+      <li>
+        You should assign a new value to <code>codingFact</code> that also
+        contains <code>favoriteLanguage</code>, and log it to the console.
+      </li>
+      <li>
+        You should assign a value to <code>codingFact</code> for the third time
+        that also contains <code>favoriteLanguage</code>, and log it to the
+        console.
+      </li>
+      <li>
+        You should log to the console
+        <code
+          >"It was fun sharing these facts with you. Goodbye! - (botName) from
+          (botLocation)."</code
+        >
+        using concatenation to add the values of the variables.
+      </li>
+    </ol>
   </body>
 </html>

@@ -1,12 +1,12 @@
-console.log("I am excited to talk to you.");
 
 let bot;
 let botLocation;
 
+console.log("I am excited to talk to you.");
+console.log("Allow me to introduce myself.");
+
 bot = "teacherBot";
 botLocation = "the universe";
-
-console.log("Allow me to introduce myself.");
 
 let botIntroduction;
 

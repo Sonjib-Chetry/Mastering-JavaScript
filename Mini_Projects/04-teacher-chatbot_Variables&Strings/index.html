@@ -5,16 +5,161 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Teacher Chatbot</title>
     <script src="script.js" defer></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        padding: 20px;
+        background-color: #f9f9f9;
+      }
+      code {
+        background-color: #eee;
+        padding: 2px 4px;
+        border-radius: 4px;
+        font-family: monospace;
+      }
+      pre {
+        background-color: #eee;
+        padding: 10px;
+        border-radius: 4px;
+        overflow-x: auto;
+      }
+    </style>
   </head>
   <body>
     <h1>Welcome to my **90 Days of JavaScript Revision Challenge**!</h1>
     <h2 style="color: red">
-      Please read the script file and understand the project and try to build your own.
+      Please read the script file and understand the project and try to build
+      your own.
     </h2>
     <h3>
-      In this mini project, you will continue to learn more about JavaScript strings
-      by building a chatbot. You will learn how to work with template literals,
-      and the indexOf method.
+      In this mini project, you will continue to learn more about JavaScript
+      strings by building a chatbot. You will learn how to work with template
+      literals, and the indexOf method.
     </h3>
+    <h2>User Stories:</h2>
+    <ol>
+      <li>
+        You should log <code>"Hi there!"</code> to the console as a greeting
+        message.
+      </li>
+      <li>
+        You should declare a variable <code>botName</code> and assign it a value
+        (e.g., "teacherBot").
+      </li>
+      <li>
+        You should use a template literal to assign <code>greeting</code> the
+        value <code>"My name is ${botName}."</code>.
+      </li>
+      <li>You should log <code>greeting</code> to the console.</li>
+      <li>
+        You should declare and assign values to <code>subject</code> and
+        <code>topic</code>.
+      </li>
+      <li>
+        You should declare <code>sentence</code> and assign it a template
+        literal about learning the topic in the subject.
+      </li>
+      <li>You should log <code>sentence</code> to the console.</li>
+      <li>
+        You should create <code>strLengthIntro</code> using a template literal
+        that mentions using the <code>length</code> property on
+        <code>subject</code>, and log it.
+      </li>
+      <li>You should log the length of <code>subject</code>.</li>
+      <li>
+        You should log a message about using <code>length</code> on
+        <code>topic</code>, and log the length of <code>topic</code>.
+      </li>
+      <li>
+        You should log a message about accessing the first letter of
+        <code>subject</code>, then log the first character.
+      </li>
+      <li>
+        You should log a message about accessing the second letter of
+        <code>subject</code>, then log the second character.
+      </li>
+      <li>
+        You should log a message about accessing the last letter of
+        <code>subject</code>.
+      </li>
+      <li>
+        You should assign <code>lastCharacter</code> to the last letter of
+        <code>subject</code> using <code>subject[subject.length - 1]</code> and
+        log it.
+      </li>
+      <li>
+        You should declare and assign the string
+        <code>"Learning is fun."</code> to <code>learningIsFunSentence</code>.
+      </li>
+      <li>
+        You should log a message about finding substrings in
+        <code>learningIsFunSentence</code>.
+      </li>
+      <li>
+        You should log the results of <code>indexOf</code> for the substrings
+        "Learning", "fun", and "learning" from
+        <code>learningIsFunSentence</code>.
+      </li>
+      <li>
+        You should end with the message
+        <code>"I hope you enjoyed learning today."</code>.
+      </li>
+    </ol>
+
+    <h2>Tests:</h2>
+    <ol>
+      <li>You should log <code>"Hi there!"</code> to the console.</li>
+      <li>You should declare <code>botName</code> and assign it a string.</li>
+      <li>
+        You should create <code>greeting</code> using template literals and log
+        it.
+      </li>
+      <li>
+        You should declare and assign string values to <code>subject</code> and
+        <code>topic</code>.
+      </li>
+      <li>
+        <code>sentence</code> should be a template literal that includes
+        <code>topic</code> and <code>subject</code> and be logged.
+      </li>
+      <li>
+        <code>strLengthIntro</code> should use a template literal that
+        references <code>subject</code> and be logged.
+      </li>
+      <li>
+        You should correctly log the length of <code>subject</code> using
+        <code>.length</code>.
+      </li>
+      <li>
+        You should log a similar message and the length of <code>topic</code>.
+      </li>
+      <li>
+        You should log the first letter of <code>subject</code> using bracket
+        notation and the message before it.
+      </li>
+      <li>
+        You should log the second letter of <code>subject</code> using bracket
+        notation and the message before it.
+      </li>
+      <li>
+        You should log a message about the last letter, assign
+        <code>lastCharacter</code> using
+        <code>subject[subject.length - 1]</code>, and log it.
+      </li>
+      <li>
+        You should declare and assign <code>learningIsFunSentence</code> the
+        value <code>"Learning is fun."</code>.
+      </li>
+      <li>You should log a message about finding substring positions.</li>
+      <li>
+        You should use <code>indexOf</code> to log the positions of "Learning",
+        "fun", and "learning" in <code>learningIsFunSentence</code>.
+      </li>
+      <li>
+        You should log <code>"I hope you enjoyed learning today."</code> to the
+        console.
+      </li>
+    </ol>
   </body>
 </html>
