@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Truncate a String</title>
+    <script src="script.js" defer></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        padding: 20px;
+        background-color: #f9f9f9;
+      }
+      code {
+        background-color: #eee;
+        padding: 2px 4px;
+        border-radius: 4px;
+        font-family: monospace;
+      }
+      pre {
+        background-color: #eee;
+        padding: 10px;
+        border-radius: 4px;
+        overflow-x: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to my **90 Days of JavaScript Revision Challenge**!</h1>
+    <h2 style="color: red">
+      Please read the script file and understand the project and try to build
+      your own.
+    </h2>
+    <h3>
+      In this mini project, you will practice truncating a string at a certain
+      length.
+    </h3>
+    <h1>Truncate String – User Stories</h1>
+
+    <ul>
+      <li>
+        You should have a function named <code>truncateString</code> that
+        accepts two arguments:
+        <ul>
+          <li>The first argument should be a <strong>string</strong>.</li>
+          <li>The second argument should be a <strong>number</strong>.</li>
+        </ul>
+      </li>
+      <li>
+        If the length of the string is more than the given number:
+        <ul>
+          <li>
+            The string should be truncated so that its length is equal to the
+            given number.
+          </li>
+          <li>
+            <code>...</code> should be appended at the end of the truncated
+            string.
+          </li>
+        </ul>
+      </li>
+      <li>
+        If the length of the string is equal to or less than the given number,
+        the string should be returned unchanged.
+      </li>
+    </ul>
+
+    <h1>truncateString – Test Cases</h1>
+
+    <ul>
+      <li>
+        <code
+          >truncateString("A-tisket a-tasket A green and yellow basket",
+          8)</code
+        >
+        should return the string <code>A-tisket...</code>
+      </li>
+
+      <li>
+        <code
+          >truncateString("Peter Piper picked a peck of pickled peppers",
+          11)</code
+        >
+        should return the string <code>Peter Piper...</code>
+      </li>
+
+      <li>
+        <code
+          >truncateString("A-tisket a-tasket A green and yellow basket",
+          "A-tisket a-tasket A green and yellow basket".length)</code
+        >
+        should return the string
+        <code>A-tisket a-tasket A green and yellow basket</code>
+      </li>
+
+      <li>
+        <code
+          >truncateString("A-tisket a-tasket A green and yellow basket",
+          "A-tisket a-tasket A green and yellow basket".length + 2)</code
+        >
+        should return the string
+        <code>A-tisket a-tasket A green and yellow basket</code>
+      </li>
+
+      <li>
+        <code>truncateString("A-", 1)</code> should return the string
+        <code>A...</code>
+      </li>
+
+      <li>
+        <code>truncateString("Absolutely Longer", 2)</code> should return the
+        string <code>Ab...</code>
+      </li>
+    </ul>
+  </body>
+</html>

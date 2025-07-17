@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Email Masker</title>
+    <script src="script.js" defer></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        padding: 20px;
+        background-color: #f9f9f9;
+      }
+      code {
+        background-color: #eee;
+        padding: 2px 4px;
+        border-radius: 4px;
+        font-family: monospace;
+      }
+      pre {
+        background-color: #eee;
+        padding: 10px;
+        border-radius: 4px;
+        overflow-x: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to my **90 Days of JavaScript Revision Challenge**!</h1>
+    <h2 style="color: red">
+      Please read the script file and understand the project and try to build
+      your own.
+    </h2>
+    <h3>
+      In this mini project, you'll build an email masker that will take an email
+      address and obscure it. You'll practice string slicing, concatenation, and
+      using functions.
+    </h3>
+
+    <h3>Challenge:-</h3>
+    <p>
+      Create a function named <code>maskEmail</code> that takes
+      <code>email</code> as an argument.
+    </p>
+
+    <p>
+      Inside the function, you should mask the email and append the domain name
+      to it. Remember that you can use methods like <code>slice</code>,
+      <code>repeat</code>, <code>indexOf</code>, or even <code>replace</code> to
+      help you.
+    </p>
+
+    <p>
+      Outside the function, declare a variable named <code>email</code> to store
+      the email address you want to mask.
+    </p>
+
+    <p>
+      Call the <code>maskEmail</code> function with the
+      <code>email</code> variable and output the result to the console.
+    </p>
+
+    <h3>Examples</h3>
+    <pre>
+      <code>
+maskEmail("apple.pie@example.com")     // returns "a*******e@example.com"
+maskEmail("freecodecamp@example.com") // returns "f**********p@example.com"
+maskEmail("info@test.dev")            // returns "i**o@test.dev"
+maskEmail("user@domain.org")          // returns "u**r@domain.org"
+      </code>
+    </pre>
+  </body>
+</html>

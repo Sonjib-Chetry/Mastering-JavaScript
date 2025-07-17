@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leap Year Calculator</title>
+    <script src="script.js" defer></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        padding: 20px;
+        background-color: #f9f9f9;
+      }
+      code {
+        background-color: #eee;
+        padding: 2px 4px;
+        border-radius: 4px;
+        font-family: monospace;
+      }
+      pre {
+        background-color: #eee;
+        padding: 10px;
+        border-radius: 4px;
+        overflow-x: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to my **90 Days of JavaScript Revision Challenge**!</h1>
+    <h2 style="color: red">
+      Please read the script file and understand the project and try to build
+      your own.
+    </h2>
+    <h3>
+      In this mini project you'll use conditional statements and loops to
+      determine if a year is a leap year.
+    </h3>
+    <h4>
+      A leap year is a year that is divisible by 4, except for years that are
+      divisible by 100 and not divisible by 400. For example, 2000 is a leap
+      year, but 1900 is not. Also, a leap year has an extra day in February,
+      which is the 29th day of the month.
+    </h4>
+    <h2>User Stories</h2>
+
+    <ul>
+      <li>
+        Define a function called <code>isLeapYear</code> that takes a number as
+        an argument.
+      </li>
+      <li>
+        Outside the function, declare a variable <code>year</code> that stores
+        the value of the year you want to check.
+      </li>
+      <li>
+        Inside the function, use an <code>if/else</code> statement or a ternary
+        operator to check if the year is a leap year.
+      </li>
+    </ul>
+
+    <h3>Leap Year Conditions</h3>
+    <ul>
+      <li>If the year is divisible by 4, then it is a leap year.</li>
+      <li>
+        Unless the year is also divisible by 100, then it is not a leap year.
+      </li>
+      <li>Unless the year is also divisible by 400, then it is a leap year.</li>
+    </ul>
+
+    <p>
+      If the year is a leap year, return <code>[year] is a leap year.</code
+      ><br />
+      Otherwise, return <code>[year] is not a leap year.</code><br />
+      You will replace <code>[year]</code> with the parameter defined in the
+      <code>isLeapYear</code> function.
+    </p>
+
+    <ul>
+      <li>
+        You should call the <code>isLeapYear</code> function with
+        <code>year</code> as the argument and assign the result to a variable
+        named <code>result</code>.
+      </li>
+      <li>
+        You should output the <code>result</code> variable to the console using
+        <code>console.log()</code>.
+      </li>
+    </ul>
+
+    <h1>Leap Year Function – Test Requirements</h1>
+
+    <ul>
+      <li>You should define a function named <code>isLeapYear</code>.</li>
+      <li>
+        The <code>isLeapYear</code> function should take a number as an
+        argument.
+      </li>
+      <li>
+        You should declare a variable <code>year</code> and assign it a value to
+        check if it is a leap year.
+      </li>
+      <li>The <code>year</code> variable shouldn't be empty.</li>
+      <li>
+        With <code>2024</code> as the value of the <code>year</code> variable,
+        the result should be <code>2024 is a leap year.</code>
+      </li>
+      <li>
+        With <code>2000</code> as the value of the <code>year</code> variable,
+        the result should be <code>2000 is a leap year.</code>
+      </li>
+      <li>
+        With <code>1900</code> as the value of the <code>year</code> variable,
+        the result should be <code>1900 is not a leap year.</code>
+      </li>
+      <li>
+        You should call the <code>isLeapYear</code> function and pass
+        <code>year</code> as a parameter.
+      </li>
+      <li>You should declare a <code>result</code> variable.</li>
+      <li>
+        You should store the result of calling the
+        <code>isLeapYear</code> function in a variable named
+        <code>result</code>.
+      </li>
+      <li>
+        You should output the <code>result</code> to the console using
+        <code>console.log()</code>.
+      </li>
+    </ul>
+  </body>
+</html>

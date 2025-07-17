@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <script src="script.js" defer></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        padding: 20px;
+        background-color: #f9f9f9;
+      }
+      code {
+        background-color: #eee;
+        padding: 2px 4px;
+        border-radius: 4px;
+        font-family: monospace;
+      }
+      pre {
+        background-color: #eee;
+        padding: 10px;
+        border-radius: 4px;
+        overflow-x: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to my **90 Days of JavaScript Revision Challenge**!</h1>
+    <h2 style="color: red">
+      Please read the script file and understand the project and try to build
+      your own.
+    </h2>
+    <h3>
+      In this mini project, you will review your knowledge of functions by
+      building a calculator.
+    </h3>
+    <h2>User Stories</h2>
+
+    <ul>
+      <li>
+        You should have a function named <code>addTwoAndSeven</code> that
+        returns the sum of 2 and 7.
+      </li>
+      <li>
+        You should log the result of calling <code>addTwoAndSeven()</code> to
+        the console.
+      </li>
+
+      <li>
+        You should have a function named <code>addThreeAndFour</code> that
+        returns the sum of 3 and 4.
+      </li>
+      <li>
+        You should log the result of calling <code>addThreeAndFour()</code> to
+        the console.
+      </li>
+
+      <li>
+        You should have a function named <code>calculateSum</code> that takes
+        two parameters and returns their sum.
+      </li>
+      <li>
+        You should call <code>calculateSum</code> multiple times with different
+        arguments and log the results to the console.
+      </li>
+
+      <li>
+        You should have a function named <code>calculateDifference</code> that
+        takes two parameters and returns their difference (num1 - num2).
+      </li>
+      <li>
+        You should call <code>calculateDifference</code> multiple times and log
+        the results to the console.
+      </li>
+
+      <li>
+        You should have a function named <code>calculateProduct</code> that
+        takes two numbers and returns their product.
+      </li>
+      <li>
+        You should call <code>calculateProduct</code> and log the result to the
+        console.
+      </li>
+
+      <li>
+        You should have a function named <code>calculateQuotient</code> that
+        takes two numbers and returns the quotient of the first divided by the
+        second.
+      </li>
+      <li>
+        If the second number is 0, <code>calculateQuotient</code> should return
+        the string "Error: Division by zero".
+      </li>
+      <li>
+        You should call <code>calculateQuotient</code> with valid and zero
+        divisors and log the results to the console.
+      </li>
+
+      <li>
+        You should have a function named <code>calculateSquare</code> that
+        returns the square of a number using <code>Math.pow()</code>.
+      </li>
+      <li>
+        You should call <code>calculateSquare</code> with different arguments
+        and log the results to the console.
+      </li>
+
+      <li>
+        You should have a function named <code>calculateSquareRoot</code> that
+        returns the square root of a number using <code>Math.sqrt()</code>.
+      </li>
+      <li>
+        You should call <code>calculateSquareRoot</code> with different
+        arguments and log the results to the console.
+      </li>
+    </ul>
+    <!-- Test Cases for Basic Arithmetic Functions -->
+
+    <h2>Test Cases</h2>
+
+    <ol>
+      <li>
+        Calling <code>addTwoAndSeven()</code> should return <strong>9</strong>.
+      </li>
+      <li>
+        Calling <code>addThreeAndFour()</code> should return <strong>7</strong>.
+      </li>
+
+      <li>
+        Calling <code>calculateSum(2, 5)</code> should return
+        <strong>7</strong>.
+      </li>
+      <li>
+        Calling <code>calculateSum(10, 10)</code> should return
+        <strong>20</strong>.
+      </li>
+      <li>
+        Calling <code>calculateSum(5, 5)</code> should return
+        <strong>10</strong>.
+      </li>
+
+      <li>
+        Calling <code>calculateDifference(22, 5)</code> should return
+        <strong>17</strong>.
+      </li>
+      <li>
+        Calling <code>calculateDifference(12, 1)</code> should return
+        <strong>11</strong>.
+      </li>
+      <li>
+        Calling <code>calculateDifference(17, 9)</code> should return
+        <strong>8</strong>.
+      </li>
+
+      <li>
+        Calling <code>calculateProduct(13, 5)</code> should return
+        <strong>65</strong>.
+      </li>
+
+      <li>
+        Calling <code>calculateQuotient(7, 11)</code> should return
+        approximately <strong>0.636</strong>.
+      </li>
+      <li>
+        Calling <code>calculateQuotient(3, 0)</code> should return
+        <strong>"Error: Division by zero"</strong>.
+      </li>
+
+      <li>
+        Calling <code>calculateSquare(2)</code> should return
+        <strong>4</strong>.
+      </li>
+      <li>
+        Calling <code>calculateSquare(9)</code> should return
+        <strong>81</strong>.
+      </li>
+
+      <li>
+        Calling <code>calculateSquareRoot(25)</code> should return
+        <strong>5</strong>.
+      </li>
+      <li>
+        Calling <code>calculateSquareRoot(100)</code> should return
+        <strong>10</strong>.
+      </li>
+    </ol>
+  </body>
+</html>
