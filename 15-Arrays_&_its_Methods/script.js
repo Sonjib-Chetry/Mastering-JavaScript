@@ -162,6 +162,35 @@ Note:
 - Results in uppercase letters appearing first
 */
 
+// array.sort(compareFunction);
+// The compareFunction is an optional parameter that specifies a function that defines the sort order
+
+const numbers12 = [414, 200, 5, 10, 3];
+numbers12.sort();
+
+console.log(numbers12); // [10, 200, 3, 414, 5]
+// the number 200 appears before the number 3 in the array, because the string 200 
+// comes before the string 3 when comparing their UTF-16 code units.
+
+const numbers13 = [414, 200, 5, 10, 3];
+numbers13.sort((a, b) => a - b);
+console13.log(numbers); // [3, 5, 10, 200, 414]
+
+/*
+The parameters a and b are the two elements being compared. 
+The compare function should return a negative value if a should come before b, 
+a positive value if a should come after b, and zero if a and b are equal.
+
+The first comparison is between the numbers 414 and 200. 
+The result of 414 - 200 is 214, which is a positive value. 
+This means that 414 should come after 200 in the sorted array.
+
+The next comparison is between the numbers 200 and 5. 
+The result of 200 - 5 is 195, which is a positive value. 
+This means that 200 should come after 5 in the sorted array.
+*/
+
+
 /* 
 Extraction methods:
 */
