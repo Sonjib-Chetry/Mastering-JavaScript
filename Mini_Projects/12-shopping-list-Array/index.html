@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping List</title>
+    <script src="script.js" defer></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        padding: 20px;
+        background-color: #f9f9f9;
+      }
+      code {
+        background-color: #eee;
+        padding: 2px 4px;
+        border-radius: 4px;
+        font-family: monospace;
+      }
+      pre {
+        background-color: #eee;
+        padding: 10px;
+        border-radius: 4px;
+        overflow-x: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to my **90 Days of JavaScript Revision Challenge**!</h1>
+    <h2 style="color: red">
+      Please read the script file and understand the project and try to build
+      your own.
+    </h2>
+    <h3>
+      In this mini project, you will practice how to work with arrays by
+      building a shopping list. You will review how to add and remove elements
+      from an array using methods like push, pop, shift, and unshift.
+    </h3>
+    <h2>User Stories</h2>
+    <ul>
+      <li>
+        You should begin by logging "Grocery shopping list" to the console.
+      </li>
+      <li>
+        You should declare a constant <code>shoppingList</code> initialized as
+        an empty array.
+      </li>
+      <li>
+        You should log a message about wanting fruit, then use
+        <code>push</code> to add "Apples" to the list.
+      </li>
+      <li>
+        You should have a function <code>getShoppingListMsg</code> that returns
+        a formatted string of the current shopping list.
+      </li>
+      <li>
+        You should add more items to the list using <code>push</code>, and print
+        the updated list after each change.
+      </li>
+      <li>
+        You should log a message about needing cooking oil, then use
+        <code>unshift</code> to add "Vegetable Oil" to the beginning of the
+        list.
+      </li>
+      <li>
+        You should add multiple snack items at once using <code>push</code>.
+      </li>
+      <li>
+        You should log a concern about junk food, then remove the last item
+        using <code>pop</code>.
+      </li>
+      <li>
+        You should log about adding dessert and use <code>unshift</code> to add
+        "Chocolate Cake" at the beginning.
+      </li>
+      <li>
+        You should log a health-related message and remove the first item using
+        <code>shift</code>.
+      </li>
+      <li>
+        You should update the first item in the list directly to "Canola Oil"
+        and log the final list.
+      </li>
+    </ul>
+    <h2>Test Cases</h2>
+    <ol>
+      <li><code>shoppingList</code> should be an array.</li>
+      <li>
+        After adding "Apples", <code>shoppingList</code> should contain
+        <code>["Apples"]</code>.
+      </li>
+      <li>
+        After pushing "Grapes", <code>shoppingList</code> should contain
+        <code>["Apples", "Grapes"]</code>.
+      </li>
+      <li>
+        After unshifting "Vegetable Oil", <code>shoppingList</code> should
+        contain <code>["Vegetable Oil", "Apples", "Grapes"]</code>.
+      </li>
+      <li>
+        After pushing 3 snack items, the list should include "Popcorn", "Beef
+        Jerky", and "Potato Chips".
+      </li>
+      <li>
+        After <code>pop()</code>, "Potato Chips" should be removed from the end
+        of the list.
+      </li>
+      <li>
+        After unshifting "Chocolate Cake", it should appear at the beginning of
+        the list.
+      </li>
+      <li>After shifting, "Chocolate Cake" should be removed from the list.</li>
+      <li>
+        After setting <code>shoppingList[0] = "Canola Oil"</code>, the first
+        item should be "Canola Oil".
+      </li>
+    </ol>
+  </body>
+</html>

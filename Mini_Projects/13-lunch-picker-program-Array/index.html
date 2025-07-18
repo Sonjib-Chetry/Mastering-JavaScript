@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lunch Picker Program</title>
+    <script src="script.js" defer></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        padding: 20px;
+        background-color: #f9f9f9;
+      }
+      code {
+        background-color: #eee;
+        padding: 2px 4px;
+        border-radius: 4px;
+        font-family: monospace;
+      }
+      pre {
+        background-color: #eee;
+        padding: 10px;
+        border-radius: 4px;
+        overflow-x: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to my **90 Days of JavaScript Revision Challenge**!</h1>
+    <h2 style="color: red">
+      Please read the script file and understand the project and try to build
+      your own.
+    </h2>
+    <h3>
+      In this mini project, you'll review working with arrays and random numbers
+      by building a lunch picker program.
+    </h3>
+
+    <h1>Lunch Menu Manager – User Stories</h1>
+
+    <ul>
+      <li>
+        You should create a variable named <code>lunches</code> and assign it an
+        empty array that will be used to store lunch items.
+      </li>
+
+      <li>
+        You should create a function <code>addLunchToEnd</code> that takes:
+        <ul>
+          <li>an array as the first argument,</li>
+          <li>a string as the second argument.</li>
+        </ul>
+        The function should:
+        <ul>
+          <li>Add the string to the <strong>end</strong> of the array.</li>
+          <li>
+            Log
+            <code>"[Lunch Item] added to the end of the lunch menu."</code> to
+            the console.
+          </li>
+          <li>Return the updated array.</li>
+        </ul>
+      </li>
+
+      <li>
+        You should create a function <code>addLunchToStart</code> with the same
+        argument pattern as above. It should:
+        <ul>
+          <li>Add the string to the <strong>start</strong> of the array.</li>
+          <li>
+            Log
+            <code>"[Lunch Item] added to the start of the lunch menu."</code> to
+            the console.
+          </li>
+          <li>Return the updated array.</li>
+        </ul>
+      </li>
+
+      <li>
+        You should create a function <code>removeLastLunch</code> that takes an
+        array as its only argument. It should:
+        <ul>
+          <li>Remove the last element from the array.</li>
+          <li>
+            If successful, log
+            <code>"[Lunch Item] removed from the end of the lunch menu."</code>.
+          </li>
+          <li>
+            If the array is empty, log <code>"No lunches to remove."</code>.
+          </li>
+          <li>Return the updated array.</li>
+        </ul>
+      </li>
+
+      <li>
+        You should create a function <code>removeFirstLunch</code> that takes an
+        array as its only argument. It should:
+        <ul>
+          <li>Remove the first element from the array.</li>
+          <li>
+            If successful, log
+            <code>"[Lunch Item] removed from the start of the lunch menu."</code
+            >.
+          </li>
+          <li>
+            If the array is empty, log <code>"No lunches to remove."</code>.
+          </li>
+          <li>Return the updated array.</li>
+        </ul>
+      </li>
+
+      <li>
+        You should create a function <code>getRandomLunch</code> that takes an
+        array as its argument. It should:
+        <ul>
+          <li>Select a random element from the array.</li>
+          <li>
+            If successful, log
+            <code>"Randomly selected lunch: [Lunch Item]"</code>.
+          </li>
+          <li>
+            If the array is empty, log <code>"No lunches available."</code>.
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        You should create a function <code>showLunchMenu</code> that takes an
+        array as its argument. It should:
+        <ul>
+          <li>
+            If the array has items, log
+            <code>"Menu items: [Lunch Item], [Lunch Item], ..."</code>.
+          </li>
+          <li>If the array is empty, log <code>"The menu is empty."</code>.</li>
+        </ul>
+      </li>
+    </ul>
+
+    <h1>Lunch Menu – Test Cases</h1>
+
+    <ul>
+      <li>
+        You should declare a variable <code>lunches</code> and assign it an
+        empty array to store the lunch items.
+      </li>
+
+      <li>You should define a function <code>addLunchToEnd</code>.</li>
+      <li>
+        The function <code>addLunchToEnd</code> should have two parameters.
+      </li>
+      <li>
+        <code>addLunchToEnd(lunches, "Tacos")</code> should log
+        <code>"Tacos added to the end of the lunch menu."</code> to the console.
+      </li>
+      <li>
+        <code>addLunchToEnd(["Pizza", "Tacos"], "Burger")</code> should return
+        <code>["Pizza", "Tacos", "Burger"]</code>.
+      </li>
+
+      <li>You should define a function <code>addLunchToStart</code>.</li>
+      <li>
+        The function <code>addLunchToStart</code> should have two parameters.
+      </li>
+      <li>
+        <code>addLunchToStart(lunches, "Sushi")</code> should log
+        <code>"Sushi added to the start of the lunch menu."</code> to the
+        console.
+      </li>
+      <li>
+        <code>addLunchToStart(["Burger", "Sushi"], "Pizza")</code> should return
+        <code>["Pizza", "Burger", "Sushi"]</code>.
+      </li>
+
+      <li>You should define a function <code>removeLastLunch</code>.</li>
+      <li>
+        The function <code>removeLastLunch</code> should have one parameter.
+      </li>
+      <li>
+        When the input array is empty, <code>removeLastLunch</code> should log
+        <code>"No lunches to remove."</code> to the console.
+      </li>
+      <li>
+        <code>removeLastLunch(["Stew", "Soup", "Toast"])</code> should log
+        <code>"Toast removed from the end of the lunch menu."</code> to the
+        console.
+      </li>
+      <li>
+        <code>removeLastLunch(["Sushi", "Pizza", "Noodles"])</code> should
+        return <code>["Sushi", "Pizza"]</code>.
+      </li>
+
+      <li>You should define a function <code>removeFirstLunch</code>.</li>
+      <li>
+        The function <code>removeFirstLunch</code> should have a single
+        parameter.
+      </li>
+      <li>
+        When the input array is empty, <code>removeFirstLunch</code> should log
+        <code>"No lunches to remove."</code> to the console.
+      </li>
+      <li>
+        <code>removeFirstLunch(["Salad", "Eggs", "Cheese"])</code> should log
+        <code>"Salad removed from the start of the lunch menu."</code> to the
+        console.
+      </li>
+      <li>
+        <code>removeFirstLunch(["Sushi", "Pizza", "Burger"])</code> should
+        return <code>["Pizza", "Burger"]</code>.
+      </li>
+
+      <li>
+        <code>addLunchToEnd</code>, <code>addLunchToStart</code>,
+        <code>removeLastLunch</code>, and <code>removeFirstLunch</code> should
+        return the same array passed as an argument after updating it.
+      </li>
+
+      <li>You should define a function <code>getRandomLunch</code>.</li>
+      <li>
+        The function <code>getRandomLunch</code> should have a single parameter.
+      </li>
+      <li>
+        When the input array is empty, <code>getRandomLunch</code> should log
+        <code>"No lunches available."</code> to the console.
+      </li>
+      <li>
+        When the input array is not empty, it should log
+        <code>"Randomly selected lunch: [Lunch Item]"</code> to the console.
+      </li>
+      <li>
+        The <code>getRandomLunch</code> function should not change the array
+        passed to it as an argument.
+      </li>
+
+      <li>You should define a function <code>showLunchMenu</code>.</li>
+      <li>
+        The function <code>showLunchMenu</code> should have a single parameter.
+      </li>
+      <li>
+        When the input array is empty, it should log
+        <code>"The menu is empty."</code> to the console.
+      </li>
+      <li>
+        <code>showLunchMenu(["Greens", "Corns", "Beans"])</code> should log
+        <code>"Menu items: Greens, Corns, Beans"</code> to the console.
+      </li>
+      <li>
+        <code>showLunchMenu(["Pizza", "Burger", "Fries", "Salad"])</code> should
+        log <code>"Menu items: Pizza, Burger, Fries, Salad"</code> to the
+        console.
+      </li>
+    </ul>
+  </body>
+</html>
