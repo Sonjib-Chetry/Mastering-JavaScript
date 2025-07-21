@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mutations Algorithm</title>
+    <script src="script.js" defer></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        padding: 20px;
+        background-color: #f9f9f9;
+      }
+      code {
+        background-color: #eee;
+        padding: 2px 4px;
+        border-radius: 4px;
+        font-family: monospace;
+      }
+      pre {
+        background-color: #eee;
+        padding: 10px;
+        border-radius: 4px;
+        overflow-x: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to my **90 Days of JavaScript Revision Challenge**!</h1>
+    <h2 style="color: red">
+      Please read the script file and understand the project and try to build
+      your own.
+    </h2>
+    <h3>
+      In this mini project, you will practice iterating over two different
+      strings to compare their characters.
+    </h3>
+    <h1>User Stories – mutation Function</h1>
+
+    <ul>
+      <li>
+        Create a function named <code>mutation</code> that takes an array as its
+        argument.
+      </li>
+      <li>
+        <code>mutation</code> should return <code>true</code> if the string in
+        the first element of the array contains all of the letters of the string
+        in the second element of the array, ignoring case.
+      </li>
+      <li>
+        If the first string does <strong>not</strong> contain all letters from
+        the second string, the function should return <code>false</code>.
+      </li>
+      <li>
+        For example:
+        <ul>
+          <li>
+            <code>mutation(["hello", "Hello"])</code> should return
+            <code>true</code>.
+          </li>
+          <li>
+            <code>mutation(["hello", "hey"])</code> should return
+            <code>false</code>.
+          </li>
+          <li>
+            <code>mutation(["Alien", "line"])</code> should return
+            <code>true</code>.
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <h1>Test Cases – mutation Function</h1>
+
+    <ul>
+      <li>
+        <code>mutation(["hello", "hey"])</code> should return
+        <code>false</code>.
+      </li>
+      <li>
+        <code>mutation(["hello", "Hello"])</code> should return
+        <code>true</code>.
+      </li>
+      <li>
+        <code>mutation(["zyxwvutsrqponmlkjihgfedcba", "qrstu"])</code> should
+        return <code>true</code>.
+      </li>
+      <li>
+        <code>mutation(["Mary", "Army"])</code> should return <code>true</code>.
+      </li>
+      <li>
+        <code>mutation(["Mary", "Aarmy"])</code> should return
+        <code>true</code>.
+      </li>
+      <li>
+        <code>mutation(["Alien", "line"])</code> should return
+        <code>true</code>.
+      </li>
+      <li>
+        <code>mutation(["floor", "for"])</code> should return <code>true</code>.
+      </li>
+      <li>
+        <code>mutation(["hello", "neo"])</code> should return
+        <code>false</code>.
+      </li>
+      <li>
+        <code>mutation(["voodoo", "no"])</code> should return
+        <code>false</code>.
+      </li>
+      <li>
+        <code>mutation(["ate", "date"])</code> should return <code>false</code>.
+      </li>
+      <li>
+        <code>mutation(["Tiger", "Zebra"])</code> should return
+        <code>false</code>.
+      </li>
+      <li>
+        <code>mutation(["Noel", "Ole"])</code> should return <code>true</code>.
+      </li>
+    </ul>
+  </body>
+</html>

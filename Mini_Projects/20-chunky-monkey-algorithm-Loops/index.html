@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chunky Monkey Algorithm</title>
+    <script src="script.js" defer></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        padding: 20px;
+        background-color: #f9f9f9;
+      }
+      code {
+        background-color: #eee;
+        padding: 2px 4px;
+        border-radius: 4px;
+        font-family: monospace;
+      }
+      pre {
+        background-color: #eee;
+        padding: 10px;
+        border-radius: 4px;
+        overflow-x: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to my **90 Days of JavaScript Revision Challenge**!</h1>
+    <h2 style="color: red">
+      Please read the script file and understand the project and try to build
+      your own.
+    </h2>
+    <h3>
+      In this mini project, you will practice dividing an array into smaller
+      arrays with the technique of your choice.
+    </h3>
+
+    <h1>User Stories – chunkArrayInGroups Function</h1>
+
+    <ul>
+      <li>
+        Write a function named <code>chunkArrayInGroups</code> that takes two
+        arguments:
+        <ul>
+          <li>An <strong>array</strong> as the first argument.</li>
+          <li>A <strong>number</strong> as the second argument.</li>
+        </ul>
+      </li>
+      <li>
+        The function should split the array into smaller sub-arrays, each with a
+        length equal to the second argument.
+      </li>
+      <li>
+        It should return the result as a two-dimensional array containing the
+        chunks.
+      </li>
+    </ul>
+    <h1>Test Cases – chunkArrayInGroups Function</h1>
+
+    <ul>
+      <li>
+        <code>chunkArrayInGroups(["a", "b", "c", "d"], 2)</code> should return
+        <code>[["a", "b"], ["c", "d"]]</code>.
+      </li>
+      <li>
+        <code>chunkArrayInGroups([0, 1, 2, 3, 4, 5], 3)</code> should return
+        <code>[[0, 1, 2], [3, 4, 5]]</code>.
+      </li>
+      <li>
+        <code>chunkArrayInGroups([0, 1, 2, 3, 4, 5], 2)</code> should return
+        <code>[[0, 1], [2, 3], [4, 5]]</code>.
+      </li>
+      <li>
+        <code>chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4)</code> should return
+        <code>[[0, 1, 2, 3], [4, 5]]</code>.
+      </li>
+      <li>
+        <code>chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6], 3)</code> should return
+        <code>[[0, 1, 2], [3, 4, 5], [6]]</code>.
+      </li>
+      <li>
+        <code>chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 4)</code> should
+        return <code>[[0, 1, 2, 3], [4, 5, 6, 7], [8]]</code>.
+      </li>
+      <li>
+        <code>chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 2)</code> should
+        return <code>[[0, 1], [2, 3], [4, 5], [6, 7], [8]]</code>.
+      </li>
+    </ul>
+  </body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz Game</title>
+    <script src="script.js" defer></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        padding: 20px;
+        background-color: #f9f9f9;
+      }
+      code {
+        background-color: #eee;
+        padding: 2px 4px;
+        border-radius: 4px;
+        font-family: monospace;
+      }
+      pre {
+        background-color: #eee;
+        padding: 10px;
+        border-radius: 4px;
+        overflow-x: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to my **90 Days of JavaScript Revision Challenge**!</h1>
+    <h2 style="color: red">
+      Please read the script file and understand the project and try to build
+      your own.
+    </h2>
+    <h3>
+      In this mini project, you'll build a quiz game using JavaScript arrays and
+      objects. You'll also practice using functions to randomly select a
+      question and an answer from an array and compare them.
+    </h3>
+
+    <h1>User Stories – Quiz Program</h1>
+
+    <ul>
+      <li>You should create an array named <code>questions</code>.</li>
+
+      <li>
+        The <code>questions</code> array should contain at least five objects,
+        each having the following keys:
+        <ul>
+          <li>
+            <code>category</code>: a string representing a question category.
+          </li>
+          <li>
+            <code>question</code>: a string representing the question itself.
+          </li>
+          <li>
+            <code>choices</code>: an array of three strings, which are the
+            answer options.
+          </li>
+          <li>
+            <code>answer</code>: a string that is the correct answer (must be
+            one of the items in <code>choices</code>).
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        You should have a function named <code>getRandomQuestion</code> that:
+        <ul>
+          <li>Takes an array of questions as a parameter.</li>
+          <li>Returns a random question object from the array.</li>
+        </ul>
+      </li>
+
+      <li>
+        You should have a function named
+        <code>getRandomComputerChoice</code> that:
+        <ul>
+          <li>Takes the array of available choices as a parameter.</li>
+          <li>Returns a random answer from the choices.</li>
+        </ul>
+      </li>
+
+      <li>
+        You should have a function named <code>getResults</code> that:
+        <ul>
+          <li>Takes the question object as the first parameter.</li>
+          <li>Takes the computer's choice as the second parameter.</li>
+          <li>
+            Returns <code>The computer's choice is correct!</code> if the answer
+            is correct.
+          </li>
+          <li>
+            If incorrect, returns
+            <code
+              >The computer's choice is wrong. The correct answer is:
+              &lt;correct-answer&gt;</code
+            >.
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <h1>Test Cases – Quiz Program</h1>
+
+    <ul>
+      <li>You should create an array named <code>questions</code>.</li>
+      <li>
+        The <code>questions</code> array should contain at least five objects,
+        each having the keys <code>category</code>, <code>question</code>,
+        <code>choices</code>, and <code>answer</code>.
+      </li>
+      <li>
+        The <code>category</code> key should have the value of a string
+        representing a question category.
+      </li>
+      <li>
+        The <code>question</code> key should have the value of a string
+        representing a question.
+      </li>
+      <li>
+        The <code>choices</code> key should have the value of an array
+        containing three strings.
+      </li>
+      <li>The <code>answer</code> key should have the value of a string.</li>
+      <li>
+        The value of <code>answer</code> should be included in the
+        <code>choices</code> array.
+      </li>
+
+      <li>
+        You should have a function named <code>getRandomQuestion</code> that:
+        <ul>
+          <li>Takes an array of questions as a parameter.</li>
+          <li>Returns a random question object from the array.</li>
+        </ul>
+      </li>
+
+      <li>
+        You should have a function named
+        <code>getRandomComputerChoice</code> that:
+        <ul>
+          <li>Takes the array of available choices as a parameter.</li>
+          <li>Returns a random answer to the selected question.</li>
+        </ul>
+      </li>
+
+      <li>You should have a function named <code>getResults</code>.</li>
+      <li>
+        Your <code>getResults</code> function should take:
+        <ul>
+          <li>The question object as the first parameter.</li>
+          <li>The computer's choice as the second parameter.</li>
+        </ul>
+      </li>
+      <li>
+        If the computer choice matches the answer,
+        <code>getResults</code> should return
+        <code>The computer's choice is correct!</code>.
+      </li>
+      <li>
+        If the computer choice doesn't match the answer,
+        <code>getResults</code> should return
+        <code
+          >The computer's choice is wrong. The correct answer is:
+          &lt;correct-answer&gt;</code
+        >, where <code>&lt;correct-answer&gt;</code> is the value of the correct
+        answer to the chosen question.
+      </li>
+    </ul>
+  </body>
+</html>
