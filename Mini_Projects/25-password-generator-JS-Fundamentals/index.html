@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Generator</title>
+    <script src="script.js" defer></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        padding: 20px;
+        background-color: #f9f9f9;
+      }
+      code {
+        background-color: #eee;
+        padding: 2px 4px;
+        border-radius: 4px;
+        font-family: monospace;
+      }
+      pre {
+        background-color: #eee;
+        padding: 10px;
+        border-radius: 4px;
+        overflow-x: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to my **90 Days of JavaScript Revision Challenge**!</h1>
+    <h2 style="color: red">
+      Please read the script file and understand the project and try to build
+      your own.
+    </h2>
+    <h3>
+      In this mini project, you'll build a password generator app based on the
+      user's input.
+    </h3>
+
+    <h1>Password Generator</h1>
+    <ul>
+      <li>
+        You should create a function called <code>generatePassword</code> that
+        takes a parameter, indicating the length of the generated password.
+      </li>
+      <li>
+        Your function should return a string representing a randomly generated
+        password.
+      </li>
+      <li>
+        You should use the following string and <code>Math</code> methods to
+        return a new string with random characters:
+        <code
+          >ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()</code
+        >.
+      </li>
+      <li>
+        You should define a variable called <code>password</code> and assign it
+        the result of calling <code>generatePassword</code> with a numeric
+        argument representing the desired password length.
+      </li>
+      <li>
+        You should have a <code>console.log</code> that logs a single string:
+        <code>Generated password: &lt;password&gt;</code>, where
+        <code>&lt;password&gt;</code> is the value of the
+        <code>password</code> variable.
+      </li>
+    </ul>
+
+    <h1>Password Generator Test Cases</h1>
+    <ul>
+      <li>
+        1. You should have a <code>generatePassword</code> function with a
+        parameter. You can name the parameter whatever you like.
+      </li>
+      <li>
+        2. Your <code>generatePassword</code> function should return a string.
+      </li>
+      <li>
+        3. Your <code>generatePassword</code> function should return a new
+        string that is the correct length.
+      </li>
+      <li>
+        4. Your function should return a randomly generated password with valid
+        characters.
+      </li>
+      <li>
+        5. Your function should return a new random string each time it is
+        called.
+      </li>
+      <li>6. You should have a <code>password</code> variable.</li>
+      <li>7. Your <code>password</code> variable should be a string.</li>
+      <li>
+        8. You should call the <code>generatePassword</code> function with a
+        numeric argument and store the returned password in the
+        <code>password</code> variable.
+      </li>
+      <li>
+        9. You should log a single string combining
+        <code>Generated password:</code> and the <code>password</code> separated
+        by a single space using <code>+</code> or a template literal.
+      </li>
+    </ul>
+  </body>
+</html>

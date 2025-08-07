@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slice & Splice Algorithm</title>
+    <script src="script.js" defer></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        padding: 20px;
+        background-color: #f9f9f9;
+      }
+      code {
+        background-color: #eee;
+        padding: 2px 4px;
+        border-radius: 4px;
+        font-family: monospace;
+      }
+      pre {
+        background-color: #eee;
+        padding: 10px;
+        border-radius: 4px;
+        overflow-x: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to my **90 Days of JavaScript Revision Challenge**!</h1>
+    <h2 style="color: red">
+      Please read the script file and understand the project and try to build
+      your own.
+    </h2>
+    <h3>
+      In this mini project, you will practice merging an array with another.
+    </h3>
+
+    <h1>User Stories – frankenSplice Function</h1>
+
+    <ul>
+      <li>
+        Create a function named <code>frankenSplice</code> that accepts two
+        arrays and an index as arguments.
+      </li>
+      <li>
+        The function should copy each element of the first array into the second
+        array, in order, starting at the given index.
+      </li>
+      <li>
+        The function should return the resulting new array after the elements
+        have been inserted.
+      </li>
+      <li>
+        Neither of the input arrays should be mutated or changed after the
+        function runs.
+      </li>
+    </ul>
+
+    <h1>Test Cases – frankenSplice Function</h1>
+
+    <ul>
+      <li>
+        <code>frankenSplice([1, 2, 3], [4, 5], 1)</code> should return
+        <code>[4, 1, 2, 3, 5]</code>.
+      </li>
+      <li>
+        <code>frankenSplice([1, 2], ["a", "b"], 1)</code> should return
+        <code>["a", 1, 2, "b"]</code>.
+      </li>
+      <li>
+        <code
+          >frankenSplice(["claw", "tentacle"], ["head", "shoulders", "knees",
+          "toes"], 2)</code
+        >
+        should return
+        <code>["head", "shoulders", "claw", "tentacle", "knees", "toes"]</code>.
+      </li>
+      <li>
+        <code>frankenSplice([1, 2, 3, 4], [], 0)</code> should return
+        <code>[1, 2, 3, 4]</code>.
+      </li>
+      <li>The first array should remain unchanged after the function runs.</li>
+      <li>
+        The second array should also remain unchanged after the function runs.
+      </li>
+    </ul>
+  </body>
+</html>

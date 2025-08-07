@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inventory Management Program</title>
+    <script src="script.js" defer></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        padding: 20px;
+        background-color: #f9f9f9;
+      }
+      code {
+        background-color: #eee;
+        padding: 2px 4px;
+        border-radius: 4px;
+        font-family: monospace;
+      }
+      pre {
+        background-color: #eee;
+        padding: 10px;
+        border-radius: 4px;
+        overflow-x: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to my **90 Days of JavaScript Revision Challenge**!</h1>
+    <h2 style="color: red">
+      Please read the script file and understand the project and try to build
+      your own.
+    </h2>
+    <h3>
+      For this mini project, you'll build an inventory management program using
+      JavaScript. You'll use JavaScript array of objects to manage the
+      inventory.
+    </h3>
+
+    <h1>Inventory Management User Stories</h1>
+
+    <ul>
+      <li>
+        You should declare an empty array named <code>inventory</code> to store
+        product objects with:
+        <ul>
+          <li><code>name</code> (a lowercase string)</li>
+          <li><code>quantity</code> (an integer)</li>
+        </ul>
+      </li>
+
+      <li>
+        You should create a function named <code>findProductIndex</code> that:
+        <ul>
+          <li>Takes a product name as an argument</li>
+          <li>Searches using the lowercase form of the product name</li>
+          <li>
+            Returns the index of the product object in <code>inventory</code>
+          </li>
+          <li>Returns <code>-1</code> if the product is not found</li>
+        </ul>
+      </li>
+
+      <li>
+        You should create a function named <code>addProduct</code> that:
+        <ul>
+          <li>Takes a product object as an argument</li>
+          <li>
+            If the product exists, updates its quantity and logs: <br /><code
+              >&lt;product-name&gt; quantity updated</code
+            >
+          </li>
+          <li>
+            If not present, adds the product to <code>inventory</code> and logs:
+            <br /><code>&lt;product-name&gt; added to inventory</code>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        You should create a function named <code>removeProduct</code> that:
+        <ul>
+          <li>Takes the product name and quantity as arguments</li>
+          <li>
+            Subtracts the passed quantity from the product in
+            <code>inventory</code>
+          </li>
+          <li>If remaining quantity is 0, removes the product</li>
+          <li>
+            If quantity is insufficient, logs:<br />
+            <code
+              >Not enough &lt;product-name&gt; available, remaining pieces:
+              &lt;product-quantity&gt;</code
+            >
+          </li>
+          <li>
+            If product is not found, logs:<br />
+            <code>&lt;product-name&gt; not found</code>
+          </li>
+          <li>
+            Otherwise, logs:<br />
+            <code
+              >Remaining &lt;product-name&gt; pieces:
+              &lt;product-quantity&gt;</code
+            >
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <strong>Note:</strong> Only log messages exactly as specified when
+        running tests to avoid conflicts.
+      </li>
+    </ul>
+
+    <h1>Inventory Management Tests</h1>
+    <ol>
+      <li>You should declare an empty array named <code>inventory</code>.</li>
+      <li>You should have a function named <code>findProductIndex</code>.</li>
+      <li>
+        <code>findProductIndex("flour")</code> should return the index of the
+        object having name equal to "flour" inside the inventory array.
+      </li>
+      <li>
+        <code>findProductIndex("FloUr")</code> should return the index of the
+        object having name equal to "flour" inside the inventory array.
+      </li>
+      <li>
+        <code>findProductIndex("Flour")</code> should return -1 when no object
+        having name equal to "flour" is found inside the inventory array.
+      </li>
+      <li>You should have a function named <code>addProduct</code>.</li>
+      <li>
+        <code>addProduct({name: "FLOUR", quantity: 5})</code> should add 5 to
+        the quantity value of the object having name equal to "flour" in the
+        inventory array.
+      </li>
+      <li>
+        <code>addProduct({name: "FLOUR", quantity: 5})</code> should log
+        <code>flour quantity updated</code> when an object having name equal to
+        "flour" is found in the inventory array.
+      </li>
+      <li>
+        <code>addProduct({name: "FLOUR", quantity: 5})</code> should push
+        <code>{name: "flour", quantity: 5}</code> to the inventory array when no
+        object having name equal to "flour" is found.
+      </li>
+      <li>
+        <code>addProduct({name: "FLOUR", quantity: 5})</code> should log
+        <code>flour added to inventory</code> when no object having name equal
+        to "flour" is found in the inventory.
+      </li>
+      <li>You should create a function named <code>removeProduct</code>.</li>
+      <li>
+        <code>removeProduct("FLOUR", 5)</code> should log
+        <code>flour not found</code> when no object having name equal to "flour"
+        is found in the inventory array.
+      </li>
+      <li>
+        <code>removeProduct("FLOUR", 5)</code> should subtract 5 from the
+        quantity value of the object with name "flour".
+      </li>
+      <li>
+        <code>removeProduct("FLOUR", 5)</code> should log
+        <code>Remaining flour pieces: 15</code> when inventory is
+        <code>[{name: "flour", quantity: 20}, {name: "rice", quantity: 5}]</code
+        >.
+      </li>
+      <li>
+        If the quantity after the subtraction is zero,
+        <code>removeProduct</code> should remove the product object from the
+        inventory.
+      </li>
+      <li>
+        <code>removeProduct("FLOUR", 10)</code> should log
+        <code>Not enough flour available, remaining pieces: 5</code> when
+        inventory is
+        <code>[{name: "flour", quantity: 5}, {name: "rice", quantity: 5}]</code
+        >.
+      </li>
+    </ol>
+  </body>
+</html>

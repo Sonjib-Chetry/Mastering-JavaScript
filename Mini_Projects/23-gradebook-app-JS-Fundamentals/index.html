@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grade-book App</title>
+    <script src="script.js" defer></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        padding: 20px;
+        background-color: #f9f9f9;
+      }
+      code {
+        background-color: #eee;
+        padding: 2px 4px;
+        border-radius: 4px;
+        font-family: monospace;
+      }
+      pre {
+        background-color: #eee;
+        padding: 10px;
+        border-radius: 4px;
+        overflow-x: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to my **90 Days of JavaScript Revision Challenge**!</h1>
+    <h2 style="color: red">
+      Please read the script file and understand the project and try to build
+      your own.
+    </h2>
+    <h3>
+      For this mini project, you'll create a gradebook app. You'll practice
+      conditionals to determine the student's grade based on their score.
+    </h3>
+
+    <h1>User Stories – Grading System Functions</h1>
+
+    <ul>
+      <li>
+        You should define a function named <code>getAverage</code> that:
+        <ul>
+          <li>Takes an array of test scores as a parameter.</li>
+          <li>Returns the average score.</li>
+        </ul>
+      </li>
+
+      <li>
+        You should define a function named <code>getGrade</code> that:
+        <ul>
+          <li>Takes a student score as a parameter.</li>
+          <li>Returns a letter grade based on the following scale:</li>
+        </ul>
+        <table border="1">
+          <thead>
+            <tr>
+              <th>Score Range</th>
+              <th>Grade</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>100</td>
+              <td>A+</td>
+            </tr>
+            <tr>
+              <td>90 - 99</td>
+              <td>A</td>
+            </tr>
+            <tr>
+              <td>80 - 89</td>
+              <td>B</td>
+            </tr>
+            <tr>
+              <td>70 - 79</td>
+              <td>C</td>
+            </tr>
+            <tr>
+              <td>60 - 69</td>
+              <td>D</td>
+            </tr>
+            <tr>
+              <td>0 - 59</td>
+              <td>F</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+
+      <li>
+        You should define a function named <code>hasPassingGrade</code> that:
+        <ul>
+          <li>Takes a score as a parameter.</li>
+          <li>
+            Returns <code>true</code> if the grade is anything other than "F",
+            otherwise returns <code>false</code>.
+          </li>
+          <li>
+            Uses the <code>getGrade</code> function to determine the grade.
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        You should define a function named <code>studentMsg</code> that:
+        <ul>
+          <li>Takes an array of scores and a student score as parameters.</li>
+          <li>Returns a message in this format:</li>
+          <li>
+            <code
+              >"Class average: average-goes-here. Your grade: grade-goes-here.
+              You passed the course."</code
+            >
+            <br />
+            <strong>OR</strong>
+            <br />
+            <code
+              >"Class average: average-goes-here. Your grade: grade-goes-here.
+              You failed the course."</code
+            >
+          </li>
+          <li>
+            Uses <code>getAverage</code> and <code>getGrade</code> to compute
+            the average and grade.
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <h1>Test Cases – Grading System Functions</h1>
+
+    <ul>
+      <li>
+        <strong>getAverage Function</strong>
+        <ul>
+          <li>Function named <code>getAverage</code> should exist.</li>
+          <li>It should return a <strong>number</strong>.</li>
+          <li>
+            <code>getAverage([92, 88, 12, 77, 57, 100, 67, 38, 97, 89])</code> →
+            <code>71.7</code>
+          </li>
+          <li>
+            <code>getAverage([45, 87, 98, 100, 86, 94, 67, 88, 94, 95])</code> →
+            <code>85.4</code>
+          </li>
+          <li>
+            <code
+              >getAverage([38, 99, 87, 100, 100, 100, 100, 100, 100, 100])</code
+            >
+            → <code>92.4</code>
+          </li>
+          <li>
+            <code>getAverage([10, 20, 30, 40, 55, 65, 75, 83])</code> →
+            <code>47.25</code>
+          </li>
+          <li>
+            <code>getAverage([10, 20, 30, 40, 50, 60, 70, 97])</code> →
+            <code>47.125</code>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <strong>getGrade Function</strong>
+        <ul>
+          <li>Function named <code>getGrade</code> should exist.</li>
+          <li><code>getGrade(100)</code> → <code>"A+"</code></li>
+          <li><code>getGrade(90)</code> → <code>"A"</code></li>
+          <li><code>getGrade(85)</code> → <code>"B"</code></li>
+          <li><code>getGrade(75)</code> → <code>"C"</code></li>
+          <li><code>getGrade(65)</code> → <code>"D"</code></li>
+          <li><code>getGrade(40)</code> → <code>"F"</code></li>
+        </ul>
+      </li>
+
+      <li>
+        <strong>hasPassingGrade Function</strong>
+        <ul>
+          <li>Function named <code>hasPassingGrade</code> should exist.</li>
+          <li>It should return a <strong>boolean</strong>.</li>
+          <li><code>hasPassingGrade(95)</code> → <code>true</code></li>
+          <li><code>hasPassingGrade(45)</code> → <code>false</code></li>
+        </ul>
+      </li>
+
+      <li>
+        <strong>studentMsg Function</strong>
+        <ul>
+          <li>Function named <code>studentMsg</code> should exist.</li>
+          <li>
+            Should return a full message based on score and grade:
+            <ul>
+              <li>
+                <code
+                  >studentMsg([92, 88, 12, 77, 57, 100, 67, 38, 97, 89],
+                  37)</code
+                >
+                → "Class average: 71.7. Your grade: F. You failed the course."
+              </li>
+              <li>
+                <code
+                  >studentMsg([56, 23, 89, 42, 75, 11, 68, 34, 91, 19],
+                  100)</code
+                >
+                → "Class average: 50.8. Your grade: A+. You passed the course."
+              </li>
+              <li>
+                <code>studentMsg([12, 22, 32, 42, 52, 62, 72, 92], 85)</code> →
+                "Class average: 48.25. Your grade: B. You passed the course."
+              </li>
+              <li>
+                <code>studentMsg([15, 25, 35, 45, 55, 60, 70, 60], 75)</code> →
+                "Class average: 45.625. Your grade: C. You passed the course."
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </body>
+</html>

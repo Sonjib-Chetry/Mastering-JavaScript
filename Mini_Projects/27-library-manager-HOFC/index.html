@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Library Manager</title>
+    <script src="script.js" defer></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        padding: 20px;
+        background-color: #f9f9f9;
+      }
+      code {
+        background-color: #eee;
+        padding: 2px 4px;
+        border-radius: 4px;
+        font-family: monospace;
+      }
+      pre {
+        background-color: #eee;
+        padding: 10px;
+        border-radius: 4px;
+        overflow-x: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to my **90 Days of JavaScript Revision Challenge**!</h1>
+    <h2 style="color: red">
+      Please read the script file and understand the project and try to build
+      your own.
+    </h2>
+    <h3>
+      In this mini project, you will learn higher order array methods by
+      building a library manager.
+    </h3>
+
+    <h1>📚 User Stories for Library App</h1>
+
+    <ol>
+      <li>
+        <strong>Library Structure:</strong>
+        <ul>
+          <li>
+            A constant <code>library</code> should be declared as an array of
+            objects.
+          </li>
+          <li>
+            Each object should include the following properties:
+            <code>title</code>, <code>author</code>, <code>about</code>, and
+            <code>pages</code>.
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <strong>Book Information:</strong>
+        <ul>
+          <li>Create a function named <code>getBookInformation</code>.</li>
+          <li>This function should take an array as a parameter.</li>
+          <li>
+            It should return a string that lists book titles and authors in the
+            format: <code>"Title by Author"</code>, each on a new line.
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <strong>Book Summaries:</strong>
+        <ul>
+          <li>Create a function named <code>getBookSummaries</code>.</li>
+          <li>
+            It should return a string containing the <code>about</code> field of
+            each book, separated by line breaks.
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <strong>Filter by Author:</strong>
+        <ul>
+          <li>Create a function named <code>getBooksByAuthor</code>.</li>
+          <li>
+            This function should accept the library array and an author name.
+          </li>
+          <li>
+            It should return a list of book titles by that author, each on a new
+            line.
+          </li>
+          <li>If no books match the author, return an empty string.</li>
+        </ul>
+      </li>
+
+      <li>
+        <strong>Total Pages:</strong>
+        <ul>
+          <li>Create a function named <code>getTotalPages</code>.</li>
+          <li>
+            It should return the total number of pages by summing the
+            <code>pages</code> field of all books in the catalog.
+          </li>
+        </ul>
+      </li>
+    </ol>
+
+    <h2>Tests</h2>
+    <ul>
+      <li>
+        1. You should declare a constant <code>library</code> that is an array.
+      </li>
+      <li>
+        2. Each object in <code>library</code> should have <code>title</code>,
+        <code>author</code>, <code>about</code>, and <code>pages</code> keys.
+      </li>
+
+      <li>
+        3. You should have a function named <code>getBookInformation</code>.
+      </li>
+      <li>
+        4. <code>getBookInformation(library)</code> should return a string.
+      </li>
+      <li>
+        5. The returned string should include all titles and authors from the
+        catalog formatted as <code>[title] by [author]</code>.
+      </li>
+
+      <li>
+        6. You should have a function named <code>getBookSummaries</code>.
+      </li>
+      <li>
+        7. <code>getBookSummaries(library)</code> should return a string
+        containing all <code>about</code> fields separated by new lines.
+      </li>
+
+      <li>
+        8. You should have a function named <code>getBooksByAuthor</code>.
+      </li>
+      <li>
+        9. <code>getBooksByAuthor(library, "Arvid Kahl")</code> should return a
+        string containing two titles.
+      </li>
+      <li>
+        10. <code>getBooksByAuthor(library, "James Clear")</code> should return
+        the string <code>Atomic Habits</code>.
+      </li>
+      <li>
+        11. <code>getBooksByAuthor(library, "Unknown Author")</code> should
+        return an empty string.
+      </li>
+
+      <li>12. You should have a function named <code>getTotalPages</code>.</li>
+      <li>
+        13. <code>getTotalPages(library)</code> should return <code>2512</code>.
+      </li>
+    </ul>
+  </body>
+</html>
