@@ -1,0 +1,22 @@
+
+/* Variables for Method 7 */
+:root {
+    --main-bg: lightblue;
+    --main-color: black;
+}
+
+/* Classes for Method 3 */
+.highlight {
+    background-color: orange;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Class for testing CSS Variables */
+.variable-style {
+    background-color: var(--main-bg);
+    color: var(--main-color);
+    padding: 15px;
+    font-weight: bold;
+}

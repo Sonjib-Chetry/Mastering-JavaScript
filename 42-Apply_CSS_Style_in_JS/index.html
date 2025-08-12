@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS in JavaScript</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body id="myBody">
+    <h1>Welcome to my **90 Days of JavaScript Revision Challenge**!</h1>
+    <h1>CSS in JavaScript</h1>
+    <h2 style="color: red">
+      Please check comment in the script file for details explanation.
+    </h2>
+    
+
+    <p id="text">This is a sample paragraph.</p>
+
+    <div id="note">This is a note box.</div>
+
+    <p id="cssText">This text will use cssText method.</p>
+
+    <button onclick="changeBodyStyle()">1. Inline style</button>
+    <button onclick="changeParaStyle()">2. setAttribute style</button>
+    <button onclick="toggleClass()">3. Toggle class</button>
+    <button onclick="UseCSSText()">4. cssText</button>
+    <button onclick="injectDynamicStyle()">5. Inject &lt;style&gt;</button>
+    <button onclick="addCSSRule()">6. Modify stylesheet</button>
+    <button onclick="updateCSSVariables()">7. Update CSS Variables</button>
+    <button onclick="loadExternalCSS('theme-dark.css')">
+      8. Load External CSS
+    </button>
+    <button onclick="assignMultipleStyles()">9. Object.assign styles</button>
+
+    <script src="script.js"></script>
+  </body>
+</html>
