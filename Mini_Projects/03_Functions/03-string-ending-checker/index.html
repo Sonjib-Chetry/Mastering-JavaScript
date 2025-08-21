@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>String Ending Checker</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      h2 {
+        color: #333;
+      }
+      ul,
+      ol {
+        margin-left: 20px;
+      }
+      code {
+        background-color: #f4f4f4;
+        padding: 2px 6px;
+        border-radius: 4px;
+      }
+    </style>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <h1>Welcome to my **90 Days of JavaScript Revision Challenge**!</h1>
+    <h2 style="color: red">
+      Please read the script file and understand the project and try to build at
+      your own.
+    </h2>
+    <h3>
+      In this mini project, you will implement a function that checks if a
+      string ends with the given target string.
+    </h3>
+
+    <h2>User Story</h2>
+    <p>
+      You should create a function named <code>confirmEnding</code>.
+      <br />
+      - The function should take <strong>two parameters</strong>: 1. The string
+      to check. 2. The string to check against.
+      <br />
+      - The function should return <code>true</code> if the first string ends
+      with the second string, and <code>false</code> otherwise.
+      <br />
+      - You should <strong>not use</strong> the <code>.endsWith()</code> method;
+      instead, use JavaScript substring methods.
+    </p>
+
+    <h2>Test Cases</h2>
+    <ul>
+      <li>
+        <code>confirmEnding("Bastian", "n")</code> should return
+        <code>true</code>.
+      </li>
+      <li>
+        <code>confirmEnding("Congratulation", "on")</code> should return
+        <code>true</code>.
+      </li>
+      <li>
+        <code>confirmEnding("Connor", "n")</code> should return
+        <code>false</code>.
+      </li>
+      <li>
+        <code
+          >confirmEnding("Walking on water and developing software from a
+          specification are easy if both are frozen", "specification")</code
+        >
+        should return <code>false</code>.
+      </li>
+      <li>
+        <code>confirmEnding("He has to give me a new name", "name")</code>
+        should return <code>true</code>.
+      </li>
+      <li>
+        <code>confirmEnding("Open sesame", "same")</code> should return
+        <code>true</code>.
+      </li>
+      <li>
+        <code>confirmEnding("Open sesame", "sage")</code> should return
+        <code>false</code>.
+      </li>
+      <li>
+        <code>confirmEnding("Open sesame", "game")</code> should return
+        <code>false</code>.
+      </li>
+      <li>
+        <code
+          >confirmEnding("If you want to save our world, you must hurry. We
+          don't know how much longer we can withstand the nothing",
+          "mountain")</code
+        >
+        should return <code>false</code>.
+      </li>
+      <li>
+        <code>confirmEnding("Abstraction", "action")</code> should return
+        <code>true</code>.
+      </li>
+    </ul>
+  </body>
+</html>

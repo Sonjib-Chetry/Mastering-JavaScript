@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A Pyramid Generator</title>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <h1>Welcome to my **90 Days of JavaScript Revision Challenge**!</h1>
+    <h2 style="color: red">
+      Please read the script file and understand the project and try to build at
+      your own.
+    </h2>
+    <h3>
+      In this practice project, you'll learn fundamental programming concepts in
+      JavaScript by coding your own Pyramid Generator. You'll learn how to work
+      with arrays, strings, functions, loops, if/else statements, and more.
+    </h3>
+
+    <h2>🎯 User Stories</h2>
+    <ul>
+      <li>
+        You should define a constant <code>character</code> to represent the
+        symbol used to build the pyramid.
+      </li>
+      <li>
+        You should define a constant <code>count</code> to represent the total
+        number of rows in the pyramid.
+      </li>
+      <li>
+        You should define an array <code>rows</code> to hold each row of the
+        pyramid as strings.
+      </li>
+      <li>
+        You should define a boolean variable <code>inverted</code> to control
+        whether the pyramid is normal or inverted.
+      </li>
+      <li>
+        You should create a function <code>padRow</code> that:
+        <ul>
+          <li>
+            Takes two arguments: <code>rowNumber</code> (the current row) and
+            <code>rowCount</code> (total rows).
+          </li>
+          <li>
+            Returns a string that contains spaces and repeated characters so
+            that the pyramid row is correctly aligned.
+          </li>
+          <li>
+            Each row should end with a newline character (<code>\n</code>).
+          </li>
+        </ul>
+      </li>
+      <li>
+        You should use a <code>for</code> loop from 1 to <code>count</code> to
+        generate pyramid rows.
+      </li>
+      <li>
+        If <code>inverted</code> is <code>false</code>, push rows to the end of
+        the <code>rows</code> array.
+      </li>
+      <li>
+        If <code>inverted</code> is <code>true</code>, unshift rows to the
+        beginning of the <code>rows</code> array (so the pyramid is upside
+        down).
+      </li>
+      <li>
+        You should combine all rows into a single string <code>result</code>.
+      </li>
+      <li>
+        You should <code>console.log</code> the final pyramid stored in
+        <code>result</code>.
+      </li>
+    </ul>
+
+    <h2>✅ Test Cases</h2>
+    <ul>
+      <li>
+        When <code>count = 4</code> and <code>inverted = false</code>, the
+        output should be:
+        <pre>
+   !   
+  !!!  
+ !!!!! 
+!!!!!!!
+      </pre
+        >
+      </li>
+
+      <li>
+        When <code>count = 4</code> and <code>inverted = true</code>, the output
+        should be:
+        <pre>
+!!!!!!!
+ !!!!! 
+  !!!  
+   !   
+      </pre
+        >
+      </li>
+
+      <li>
+        When <code>count = 2</code> and <code>inverted = false</code>, the
+        output should be:
+        <pre>
+ ! 
+!!!
+      </pre
+        >
+      </li>
+
+      <li>
+        When <code>count = 2</code> and <code>inverted = true</code>, the output
+        should be:
+        <pre>
+!!!
+ ! 
+      </pre
+        >
+      </li>
+
+      <li>
+        <code>padRow(1, 3)</code> with <code>character="*"</code> should return
+        <code>" * \n"</code>.
+      </li>
+      <li>
+        <code>padRow(2, 3)</code> with <code>character="*"</code> should return
+        <code>" *** \n"</code>.
+      </li>
+      <li>
+        <code>padRow(3, 3)</code> with <code>character="*"</code> should return
+        <code>"*****\n"</code>.
+      </li>
+    </ul>
+  </body>
+</html>

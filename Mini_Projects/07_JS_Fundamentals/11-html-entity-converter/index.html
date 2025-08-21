@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>HTML Entity Converter</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      h2 {
+        color: #333;
+      }
+      ul,
+      ol {
+        margin-left: 20px;
+      }
+      code {
+        background-color: #f4f4f4;
+        padding: 2px 6px;
+        border-radius: 4px;
+      }
+    </style>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <h1>Welcome to my **90 Days of JavaScript Revision Challenge**!</h1>
+    <h2 style="color: red">
+      Please read the script file and understand the project and try to build at
+      your own.
+    </h2>
+    <h3>
+      In this mini project, you will convert special characters in a string to
+      their corresponding HTML entities.
+    </h3>
+
+    <h2>User Stories</h2>
+    <ul>
+      <li>You should have a function named <code>convertHTML</code>.</li>
+      <li>
+        The <code>convertHTML</code> function should accept a string as an
+        argument.
+      </li>
+      <li>The function should return a new string with these replacements:</li>
+      <ul>
+        <li><code>&amp;</code> → <code>&amp;amp;</code></li>
+        <li><code>&lt;</code> → <code>&amp;lt;</code></li>
+        <li><code>&gt;</code> → <code>&amp;gt;</code></li>
+        <li><code>"</code> → <code>&amp;quot;</code></li>
+        <li><code>'</code> → <code>&amp;apos;</code></li>
+      </ul>
+    </ul>
+
+    <h2>Test Cases</h2>
+    <ul>
+      <li>
+        <code>convertHTML("Dolce & Gabbana")</code> →
+        <code>Dolce &amp; Gabbana</code>
+      </li>
+      <li>
+        <code>convertHTML("Hamburgers &lt; Pizza &lt; Tacos")</code> →
+        <code>Hamburgers &amp;lt; Pizza &amp;lt; Tacos</code>
+      </li>
+      <li>
+        <code>convertHTML("Sixty > twelve")</code> →
+        <code>Sixty &amp;gt; twelve</code>
+      </li>
+      <li>
+        <code>convertHTML('Stuff in "quotation marks"')</code> →
+        <code>Stuff in &amp;quot;quotation marks&amp;quot;</code>
+      </li>
+      <li>
+        <code>convertHTML("Schindler's List")</code> →
+        <code>Schindler&amp;apos;s List</code>
+      </li>
+      <li>
+        <code>convertHTML("&lt;&gt;")</code> → <code>&amp;lt;&amp;gt;</code>
+      </li>
+      <li><code>convertHTML("abc")</code> → <code>abc</code></li>
+    </ul>
+  </body>
+</html>
+
+

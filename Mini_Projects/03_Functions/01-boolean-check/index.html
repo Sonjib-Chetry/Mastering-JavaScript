@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Boolean Check Function</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      h2 {
+        color: #333;
+      }
+      ul,
+      ol {
+        margin-left: 20px;
+      }
+      code {
+        background-color: #f4f4f4;
+        padding: 2px 6px;
+        border-radius: 4px;
+      }
+    </style>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <h1>Welcome to my **90 Days of JavaScript Revision Challenge**!</h1>
+    <h2 style="color: red">
+      Please read the script file and understand the project and try to build at
+      your own.
+    </h2>
+    <h3>
+      In this mini project, you'll implement a function that checks if a value
+      is a boolean.
+    </h3>
+
+    <h2>User Story</h2>
+    <p>
+      You should have a function named <code>booWho</code> that receives one
+      argument.
+      <br />
+      - If the argument received is a <strong>boolean primitive</strong> (<code
+        >true</code
+      >
+      or <code>false</code>), the function should return <code>true</code>.
+      <br />
+      - If the argument is <strong>any other value</strong>, the function should
+      return <code>false</code>.
+    </p>
+
+    <h2>Test Cases</h2>
+    <ul>
+      <li><code>booWho(true)</code> should return <code>true</code>.</li>
+      <li><code>booWho(false)</code> should return <code>true</code>.</li>
+      <li><code>booWho([1, 2, 3])</code> should return <code>false</code>.</li>
+      <li><code>booWho([].slice)</code> should return <code>false</code>.</li>
+      <li><code>booWho({ "a": 1 })</code> should return <code>false</code>.</li>
+      <li><code>booWho(1)</code> should return <code>false</code>.</li>
+      <li><code>booWho(NaN)</code> should return <code>false</code>.</li>
+      <li><code>booWho("a")</code> should return <code>false</code>.</li>
+      <li><code>booWho("true")</code> should return <code>false</code>.</li>
+      <li><code>booWho("false")</code> should return <code>false</code>.</li>
+    </ul>
+  </body>
+</html>

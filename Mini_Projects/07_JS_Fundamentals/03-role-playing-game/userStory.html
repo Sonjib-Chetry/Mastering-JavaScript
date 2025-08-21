@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Role Playing Game - User Stories & Test Cases</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      h2 {
+        color: #333;
+      }
+      ul,
+      ol {
+        margin-left: 20px;
+      }
+      code {
+        background-color: #f4f4f4;
+        padding: 2px 6px;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to my **90 Days of JavaScript Revision Challenge**!</h1>
+    <h2 style="color: red">
+      Please read the script file and understand the project and try to build at
+      your own.
+    </h2>
+    <h3>
+      In this practice project, you'll learn fundamental programming concepts in
+      JavaScript by coding your own Role Playing Game. You'll learn how to work
+      with arrays, strings, objects, functions, loops, if/else statements, and
+      more.
+    </h3>
+
+    <h2>🎯 User Stories</h2>
+    <ul>
+      <li>
+        You should define global variables to represent player stats:
+        <ul>
+          <li><code>xp</code>: Player’s experience points (default 0).</li>
+          <li><code>health</code>: Player’s health (default 100).</li>
+          <li><code>gold</code>: Player’s gold (default 50).</li>
+          <li>
+            <code>currentWeapon</code>: Index of the current weapon in the
+            <code>weapons</code> array.
+          </li>
+          <li>
+            <code>fighting</code>: Index of the monster currently being fought.
+          </li>
+          <li><code>monsterHealth</code>: Current monster’s health.</li>
+          <li>
+            <code>inventory</code>: Array of weapon names (default
+            <code>["stick"]</code>).
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        You should create a <code>weapons</code> array of objects. Each weapon
+        should have:
+        <ul>
+          <li><code>name</code>: String name of the weapon.</li>
+          <li><code>power</code>: Numeric attack power of the weapon.</li>
+        </ul>
+      </li>
+
+      <li>
+        You should create a <code>monsters</code> array of objects. Each monster
+        should have:
+        <ul>
+          <li><code>name</code>: Monster’s name.</li>
+          <li>
+            <code>level</code>: Numeric level (used in attack calculations).
+          </li>
+          <li><code>health</code>: Monster’s starting health.</li>
+        </ul>
+      </li>
+
+      <li>
+        You should create a <code>locations</code> array of objects. Each
+        location should have:
+        <ul>
+          <li><code>name</code>: Location name.</li>
+          <li>
+            <code>button text</code>: Array of 3 strings for the UI buttons.
+          </li>
+          <li>
+            <code>button functions</code>: Array of 3 functions to be triggered
+            by the buttons.
+          </li>
+          <li><code>text</code>: String of description shown in the game.</li>
+        </ul>
+      </li>
+
+      <li>
+        You should write a reusable <code>update(location)</code> function to:
+        <ul>
+          <li>Change button texts and click handlers.</li>
+          <li>Update the main description text.</li>
+          <li>Show/hide monster stats depending on location.</li>
+        </ul>
+      </li>
+
+      <li>
+        You should implement location functions:
+        <ul>
+          <li>
+            <code>goTown()</code>, <code>goStore()</code>, <code>goCave()</code>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        You should implement store functions:
+        <ul>
+          <li><code>buyHealth()</code>: Deduct gold, increase health.</li>
+          <li>
+            <code>buyWeapon()</code>: Deduct gold, add weapon to inventory, or
+            switch to <code>sellWeapon()</code> if max weapon reached.
+          </li>
+          <li>
+            <code>sellWeapon()</code>: Add gold, remove a weapon from inventory.
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        You should implement combat initiation functions:
+        <ul>
+          <li>
+            <code>fightSlime()</code>, <code>fightBeast()</code>,
+            <code>fightDragon()</code> → set monster index and call
+            <code>goFight()</code>.
+          </li>
+          <li>
+            <code>goFight()</code>: Show fight screen, display monster stats.
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        You should implement combat functions:
+        <ul>
+          <li>
+            <code>attack()</code>: Player and monster exchange attacks, apply
+            health updates, check win/lose conditions, chance of weapon
+            breaking.
+          </li>
+          <li>
+            <code>dodge()</code>: Avoid monster attack with message update.
+          </li>
+          <li>
+            <code>defeatMonster()</code>: Grant gold & XP, show victory scene.
+          </li>
+          <li><code>lose()</code>: Show game over scene.</li>
+          <li><code>winGame()</code>: Show dragon victory scene.</li>
+        </ul>
+      </li>
+
+      <li>
+        You should implement helper functions:
+        <ul>
+          <li>
+            <code>getMonsterAttackValue(level)</code>: Calculate monster’s
+            attack damage.
+          </li>
+          <li>
+            <code>isMonsterHit()</code>: Random chance to hit the monster.
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        You should implement game reset:
+        <ul>
+          <li>
+            <code>restart()</code>: Reset stats and inventory, return to town.
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        You should implement an Easter Egg mini-game:
+        <ul>
+          <li><code>easterEgg()</code>: Load Easter Egg location.</li>
+          <li>
+            <code>pickTwo()</code>, <code>pickEight()</code>,
+            <code>pick(guess)</code>: Random number guessing mini-game with
+            rewards/penalties.
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <h2>✅ Test Cases</h2>
+    <ul>
+      <li>
+        Initial stats: <code>xp = 0</code>, <code>health = 100</code>,
+        <code>gold = 50</code>, <code>inventory = ["stick"]</code>.
+      </li>
+      <li>
+        <code>buyHealth()</code> should increase health by 10 and reduce gold by
+        10 when enough gold is available.
+      </li>
+      <li>
+        <code>buyWeapon()</code> should increase
+        <code>currentWeapon</code> index and add weapon to inventory when gold ≥
+        30.
+      </li>
+      <li>
+        <code>sellWeapon()</code> should remove a weapon from inventory and
+        increase gold by 15.
+      </li>
+      <li>
+        <code>fightSlime()</code> should set <code>fighting = 0</code> and enter
+        fight scene with monster stats displayed.
+      </li>
+      <li>
+        <code>attack()</code> should:
+        <ul>
+          <li>Reduce player health according to monster attack.</li>
+          <li>Reduce monster health when hit.</li>
+          <li>Show “miss” message when attack fails.</li>
+        </ul>
+      </li>
+      <li>
+        If <code>health <= 0</code>, <code>lose()</code> should be triggered.
+      </li>
+      <li>
+        If monster health <= 0 and fighting is not dragon,
+        <code>defeatMonster()</code> should be triggered.
+      </li>
+      <li>
+        If monster health <= 0 and fighting is dragon,
+        <code>winGame()</code> should be triggered.
+      </li>
+      <li>
+        <code>restart()</code> should reset all stats and inventory to starting
+        values.
+      </li>
+      <li>
+        <code>pick(2)</code> or <code>pick(8)</code> should generate 10 random
+        numbers. If guess matches, add 20 gold. If not, reduce health by 10.
+      </li>
+    </ul>
+  </body>
+</html>

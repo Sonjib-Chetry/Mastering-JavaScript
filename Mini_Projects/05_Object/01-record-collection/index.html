@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Record Collection</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      h2 {
+        color: #333;
+      }
+      ul,
+      ol {
+        margin-left: 20px;
+      }
+      code {
+        background-color: #f4f4f4;
+        padding: 2px 6px;
+        border-radius: 4px;
+      }
+    </style>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <h1>Welcome to my **90 Days of JavaScript Revision Challenge**!</h1>
+    <h2 style="color: red">
+      Please read the script file and understand the project and try to build at
+      your own.
+    </h2>
+    <h3>
+      You are creating a function that aids in the maintenance of a musical
+      album collection. The collection is organized as an object that contains
+      multiple albums which are also objects. Each album is represented in the
+      collection with a unique id as the property name. Within each album
+      object, there are various properties describing information about the
+      album. Not all albums have complete information.
+    </h3>
+
+    <h2>User Story</h2>
+    <p>
+      You need to write a function called
+      <code>updateRecords(records, id, prop, value)</code> that manipulates a
+      record collection object.
+    </p>
+    <p><strong>Function Parameters:</strong></p>
+    <ul>
+      <li>
+        <code>records</code> - an object containing several individual albums.
+      </li>
+      <li>
+        <code>id</code> - a number representing a specific album in the records
+        object.
+      </li>
+      <li>
+        <code>prop</code> - a string representing the name of the album’s
+        property to update.
+      </li>
+      <li>
+        <code>value</code> - a string containing the information used to update
+        the album’s property.
+      </li>
+    </ul>
+
+    <p><strong>Rules:</strong></p>
+    <ul>
+      <li>
+        Your function must always return the entire <code>records</code> object.
+      </li>
+      <li>
+        If <code>value</code> is an empty string, delete the given
+        <code>prop</code> property from the album.
+      </li>
+      <li>
+        If <code>prop</code> isn't <code>tracks</code> and
+        <code>value</code> isn't an empty string, assign <code>value</code> to
+        that album's <code>prop</code>.
+      </li>
+      <li>
+        If <code>prop</code> is <code>tracks</code> and <code>value</code> isn't
+        an empty string, but the album doesn’t have a
+        <code>tracks</code> property, create an empty array and add
+        <code>value</code> to it.
+      </li>
+      <li>
+        If <code>prop</code> is <code>tracks</code> and <code>value</code> isn't
+        an empty string, add <code>value</code> to the end of the album's
+        existing <code>tracks</code> array.
+      </li>
+    </ul>
+
+    <h2>Test Cases</h2>
+    <ul>
+      <li>You should have an <code>updateRecords</code> function.</li>
+      <li>
+        <code>updateRecords(recordCollection, 5439, "artist", "ABBA")</code> →
+        <code>artist</code> should be the string <code>"ABBA"</code>.
+      </li>
+      <li>
+        <code
+          >updateRecords(recordCollection, 5439, "tracks", "Take a Chance on
+          Me")</code
+        >
+        → <code>tracks</code> should have <code>"Take a Chance on Me"</code> as
+        the last and only element.
+      </li>
+      <li>
+        <code>updateRecords(recordCollection, 2548, "artist", "")</code> →
+        <code>artist</code> should be removed.
+      </li>
+      <li>
+        <code
+          >updateRecords(recordCollection, 1245, "tracks", "Addicted to
+          Love")</code
+        >
+        → <code>tracks</code> should include <code>"Addicted to Love"</code>.
+      </li>
+      <li>
+        <code>updateRecords(recordCollection, 2468, "tracks", "Free")</code> →
+        <code>tracks</code> should still contain <code>"1999"</code> as the
+        first element.
+      </li>
+      <li>
+        <code>updateRecords(recordCollection, 2548, "tracks", "")</code> →
+        <code>tracks</code> should be removed.
+      </li>
+      <li>
+        <code
+          >updateRecords(recordCollection, 1245, "albumTitle", "Riptide")</code
+        >
+        → <code>albumTitle</code> should be <code>"Riptide"</code>.
+      </li>
+    </ul>
+  </body>
+</html>

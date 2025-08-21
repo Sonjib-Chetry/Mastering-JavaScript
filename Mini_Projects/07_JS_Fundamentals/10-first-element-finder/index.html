@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>First Element Finder</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      h2 {
+        color: #333;
+      }
+      ul,
+      ol {
+        margin-left: 20px;
+      }
+      code {
+        background-color: #f4f4f4;
+        padding: 2px 6px;
+        border-radius: 4px;
+      }
+    </style>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <h1>Welcome to my **90 Days of JavaScript Revision Challenge**!</h1>
+    <h2 style="color: red">
+      Please read the script file and understand the project and try to build at
+      your own.
+    </h2>
+    <h3>
+      In this mini project, you will create a function that looks through an
+      array and returns the first element in it that passes a "truth test".
+    </h3>
+
+    <h2>User Stories</h2>
+    <ul>
+      <li>You should have a function named <code>findElement</code>.</li>
+      <li>
+        The <code>findElement</code> function should accept
+        <b>two parameters</b>: an <b>array</b> and a <b>function</b>.
+      </li>
+      <li>
+        The function should return the <b>first element</b> in the array that
+        passes the truth test provided by the function.
+      </li>
+      <li>
+        If no element passes the truth test, <code>findElement</code> should
+        return <code>undefined</code>.
+      </li>
+    </ul>
+
+    <h2>Test Cases</h2>
+    <ul>
+      <li>You should have a <code>findElement</code> function.</li>
+      <li>
+        <code
+          >findElement([1, 3, 5, 8, 9, 10], function(num) { return num % 2 ===
+          0; })</code
+        >
+        → <code>8</code>.
+      </li>
+      <li>
+        <code
+          >findElement([1, 3, 5, 9], function(num) { return num % 2 === 0;
+          })</code
+        >
+        → <code>undefined</code>.
+      </li>
+      <li>
+        <code
+          >findElement([1, 2, 3, 4], function(num) { return num > 2; })</code
+        >
+        → <code>3</code>.
+      </li>
+      <li>
+        <code
+          >findElement(["hello", "world", "javascript"], function(str) { return
+          str.length > 5; })</code
+        >
+        → <code>"javascript"</code>.
+      </li>
+      <li>
+        <code
+          >findElement(["cat", "dog", "bird"], function(str) { return str.length
+          > 10; })</code
+        >
+        → <code>undefined</code>.
+      </li>
+      <li>
+        <code
+          >findElement([2, 4, 6, 8], function(num) { return num % 2 === 0;
+          })</code
+        >
+        → <code>2</code>.
+      </li>
+      <li>
+        <code>findElement([], function(num) { return num > 0; })</code> →
+        <code>undefined</code>.
+      </li>
+    </ul>
+  </body>
+</html>

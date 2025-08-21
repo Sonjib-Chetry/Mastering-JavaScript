@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>String Repeating Function</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      h2 {
+        color: #333;
+      }
+      ul,
+      ol {
+        margin-left: 20px;
+      }
+      code {
+        background-color: #f4f4f4;
+        padding: 2px 6px;
+        border-radius: 4px;
+      }
+    </style>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <h1>Welcome to my **90 Days of JavaScript Revision Challenge**!</h1>
+    <h2 style="color: red">
+      Please read the script file and understand the project and try to build at
+      your own.
+    </h2>
+    <h3>
+      In this mini project, you will implement loops to repeat a string a
+      specified number of times.
+    </h3>
+
+    <h2>User Story</h2>
+    <p>
+      You need to create a function named <code>repeatStringNumTimes</code> that
+      repeats a string a given number of times.
+    </p>
+
+    <h3>Requirements:</h3>
+    <ul>
+      <li>Create a function named <code>repeatStringNumTimes</code>.</li>
+      <li>
+        The function should take <b>two parameters</b>:
+        <ul>
+          <li><b>string</b>: the text to repeat</li>
+          <li><b>number</b>: how many times to repeat</li>
+        </ul>
+      </li>
+      <li>
+        If the number is <code>&lt;= 0</code>, return an <b>empty string</b>.
+      </li>
+      <li>The function should always return a string.</li>
+      <li><b>Do not use</b> the built-in <code>repeat()</code> method.</li>
+      <li>
+        Use a <code>for loop</code> or <code>while loop</code> to build the
+        repeated string.
+      </li>
+    </ul>
+
+    <h2>Test Cases</h2>
+    <ul>
+      <li>
+        You should create a function named <code>repeatStringNumTimes</code>.
+      </li>
+      <li><code>repeatStringNumTimes</code> should take two parameters.</li>
+      <li>The function should always return a string.</li>
+      <li><code>repeatStringNumTimes("*", 3)</code> → <code>"***"</code>.</li>
+      <li>
+        <code>repeatStringNumTimes("abc", 3)</code> → <code>"abcabcabc"</code>.
+      </li>
+      <li>
+        <code>repeatStringNumTimes("abc", 4)</code> →
+        <code>"abcabcabcabc"</code>.
+      </li>
+      <li><code>repeatStringNumTimes("abc", 1)</code> → <code>"abc"</code>.</li>
+      <li>
+        <code>repeatStringNumTimes("*", 8)</code> → <code>"********"</code>.
+      </li>
+      <li>
+        <code>repeatStringNumTimes("abc", -2)</code> → <code>""</code> (empty
+        string).
+      </li>
+      <li>
+        <code>repeatStringNumTimes("abc", 0)</code> → <code>""</code> (empty
+        string).
+      </li>
+      <li>
+        The built-in <code>repeat()</code> method should <b>not</b> be used.
+      </li>
+    </ul>
+  </body>
+</html>

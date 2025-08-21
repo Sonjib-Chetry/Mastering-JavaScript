@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Profile Lookup</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      h2 {
+        color: #333;
+      }
+      ul,
+      ol {
+        margin-left: 20px;
+      }
+      code {
+        background-color: #f4f4f4;
+        padding: 2px 6px;
+        border-radius: 4px;
+      }
+    </style>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <h1>Welcome to my **90 Days of JavaScript Revision Challenge**!</h1>
+    <h2 style="color: red">
+      Please read the script file and understand the project and try to build at
+      your own.
+    </h2>
+    <h3>
+      In this mini project, you'll create a function that looks up profile
+      information.
+    </h3>
+
+    <h2>User Story</h2>
+    <p>
+      You need to create a function named <code>lookUpProfile</code> that looks
+      up information in a given <code>contacts</code> array.
+    </p>
+
+    <h3>Requirements:</h3>
+    <ul>
+      <li>
+        A global <code>contacts</code> array will be provided, containing
+        multiple objects. Each object represents a contact with properties like
+        <code>firstName</code>, <code>lastName</code>, <code>number</code>, and
+        <code>likes</code>.
+      </li>
+      <li>
+        Create a function named <code>lookUpProfile</code> that accepts two
+        parameters:
+        <ul>
+          <li>
+            <b>name</b> (string): the first name of the contact to search for.
+          </li>
+          <li>
+            <b>prop</b> (string): the property of the contact you want to
+            retrieve.
+          </li>
+        </ul>
+      </li>
+      <li>
+        If the contact with the given name exists <b>and</b> has the requested
+        property, return the property’s value.
+      </li>
+      <li>
+        If no contact with the given name exists, return
+        <code>"No such contact"</code>.
+      </li>
+      <li>
+        If the contact exists but the property does not exist on it, return
+        <code>"No such property"</code>.
+      </li>
+    </ul>
+
+    <h2>Test Cases</h2>
+    <ul>
+      <li>
+        The <code>contacts</code> array should be present in the global scope.
+      </li>
+      <li>You should have a function named <code>lookUpProfile</code>.</li>
+      <li>
+        <code>lookUpProfile("Kristian", "lastName")</code> → <code>"Vos"</code>.
+      </li>
+      <li>
+        <code>lookUpProfile("Sherlock", "likes")</code> →
+        <code>["Intriguing Cases", "Violin"]</code>.
+      </li>
+      <li>
+        <code>lookUpProfile("Harry", "likes")</code> should return an
+        <b>array</b>.
+      </li>
+      <li>
+        <code>lookUpProfile("Bob", "number")</code> →
+        <code>"No such contact"</code>.
+      </li>
+      <li>
+        <code>lookUpProfile("Bob", "potato")</code> →
+        <code>"No such contact"</code>.
+      </li>
+      <li>
+        <code>lookUpProfile("Akira", "address")</code> →
+        <code>"No such property"</code>.
+      </li>
+    </ul>
+  </body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Statistics Calculator - User Stories & Test Cases</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      h2 {
+        color: #333;
+      }
+      ul,
+      ol {
+        margin-left: 20px;
+      }
+      code {
+        background-color: #f4f4f4;
+        padding: 2px 6px;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to my **90 Days of JavaScript Revision Challenge**!</h1>
+    <h2 style="color: red">
+      Please read the script file and understand the project and try to build at
+      your own.
+    </h2>
+
+    <h3>
+      As you expand your JavaScript skills, you'll want to get comfortable with
+      array manipulation methods, such as map(), reduce(), and filter(). In this
+      statistics calculator project, you'll gain experience with handling user
+      input, DOM manipulation, and method chaining. You'll get practice by
+      performing statistical calculations like mean, median, mode, variance, and
+      standard deviation.
+    </h3>
+
+      <h2>📝 User Stories</h2>
+  <ul>
+    <li>You should have an input element with the id <code>numbers</code>. This input will accept a comma-separated list of numbers (e.g., <code>1, 2, 3, 4</code>).</li>
+    <li>You should have a button element that triggers the calculation when clicked.</li>
+    <li>You should have output elements (e.g., <code>&lt;span&gt;</code> or <code>&lt;p&gt;</code>) with the following ids to display results:
+      <ul>
+        <li><code>mean</code></li>
+        <li><code>median</code></li>
+        <li><code>mode</code></li>
+        <li><code>range</code></li>
+        <li><code>variance</code></li>
+        <li><code>standardDeviation</code></li>
+      </ul>
+    </li>
+    <li>In JavaScript:
+      <ul>
+        <li>Implement a function <code>getMean(array)</code> that calculates the average of numbers.</li>
+        <li>Implement a function <code>getMedian(array)</code> that finds the middle value (or average of two middle values).</li>
+        <li>Implement a function <code>getMode(array)</code> that finds the most frequent value(s). If no mode exists, return <code>"No mode value"</code>.</li>
+        <li>Implement a function <code>getRange(array)</code> that returns the difference between the maximum and minimum values.</li>
+        <li>Implement a function <code>getVariance(array)</code> that calculates the average of squared differences from the mean.</li>
+        <li>Implement a function <code>getStandardDeviation(array)</code> that is the square root of variance.</li>
+      </ul>
+    </li>
+    <li>Create a <code>calculate()</code> function that:
+      <ul>
+        <li>Reads the input from <code>#numbers</code>.</li>
+        <li>Parses it into an array of valid numbers.</li>
+        <li>Calculates mean, median, mode, range, variance, and standard deviation.</li>
+        <li>Updates the respective output elements with the calculated values.</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h2>✅ Test Cases</h2>
+  <ul>
+    <li><strong>Test 1: Input Parsing</strong>
+      <ul>
+        <li>Input: <code>1, 2, 3</code> → Should be parsed into array <code>[1, 2, 3]</code>.</li>
+        <li>Input: <code>5,10,15</code> → Should be parsed into array <code>[5, 10, 15]</code>.</li>
+      </ul>
+    </li>
+
+    <li><strong>Test 2: Mean</strong>
+      <ul>
+        <li>Input: <code>2, 4, 6</code> → Mean = <code>4</code>.</li>
+        <li>Input: <code>1, 2, 3, 4, 5</code> → Mean = <code>3</code>.</li>
+      </ul>
+    </li>
+
+    <li><strong>Test 3: Median</strong>
+      <ul>
+        <li>Input: <code>3, 1, 2</code> → Sorted = <code>[1, 2, 3]</code>, Median = <code>2</code>.</li>
+        <li>Input: <code>4, 1, 3, 2</code> → Sorted = <code>[1, 2, 3, 4]</code>, Median = <code>(2 + 3) / 2 = 2.5</code>.</li>
+      </ul>
+    </li>
+
+    <li><strong>Test 4: Mode</strong>
+      <ul>
+        <li>Input: <code>1, 2, 2, 3</code> → Mode = <code>2</code>.</li>
+        <li>Input: <code>1, 1, 2, 2</code> → Mode = <code>1, 2</code> (both occur equally).</li>
+        <li>Input: <code>5, 6, 7</code> → Mode = <code>No mode value</code>.</li>
+      </ul>
+    </li>
+
+    <li><strong>Test 5: Range</strong>
+      <ul>
+        <li>Input: <code>1, 5, 9</code> → Range = <code>9 - 1 = 8</code>.</li>
+      </ul>
+    </li>
+
+    <li><strong>Test 6: Variance & Standard Deviation</strong>
+      <ul>
+        <li>Input: <code>1, 2, 3</code>
+          <ul>
+            <li>Mean = <code>2</code>.</li>
+            <li>Variance = <code>((1-2)^2 + (2-2)^2 + (3-2)^2) / 3 = (1 + 0 + 1) / 3 = 0.666...</code>.</li>
+            <li>Standard Deviation = <code>√0.666... ≈ 0.816</code>.</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+
+    <li><strong>Test 7: Display in DOM</strong>
+      <ul>
+        <li>After calculation, the <code>#mean</code> element should show the mean value.</li>
+        <li>The <code>#median</code> element should show the median.</li>
+        <li>The <code>#mode</code> element should show the mode.</li>
+        <li>The <code>#range</code> element should show the range.</li>
+        <li>The <code>#variance</code> element should show the variance.</li>
+        <li>The <code>#standardDeviation</code> element should show the standard deviation.</li>
+      </ul>
+    </li>
+  </ul>
+  </body>
+</html>
