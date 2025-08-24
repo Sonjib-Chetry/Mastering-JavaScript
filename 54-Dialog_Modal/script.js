@@ -5,7 +5,7 @@
 // for showing and hiding and comes with accessibility features.
 
 
-// ✅ 1. What is the <dialog> element?
+// ✅ What is the <dialog> element?
 
 // A semantic HTML element designed for dialogs and popups.
 // Has two key methods:
@@ -49,7 +49,7 @@ closeButton1.addEventListener("click", () => {
 
 
 /*
-✅ 7. Form in Dialog (Native Behavior)
+✅ Form in Dialog (Native Behavior)
 
 The <dialog> element supports a method="dialog" in forms:
 
