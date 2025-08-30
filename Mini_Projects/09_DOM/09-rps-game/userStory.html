@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>RPS Game - User Stories & Test Cases</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      h2 {
+        color: #333;
+      }
+      ul,
+      ol {
+        margin-left: 20px;
+      }
+      code {
+        background-color: #f4f4f4;
+        padding: 2px 6px;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to my **90 Days of JavaScript Revision Challenge**!</h1>
+    <h2 style="color: red">
+      Please read the script file and understand the project and try to build
+      your own.
+    </h2>
+    <h3>
+      In this mini project, you will continue to practice working with the DOM
+      and event handling by building a Rock, Paper, Scissors game. The HTML and
+      CSS boilerplate for the game has been provided for you. On the screen, you
+      will see the rules to the game, the player and computer scores and the
+      buttons for the user to select Rock, Paper, or Scissors. Your task over
+      the next few steps is to build the JavaScript functionality that generates
+      a computer choice, compares it to the player's choice, and updates the
+      scores accordingly. Take some time to look through the HTML provided and
+      familiarize yourself with the structure of the game.
+    </h3>
+    <h2>User Stories</h2>
+    <ul>
+      <li>
+        You should define a function <code>getRandomComputerResult()</code> that
+        randomly returns one of "Rock", "Paper", or "Scissors".
+      </li>
+      <li>
+        You should define a function
+        <code>hasPlayerWonTheRound(player, computer)</code> that returns
+        <code>true</code> if the player beats the computer based on standard
+        game rules.
+      </li>
+      <li>
+        You should initialize two variables <code>playerScore</code> and
+        <code>computerScore</code> to 0 to keep track of the scores.
+      </li>
+      <li>
+        You should define a function
+        <code>getRoundResults(userOption)</code> that:
+        <ul>
+          <li>
+            Gets a random computer choice using
+            <code>getRandomComputerResult()</code>.
+          </li>
+          <li>
+            Determines the outcome using <code>hasPlayerWonTheRound()</code>.
+          </li>
+          <li>
+            Updates the score accordingly and returns a string describing the
+            result.
+          </li>
+        </ul>
+      </li>
+      <li>
+        You should display the updated round result in the element with ID
+        <code>results-msg</code>.
+      </li>
+      <li>
+        You should update the score elements <code>player-score</code> and
+        <code>computer-score</code> after each round.
+      </li>
+      <li>
+        You should show a winner message inside the element with ID
+        <code>winner-msg</code> when a score of 3 is reached by either player or
+        computer.
+      </li>
+      <li>
+        You should hide the game buttons and display a reset button (ID
+        <code>reset-game-btn</code>) when the game ends.
+      </li>
+      <li>
+        You should define a function <code>resetGame()</code> to reset scores,
+        messages, and visibility of game elements.
+      </li>
+      <li>
+        You should attach event listeners to the game option buttons (rock,
+        paper, scissors) and the reset button to call the appropriate functions.
+      </li>
+    </ul>
+
+    <h2>Test Cases</h2>
+    <ol>
+      <li>
+        The <code>getRandomComputerResult()</code> function should return one of
+        "Rock", "Paper", or "Scissors".
+      </li>
+      <li>
+        The <code>hasPlayerWonTheRound()</code> function should return
+        <code>true</code> for winning combinations like Rock vs Scissors, and
+        <code>false</code> for losing ones.
+      </li>
+      <li>
+        When the player selects an option, the
+        <code>getRoundResults()</code> function should return a string
+        containing either "Player wins!", "Computer wins!" or "It's a tie!".
+      </li>
+      <li>
+        The <code>playerScore</code> or <code>computerScore</code> should
+        increment appropriately depending on the round result.
+      </li>
+      <li>
+        The round result message should appear in the element with ID
+        <code>results-msg</code>.
+      </li>
+      <li>
+        The score values should update inside <code>player-score</code> and
+        <code>computer-score</code> elements.
+      </li>
+      <li>
+        When either score reaches 3, the <code>winner-msg</code> element should
+        display the winning message.
+      </li>
+      <li>
+        When the game ends, the <code>options-container</code> should be hidden
+        and the <code>reset-game-btn</code> should be visible.
+      </li>
+      <li>
+        Clicking the reset button should reset both scores to 0 and clear all
+        messages.
+      </li>
+      <li>
+        After reset, the <code>options-container</code> should be visible again
+        and <code>reset-game-btn</code> should be hidden.
+      </li>
+    </ol>
+  </body>
+</html>

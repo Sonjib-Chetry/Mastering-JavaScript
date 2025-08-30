@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Music Instrument Filter - User Stories & Test Cases</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      h2 {
+        color: #333;
+      }
+      ul,
+      ol {
+        margin-left: 20px;
+      }
+      code {
+        background-color: #f4f4f4;
+        padding: 2px 6px;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to my **90 Days of JavaScript Revision Challenge**!</h1>
+    <h2 style="color: red">
+      Please read the script file and understand the project and try to build
+      your own.
+    </h2>
+    <h3>
+      In this mini project, you will build a music instrument filter with JavaScript.
+    </h3>
+    <h2>User Stories</h2>
+    <ul>
+      <li>
+        You should have an HTML page titled
+        <code>Music Instrument Filter</code>.
+      </li>
+      <li>
+        You should display a heading that says
+        <strong>Student Instruments</strong>.
+      </li>
+      <li>
+        You should have a <code>&lt;select&gt;</code> dropdown menu for
+        filtering instrument categories.
+      </li>
+      <li>
+        The dropdown should include the following options: <code>All</code>,
+        <code>Woodwinds</code>, <code>Brass</code>, and <code>Percussion</code>.
+      </li>
+      <li>
+        You should display a list of instrument cards inside a container with
+        class <code>products-container</code>.
+      </li>
+      <li>Each card should show the name of the instrument and its price.</li>
+      <li>
+        You should have a JavaScript array of instrument objects, each with
+        properties: <code>category</code>, <code>instrument</code>, and
+        <code>price</code>.
+      </li>
+      <li>
+        You should have a function <code>instrumentCards</code> that filters and
+        returns the matching instrument cards as a string of HTML.
+      </li>
+      <li>
+        When the user selects an option from the dropdown, the displayed
+        instrument cards should update based on the selected category.
+      </li>
+    </ul>
+
+    <h2>Test Cases</h2>
+    <ol>
+      <li>
+        The HTML should include a <code>&lt;select&gt;</code> element for
+        filtering instruments.
+      </li>
+      <li>
+        The dropdown should have four <code>&lt;option&gt;</code> elements with
+        values <code>all</code>, <code>woodwinds</code>, <code>brass</code>, and
+        <code>percussion</code>.
+      </li>
+      <li>The initial list should show all 10 instruments.</li>
+      <li>
+        When "Brass" is selected, only 3 brass instruments should be displayed.
+      </li>
+      <li>
+        When "Woodwinds" is selected, only 3 woodwind instruments should be
+        displayed.
+      </li>
+      <li>
+        When "Percussion" is selected, only 4 percussion instruments should be
+        displayed.
+      </li>
+      <li>
+        The instrument cards should be updated dynamically without refreshing
+        the page.
+      </li>
+      <li>
+        The function <code>instrumentCards("brass")</code> should return HTML
+        for only brass instruments.
+      </li>
+      <li>
+        The function <code>instrumentCards("all")</code> should return HTML for
+        all instruments.
+      </li>
+      <li>
+        Each card should include an <code>&lt;h2&gt;</code> for the instrument
+        name and a <code>&lt;p&gt;</code> for the price in the format
+        <code>$PRICE</code>.
+      </li>
+    </ol>
+  </body>
+</html>

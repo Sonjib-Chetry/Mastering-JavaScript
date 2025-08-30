@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Music Player App- User Stories & Test Cases</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      h2 {
+        color: #333;
+      }
+      ul,
+      ol {
+        margin-left: 20px;
+      }
+      code {
+        background-color: #f4f4f4;
+        padding: 2px 6px;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to my **90 Days of JavaScript Revision Challenge**!</h1>
+    <h2 style="color: red">
+      Please read the script file and understand the project and try to build at
+      your own.
+    </h2>
+    <h3>
+      Now let's learn some essential string and array methods like the find(),
+      forEach(), map(), and join(). These methods are crucial for developing
+      dynamic web applications. In this project, you'll code a basic MP3 player
+      using HTML, CSS, and JavaScript. The project covers fundamental concepts
+      such as handling audio playback, managing a playlist, implementing play,
+      pause, next, previous, and shuffle functionalities. You'll even learn how
+      to dynamically update your user interface based on the current song.
+    </h3>
+
+    <h2>📌 User Stories</h2>
+    <ul>
+      <li>
+        You should define DOM references for player controls and playlist:
+        <ul>
+          <li>
+            <code>playlistSongs</code>, <code>playButton</code>,
+            <code>pauseButton</code>, <code>nextButton</code>,
+            <code>previousButton</code>, <code>shuffleButton</code>.
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        You should create an <code>allSongs</code> array of objects. Each object
+        should have:
+        <ul>
+          <li><code>id</code>: unique identifier</li>
+          <li><code>title</code>: song title</li>
+          <li><code>artist</code>: artist name</li>
+          <li><code>duration</code>: duration string</li>
+          <li><code>src</code>: audio file URL</li>
+        </ul>
+      </li>
+
+      <li>
+        You should define an <code>audio</code> element using
+        <code>new Audio()</code> to control playback.
+      </li>
+
+      <li>
+        You should create a <code>userData</code> object to store:
+        <ul>
+          <li><code>songs</code>: a copy of <code>allSongs</code>.</li>
+          <li><code>currentSong</code>: the currently playing song object.</li>
+          <li><code>songCurrentTime</code>: the playback time when paused.</li>
+        </ul>
+      </li>
+
+      <li>
+        You should implement a <code>playSong(id)</code> function that:
+        <ul>
+          <li>
+            Finds the song by <code>id</code> and updates
+            <code>audio.src</code>.
+          </li>
+          <li>
+            Resets or resumes <code>audio.currentTime</code> based on previous
+            state.
+          </li>
+          <li>Updates <code>userData.currentSong</code>.</li>
+          <li>
+            Calls <code>highlightCurrentSong()</code>,
+            <code>setPlayerDisplay()</code>, and
+            <code>setPlayButtonAccessibleText()</code>.
+          </li>
+          <li>Starts playback with <code>audio.play()</code>.</li>
+        </ul>
+      </li>
+
+      <li>
+        You should implement <code>pauseSong()</code> to:
+        <ul>
+          <li>
+            Store <code>audio.currentTime</code> into
+            <code>userData.songCurrentTime</code>.
+          </li>
+          <li>Pause playback using <code>audio.pause()</code>.</li>
+          <li>Update UI state.</li>
+        </ul>
+      </li>
+
+      <li>
+        You should implement navigation functions:
+        <ul>
+          <li>
+            <code>playNextSong()</code>: plays the next song in the playlist.
+          </li>
+          <li>
+            <code>playPreviousSong()</code>: plays the previous song in the
+            playlist.
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        You should implement a <code>shuffle()</code> function to:
+        <ul>
+          <li>Randomize <code>userData.songs</code>.</li>
+          <li>Reset playback state.</li>
+          <li>Re-render playlist using <code>renderSongs()</code>.</li>
+        </ul>
+      </li>
+
+      <li>
+        You should implement a <code>deleteSong(id)</code> function to:
+        <ul>
+          <li>Stop playback if the deleted song is currently playing.</li>
+          <li>Remove the song from <code>userData.songs</code>.</li>
+          <li>Re-render playlist.</li>
+          <li>If playlist becomes empty, display a “Reset Playlist” button.</li>
+        </ul>
+      </li>
+
+      <li>
+        You should implement UI update functions:
+        <ul>
+          <li>
+            <code>setPlayerDisplay()</code>: updates current song title &
+            artist.
+          </li>
+          <li>
+            <code>highlightCurrentSong()</code>: highlights active song in the
+            list.
+          </li>
+          <li>
+            <code>renderSongs()</code>: dynamically generates playlist HTML.
+          </li>
+          <li>
+            <code>setPlayButtonAccessibleText()</code>: updates play button
+            accessibility label.
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        You should implement helper function:
+        <ul>
+          <li>
+            <code>getCurrentSongIndex()</code>: returns index of current song in
+            <code>userData.songs</code>.
+          </li>
+          <li>
+            <code>sortSongs()</code>: sorts playlist alphabetically by title.
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        You should add event listeners for:
+        <ul>
+          <li>
+            <code>playButton</code>: plays first song or resumes current song.
+          </li>
+          <li><code>pauseButton</code>: pauses playback.</li>
+          <li><code>nextButton</code>: plays next song.</li>
+          <li><code>previousButton</code>: plays previous song.</li>
+          <li><code>shuffleButton</code>: shuffles playlist.</li>
+          <li>
+            <code>audio</code> element <code>"ended"</code> event: plays next
+            song automatically or resets at playlist end.
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        You should call <code>renderSongs(sortSongs())</code> on initial load to
+        display playlist.
+      </li>
+      <li>
+        You should call <code>setPlayButtonAccessibleText()</code> to initialize
+        accessibility.
+      </li>
+    </ul>
+
+    <h2>✅ Test Cases</h2>
+    <ul>
+      <li>
+        <code>playSong(0)</code> should start playing “Scratching The Surface”.
+      </li>
+      <li>
+        <code>pauseSong()</code> should pause playback and store
+        <code>songCurrentTime</code>.
+      </li>
+      <li>
+        <code>playNextSong()</code> should move to the next song in the
+        playlist.
+      </li>
+      <li>
+        <code>playPreviousSong()</code> should move to the previous song in the
+        playlist.
+      </li>
+      <li>
+        <code>shuffle()</code> should randomize the playlist order and reset
+        playback.
+      </li>
+      <li>
+        <code>deleteSong(id)</code> should remove the song from
+        <code>userData.songs</code> and re-render the playlist.
+      </li>
+      <li>
+        If all songs are deleted, a “Reset Playlist” button should appear and
+        restore original songs when clicked.
+      </li>
+      <li>
+        <code>setPlayerDisplay()</code> should show the correct title & artist
+        of the current song.
+      </li>
+      <li>
+        <code>highlightCurrentSong()</code> should add
+        <code>aria-current="true"</code> to the current playing song.
+      </li>
+      <li>
+        When a song ends, the next song should play automatically if available.
+      </li>
+      <li>When the last song ends, the player should reset to idle state.</li>
+      <li>
+        <code>sortSongs()</code> should return the playlist sorted
+        alphabetically by title.
+      </li>
+    </ul>
+  </body>
+</html>

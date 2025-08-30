@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Music Instrument Filter - User Stories & Test Cases</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      h2 {
+        color: #333;
+      }
+      ul,
+      ol {
+        margin-left: 20px;
+      }
+      code {
+        background-color: #f4f4f4;
+        padding: 2px 6px;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to my **90 Days of JavaScript Revision Challenge**!</h1>
+    <h2 style="color: red">
+      Please read the script file and understand the project and try to build
+      your own.
+    </h2>
+    <h3>
+      In this mini project, you'll build a real-time character counter You'll
+      practice how to work with the input event when the user types in the input
+      field.
+    </h3>
+    <h2>User Stories</h2>
+    <ul>
+      <li>
+        You should have a <code>&lt;textarea&gt;</code> element with the id of
+        <code>text-input</code>.
+      </li>
+      <li>
+        You should have a <code>&lt;p&gt;</code> element with the id of
+        <code>char-count</code>.
+      </li>
+      <li>
+        The <code>#char-count</code> element should initially contain the text
+        <strong>"Character Count: 0/50"</strong>.
+      </li>
+      <li>
+        As the user types in the textarea, the <code>#char-count</code> should
+        update to reflect the current number of characters entered.
+      </li>
+      <li>
+        When the user types <strong>"hello coder"</strong>, the character count
+        should display <strong>"Character Count: 11/50"</strong>.
+      </li>
+      <li>
+        When the user types <strong>"i am a programmer"</strong>, the character
+        count should display <strong>"Character Count: 17/50"</strong>.
+      </li>
+      <li>
+        When the user types <strong>"hello world"</strong>, the character count
+        should display <strong>"Character Count: 11/50"</strong>.
+      </li>
+      <li>
+        When the user types
+        <strong>"I am learning a new language and it is called c++."</strong>,
+        the character count should display
+        <strong>"Character Count: 50/50"</strong>.
+      </li>
+      <li>
+        The user should not be able to enter more than 50 characters into the
+        textarea.
+      </li>
+      <li>
+        When the character count reaches 50, the text inside
+        <code>#char-count</code> should be displayed in <strong>red</strong>.
+      </li>
+      <li>
+        All logic should be handled with <strong>JavaScript only</strong>. You
+        should not use the <code>maxlength</code> attribute.
+      </li>
+    </ul>
+
+    <h2>Test Cases</h2>
+    <ol>
+      <li>
+        There should be a <code>&lt;textarea&gt;</code> element with the id
+        <code>text-input</code>.
+      </li>
+      <li>
+        There should be a <code>&lt;p&gt;</code> element with the id
+        <code>char-count</code>.
+      </li>
+      <li>
+        The initial text content of <code>#char-count</code> should be
+        <code>Character Count: 0/50</code>.
+      </li>
+      <li>
+        Typing "hello coder" into the textarea should result in
+        <code>Character Count: 11/50</code> being displayed.
+      </li>
+      <li>
+        Typing "i am a programmer" into the textarea should result in
+        <code>Character Count: 17/50</code> being displayed.
+      </li>
+      <li>
+        Typing "hello world" into the textarea should result in
+        <code>Character Count: 11/50</code> being displayed.
+      </li>
+      <li>
+        Typing "I am learning a new language and it is called c++." should
+        result in <code>Character Count: 50/50</code>.
+      </li>
+      <li>
+        When the character count reaches 50, the text inside
+        <code>#char-count</code> should turn red (check computed CSS color).
+      </li>
+      <li>
+        Typing more than 50 characters should not be possible — input must be
+        capped at 50 characters using JavaScript.
+      </li>
+    </ol>
+  </body>
+</html>

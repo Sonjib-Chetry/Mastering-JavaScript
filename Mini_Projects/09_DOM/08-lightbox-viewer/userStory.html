@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Lightbox Viewer - User Stories & Test Cases</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      h2 {
+        color: #333;
+      }
+      ul,
+      ol {
+        margin-left: 20px;
+      }
+      code {
+        background-color: #f4f4f4;
+        padding: 2px 6px;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to my **90 Days of JavaScript Revision Challenge**!</h1>
+    <h2 style="color: red">
+      Please read the script file and understand the project and try to build
+      your own.
+    </h2>
+    <h3>
+      In this mini project, you'll build a lightbox viewer for viewing images in
+      a focused mode. You'll practice click events and toggling classes.
+    </h3>
+    <h2>User Stories</h2>
+    <ul>
+      <li>
+        You should have a <code>&lt;div&gt;</code> with a class of
+        <code>gallery</code> inside your <code>&lt;body&gt;</code> element.
+      </li>
+      <li>
+        Inside the <code>.gallery</code> div, you should have
+        <strong>three image thumbnails</strong>, each with the class
+        <code>gallery-item</code>.
+      </li>
+      <li>
+        The three thumbnail images should use the following URLs:
+        <ul>
+          <li>
+            <code
+              >https://cdn.freecodecamp.org/curriculum/labs/stonehenge-thumbnail.jpg</code
+            >
+          </li>
+          <li>
+            <code
+              >https://cdn.freecodecamp.org/curriculum/labs/storm-thumbnail.jpg</code
+            >
+          </li>
+          <li>
+            <code
+              >https://cdn.freecodecamp.org/curriculum/labs/trees-thumbnail.jpg</code
+            >
+          </li>
+        </ul>
+      </li>
+      <li>
+        You should have a <code>&lt;div&gt;</code> with the class
+        <code>lightbox</code> inside your body.
+      </li>
+      <li>
+        Inside the <code>.lightbox</code> div, include:
+        <ul>
+          <li>
+            A <code>&lt;button&gt;</code> element with the id
+            <code>close-btn</code> (suggested text: &times;)
+          </li>
+          <li>
+            An <code>&lt;img&gt;</code> element with the id
+            <code>lightbox-image</code>
+          </li>
+        </ul>
+      </li>
+      <li>
+        The <code>.lightbox</code> element should:
+        <ul>
+          <li>Have <code>position: fixed</code></li>
+          <li>
+            Cover the full viewport using <code>height: 100%</code> and
+            <code>width: 100%</code>
+          </li>
+          <li>
+            Be aligned at the top-left corner (e.g.,
+            <code>top: 0; left: 0;</code>)
+          </li>
+          <li>Have a background color</li>
+          <li>Be hidden initially using <code>display: none</code></li>
+        </ul>
+      </li>
+      <li>
+        When a <code>.gallery-item</code> image is clicked:
+        <ul>
+          <li>
+            The <code>.lightbox</code> should become visible by setting its
+            <code>display</code> to <code>flex</code>
+          </li>
+          <li>
+            The <code>#lightbox-image</code>'s <code>src</code> should be
+            updated by removing <code>-thumbnail</code> from the clicked image's
+            URL
+          </li>
+        </ul>
+      </li>
+      <li>
+        Clicking either the <code>#close-btn</code> or the
+        <code>.lightbox</code> background should hide the lightbox by setting
+        its <code>display</code> back to <code>none</code>.
+      </li>
+    </ul>
+
+    <h2>Test Cases</h2>
+    <ol>
+      <li>
+        There should be a <code>div</code> with the class <code>gallery</code>.
+      </li>
+      <li>
+        The <code>.gallery</code> should contain three <code>img</code> elements
+        with the class <code>gallery-item</code>.
+      </li>
+      <li>
+        The three image elements should have the correct <code>src</code> values
+        for thumbnails.
+      </li>
+      <li>
+        There should be a <code>div</code> with the class <code>lightbox</code>.
+      </li>
+      <li>
+        The <code>.lightbox</code> should contain a <code>button</code> with id
+        <code>close-btn</code>.
+      </li>
+      <li>
+        The <code>.lightbox</code> should contain an <code>img</code> with id
+        <code>lightbox-image</code>.
+      </li>
+      <li>
+        The <code>.lightbox</code> should have <code>position: fixed</code>.
+      </li>
+      <li>
+        The <code>.lightbox</code> should be set to
+        <code>height: 100%</code> and <code>width: 100%</code>.
+      </li>
+      <li>
+        The <code>.lightbox</code> should be aligned at the top left with
+        <code>top: 0</code> and <code>left: 0</code>.
+      </li>
+      <li>
+        The <code>.lightbox</code> should have a visible background color.
+      </li>
+      <li>
+        The <code>.lightbox</code> should be hidden initially (i.e.,
+        <code>display: none</code>).
+      </li>
+      <li>
+        Clicking a thumbnail should change <code>.lightbox</code> to
+        <code>display: flex</code>.
+      </li>
+      <li>
+        Clicking a thumbnail should set <code>#lightbox-image</code>'s
+        <code>src</code> to the full-size image version (without
+        <code>-thumbnail</code>).
+      </li>
+      <li>Clicking the <code>#close-btn</code> should hide the lightbox.</li>
+      <li>
+        Clicking the background of the <code>.lightbox</code> should also hide
+        the lightbox.
+      </li>
+    </ol>
+  </body>
+</html>

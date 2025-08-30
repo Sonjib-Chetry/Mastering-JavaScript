@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Short Story Generator - User Stories & Test Cases</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    h2 {
+      color: #333;
+    }
+    ul, ol {
+      margin-left: 20px;
+    }
+    code {
+      background-color: #f4f4f4;
+      padding: 2px 5px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome to my **90 Days of JavaScript Revision Challenge**!</h1>
+    <h2 style="color: red">
+      Please read the script file and understand the project and try to build
+      your own.
+    </h2>
+    <h3>
+      In this mini project, you will build a storytelling app that will allow you to list different stories based on genre.
+    </h3>
+
+  <h2>User Stories</h2>
+  <ul>
+    <li>You should create a container element with class <code>story-container</code> to display the story and hold the buttons.</li>
+    <li>You should define a paragraph element with ID <code>result</code> where the selected story will be shown.</li>
+    <li>You should add three buttons with the IDs <code>scary-btn</code>, <code>funny-btn</code>, and <code>adventure-btn</code> for selecting each story type.</li>
+    <li>You should declare a constant <code>storyObj</code> containing an object with three properties: <code>scary</code>, <code>funny</code>, and <code>adventure</code>.</li>
+    <li>Each property in <code>storyObj</code> should itself be an object containing a <code>story</code> string and a <code>borderColor</code> string.</li>
+    <li>You should define a function <code>displayStory</code> that accepts a genre string and updates the <code>#result</code> paragraph with the corresponding story text.</li>
+    <li>The <code>displayStory</code> function should also update the border color of the <code>.story-container</code> using the <code>borderColor</code> value from <code>storyObj</code>.</li>
+    <li>You should add event listeners to each button that call <code>displayStory</code> with their respective genre strings.</li>
+    <li>If an unknown genre is passed to <code>displayStory</code>, it should display <code>Story not found.</code> and remove any border color styling.</li>
+  </ul>
+
+  <h2>Test Cases</h2>
+  <ol>
+    <li><code>storyObj</code> should be an object containing the keys <code>scary</code>, <code>funny</code>, and <code>adventure</code>.</li>
+    <li>Each genre in <code>storyObj</code> should have a <code>story</code> and <code>borderColor</code> property.</li>
+    <li>When the "Scary Story" button is clicked, <code>#result</code> should display the scary story text, and the container's border color should be <code>#ee4b2b</code>.</li>
+    <li>When the "Funny Story" button is clicked, <code>#result</code> should display the funny story, and the border color should be <code>#f1be32</code>.</li>
+    <li>When the "Adventure Story" button is clicked, <code>#result</code> should display the adventure story, and the border color should be <code>#acd157</code>.</li>
+    <li>If <code>displayStory</code> is called with an undefined genre (e.g., <code>"romantic"</code>), <code>#result</code> should show <code>Story not found.</code> and the border color should reset (transparent or none).</li>
+    <li>All three buttons should correctly trigger the <code>displayStory</code> function with the appropriate genre string.</li>
+    <li>The paragraph <code>#result</code> should reflect the last selected story and update every time a different button is clicked.</li>
+    <li>The <code>.story-container</code> should visually update its border color based on the selected story genre.</li>
+  </ol>
+
+</body>
+</html>

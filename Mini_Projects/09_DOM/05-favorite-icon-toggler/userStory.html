@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Heart Toggle - User Stories & Test Cases</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      h2 {
+        color: #333;
+      }
+      ul,
+      ol {
+        margin-left: 20px;
+      }
+      code {
+        background-color: #f4f4f4;
+        padding: 2px 6px;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to my **90 Days of JavaScript Revision Challenge**!</h1>
+    <h2 style="color: red">
+      Please read the script file and understand the project and try to build
+      your own.
+    </h2>
+    <h3>
+      In this mini project, you'll build a favorite icon toggler by utilizing JavaScript click events.
+    </h3>
+    <h2>User Stories</h2>
+    <ul>
+      <li>You should have an unordered list with three items.</li>
+      <li>The unordered list should have the class <code>item-list</code>.</li>
+      <li>
+        The three list items should contain the item name followed by a
+        <code>button</code> element with the class <code>favorite-icon</code>.
+      </li>
+      <li>
+        The <code>button</code> element should contain the code
+        <code>&amp;#9825;</code> initially to represent an empty heart.
+      </li>
+      <li>
+        When a <code>button</code> element containing a heart is clicked, you
+        should add a class named <code>filled</code> to the clicked button if
+        it's not already present, and remove it if it is.
+      </li>
+      <li>
+        You should have a <code>.filled</code> class selector that sets some CSS
+        properties (e.g., color).
+      </li>
+      <li>
+        When a heart <code>button</code> is clicked, it should toggle between
+        <code>&amp;#9825;</code> (empty heart) and
+        <code>&amp;#10084;</code> (filled heart), depending on its current
+        state.
+      </li>
+    </ul>
+
+    <h2>Test Cases</h2>
+    <ol>
+      <li>You should have an unordered list.</li>
+      <li>Your unordered list should have 3 items.</li>
+      <li>Your unordered list should have the class <code>item-list</code>.</li>
+      <li>Your individual list items should contain the item name.</li>
+      <li>
+        Your individual list items should contain a <code>button</code> element
+        with the class <code>favorite-icon</code>.
+      </li>
+      <li>
+        Initially, the <code>button</code> elements should contain the code
+        <code>&amp;#9825;</code> to represent an empty heart.
+      </li>
+      <li>
+        You should have a <code>.filled</code> selector that sets some CSS
+        properties.
+      </li>
+      <li>
+        When a <code>button</code> element is clicked, and it contains the class
+        <code>filled</code>, you should remove the class and change the
+        innerHTML of the button to <code>&amp;#9825;</code>.
+      </li>
+      <li>
+        When a <code>button</code> element is clicked, and it doesn't contain
+        the class <code>filled</code>, you should add the class and change the
+        innerHTML of the button to <code>&amp;#10084;</code>.
+      </li>
+    </ol>
+  </body>
+</html>

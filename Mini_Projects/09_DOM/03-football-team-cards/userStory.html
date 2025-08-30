@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Football Team Cards- User Stories & Test Cases</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      h2 {
+        color: #333;
+      }
+      ul,
+      ol {
+        margin-left: 20px;
+      }
+      code {
+        background-color: #f4f4f4;
+        padding: 2px 6px;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to my **90 Days of JavaScript Revision Challenge**!</h1>
+    <h2 style="color: red">
+      Please read the script file and understand the project and try to build at
+      your own.
+    </h2>
+    <h3>
+      One common aspect of building web applications: processing datasets, and
+      then outputting information to the screen. In this sports team cards
+      project, you'll learn how to work with DOM manipulation, object
+      destructuring, event handling, and data filtering. This project will cover
+      concepts like, default parameters, Object.freeze(), and reinforce your
+      knowledge of the switch statement and map() method.
+    </h3>
+
+    <h2>📌 User Stories</h2>
+    <ul>
+      <li>
+        You should create a constant <code>myFavoriteFootballTeam</code> object
+        that contains:
+        <ul>
+          <li><code>team</code>: the team’s name.</li>
+          <li><code>sport</code>: the type of sport.</li>
+          <li><code>year</code>: the World Cup year.</li>
+          <li>
+            <code>isWorldCupWinner</code>: boolean indicating if the team won.
+          </li>
+          <li>
+            <code>headCoach</code> (nested object with
+            <code>coachName</code> and <code>matches</code>).
+          </li>
+          <li>
+            <code>players</code> (array of player objects with
+            <code>name</code>, <code>position</code>, <code>number</code>,
+            <code>isCaptain</code>, and <code>nickname</code>).
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        You should use <code>Object.freeze()</code> to prevent modifications to
+        <code>myFavoriteFootballTeam</code>.
+      </li>
+
+      <li>
+        You should destructure values from the team object:
+        <ul>
+          <li>
+            <code>team</code>, <code>sport</code>, <code>year</code>, and
+            <code>players</code>.
+          </li>
+          <li><code>coachName</code> from <code>headCoach</code>.</li>
+        </ul>
+      </li>
+
+      <li>
+        You should update the DOM elements to display team info:
+        <ul>
+          <li><code>#sport</code> → type of sport.</li>
+          <li><code>#team</code> → team name.</li>
+          <li><code>#year</code> → World Cup year.</li>
+          <li><code>#head-coach</code> → coach name.</li>
+        </ul>
+      </li>
+
+      <li>
+        You should create a function <code>setPlayerCards()</code> that:
+        <ul>
+          <li>
+            Generates HTML for each player inside <code>#player-cards</code>.
+          </li>
+          <li>Shows Captain players with "(Captain)" prefix in their name.</li>
+          <li>Displays <code>N/A</code> if a player has no nickname.</li>
+        </ul>
+      </li>
+
+      <li>
+        You should implement a dropdown filter (<code>#players</code>) that
+        allows:
+        <ul>
+          <li>Show all players (default).</li>
+          <li>Show only players with nicknames.</li>
+          <li>
+            Show only players by position: <code>forward</code>,
+            <code>midfielder</code>, <code>defender</code>,
+            <code>goalkeeper</code>.
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        You should add an event listener on <code>#players</code> that calls
+        <code>changeFunction()</code> to filter player cards.
+      </li>
+    </ul>
+
+    <h2>✅ Test Cases</h2>
+    <ul>
+      <li>
+        <code>myFavoriteFootballTeam</code> should be defined and frozen with
+        <code>Object.freeze()</code>.
+      </li>
+      <li><code>#sport</code> should display <strong>Football</strong>.</li>
+      <li><code>#team</code> should display <strong>Argentina</strong>.</li>
+      <li><code>#year</code> should display <strong>1986</strong>.</li>
+      <li>
+        <code>#head-coach</code> should display <strong>Carlos Bilardo</strong>.
+      </li>
+      <li>
+        <code>setPlayerCards()</code> should create player cards for all 22
+        players.
+      </li>
+      <li>
+        If a player has <code>isCaptain: true</code>, the card should include
+        "(Captain)" before their name.
+      </li>
+      <li>
+        If a player has <code>nickname: null</code>, the card should display
+        <strong>N/A</strong> for Nickname.
+      </li>
+      <li>
+        When <code>nickname</code> is selected in the dropdown, only players
+        with nicknames should be displayed.
+      </li>
+      <li>
+        When <code>forward</code> is selected, only players with
+        <code>position: forward</code> should be displayed.
+      </li>
+      <li>
+        When <code>midfielder</code> is selected, only midfielders should be
+        displayed.
+      </li>
+      <li>
+        When <code>defender</code> is selected, only defenders should be
+        displayed.
+      </li>
+      <li>
+        When <code>goalkeeper</code> is selected, only goalkeepers should be
+        displayed.
+      </li>
+      <li>
+        When "All" is selected (default), all players should be displayed again.
+      </li>
+    </ul>
+  </body>
+</html>

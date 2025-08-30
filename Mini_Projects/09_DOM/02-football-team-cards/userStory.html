@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Football Team Cards - User Stories & Test Cases</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      h2 {
+        color: #333;
+      }
+      ul,
+      ol {
+        margin-left: 20px;
+      }
+      code {
+        background-color: #f4f4f4;
+        padding: 2px 6px;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to my **90 Days of JavaScript Revision Challenge**!</h1>
+    <h2 style="color: red">
+      Please read the script file and understand the project and try to build
+      your own.
+    </h2>
+    <h3>
+      In this mini project, you will build a set of football team cards. The
+      user should be able to use the dropdown menu and filter between the
+      different players based on their positions.
+    </h3>
+    <h2>User Stories</h2>
+    <ul>
+      <li>
+        You should create a JavaScript object named
+        <code>footballTeam</code> with the following properties:
+      </li>
+      <ul>
+        <li><code>team</code>: a string representing the name of the team.</li>
+        <li><code>year</code>: a number representing the year.</li>
+        <li>
+          <code>headCoach</code>: a string containing the head coach's name.
+        </li>
+        <li>
+          <code>players</code>: an array with at least four player objects.
+        </li>
+      </ul>
+      <li>Each object in the <code>players</code> array should include:</li>
+      <ul>
+        <li><code>name</code>: a string with the player’s name.</li>
+        <li>
+          <code>position</code>: a string with one of the following values:
+          "forward", "midfielder", "defender", or "goalkeeper".
+        </li>
+        <li>
+          <code>isCaptain</code>: a boolean indicating whether the player is the
+          captain. Only one player should have <code>true</code>.
+        </li>
+      </ul>
+      <li>
+        You should display the values of <code>headCoach</code>,
+        <code>team</code>, and <code>year</code> in the HTML elements with ids:
+        <code>head-coach</code>, <code>team</code>, and
+        <code>year</code> respectively.
+      </li>
+      <li>
+        You should display each player as a <code>div</code> with class
+        <code>player-card</code> inside the <code>#player-cards</code> element.
+        Each player card should contain:
+      </li>
+      <ul>
+        <li>
+          An <code>&lt;h2&gt;</code> with the player’s name. If the player is
+          captain, prepend it with "(Captain)".
+        </li>
+        <li>
+          A <code>&lt;p&gt;</code> with the player’s position, e.g.,
+          <code>Position: midfielder</code>.
+        </li>
+      </ul>
+      <li>
+        You should have a dropdown filter to show players by their position
+        (forward, midfielder, defender, goalkeeper, or all).
+      </li>
+      <li>
+        When the dropdown selection changes, only the players matching the
+        selected position should be displayed. If "All Players" is selected,
+        display all players.
+      </li>
+    </ul>
+
+    <h2>Test Cases</h2>
+    <ol>
+      <li>
+        You should declare a variable <code>footballTeam</code> in your script.
+      </li>
+      <li>
+        <code>footballTeam</code> should be an object with four properties:
+        <code>team</code>, <code>year</code>, <code>headCoach</code>, and
+        <code>players</code>.
+      </li>
+      <li>The <code>team</code> property should be a string.</li>
+      <li>The <code>year</code> property should be a number.</li>
+      <li>The <code>headCoach</code> property should be a string.</li>
+      <li>
+        The <code>players</code> property should be an array of at least four
+        objects.
+      </li>
+      <li>
+        Each player object should have the properties
+        <code>name</code> (string), <code>position</code> (valid string), and
+        <code>isCaptain</code> (boolean).
+      </li>
+      <li>
+        Only one player should have <code>isCaptain</code> set to
+        <code>true</code>.
+      </li>
+      <li>
+        The values of <code>team</code>, <code>year</code>, and
+        <code>headCoach</code> should appear in the correct HTML elements by
+        their IDs.
+      </li>
+      <li>
+        All players should be displayed when "All Players" is selected from the
+        dropdown.
+      </li>
+      <li>
+        Only players with the selected position should be displayed when
+        filtering by "Forward".
+      </li>
+      <li>
+        Only players with the selected position should be displayed when
+        filtering by "Midfielder".
+      </li>
+      <li>
+        Only players with the selected position should be displayed when
+        filtering by "Defender".
+      </li>
+      <li>
+        Only players with the selected position should be displayed when
+        filtering by "Goalkeeper".
+      </li>
+    </ol>
+  </body>
+</html>
