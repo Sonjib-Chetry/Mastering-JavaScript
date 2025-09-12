@@ -128,7 +128,30 @@ body.addEventListener("click", () => {
 // Arrow function → this = parent scope
 
 
-//In Classes: we have discussed it on Classes lecture
+
+// 🔹 this in a Class or Object Method
+// Inside a class or method, this refers to the object that owns the method.
+
+class Dessert {
+  constructor(name, price) {
+    this.name = name;
+    this.price = price;
+  }
+
+  showPrice() {
+    console.log(`The price of ${this.name} is $${this.price}.`);
+  }
+}
+
+const brownie = new Dessert("Brownie", 5.99);
+brownie.showPrice(); 
+// 👉 The price of Brownie is $5.99
+
+// Here:
+
+// this.name → "Brownie"
+// this.price → 5.99
+// this → the brownie object
 
 
 // (h) With call, apply, bind
