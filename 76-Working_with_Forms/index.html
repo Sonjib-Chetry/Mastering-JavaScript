@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Working with Forms</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+
+      h2 {
+        max-width: 400px;
+        display: flex;
+        margin-bottom: 30px;
+      }
+
+      form {
+        max-width: 400px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+      label {
+        font-weight: bold;
+      }
+      input,
+      textarea,
+      button {
+        padding: 8px;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      .error {
+        color: red;
+        font-size: 13px;
+      }
+      .success {
+        color: green;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to my **90 Days of JavaScript Revision Challenge**!</h1>
+
+    <h1>Working with Forms</h1>
+    <h2 style="color: red">
+      Please check comment in the script file for details explanation.
+    </h2>
+
+    <h2>Employee Feedback Form</h2>
+
+    <form id="feedbackForm">
+      <label for="email">Enter your company email:</label>
+      <input
+        id="email"
+        name="email"
+        type="email"
+        required
+        placeholder="username@sampleCompany.com"
+        pattern=".+@sampleCompany\.com"
+      />
+
+      <label for="feedback">Enter your feedback:</label>
+      <textarea
+        id="feedback"
+        name="feedback"
+        required
+        placeholder="Your feedback here..."
+      ></textarea>
+
+      <button type="submit">Submit Feedback</button>
+      <p id="formMessage"></p>
+    </form>
+
+    <script>
+      const form = document.getElementById("feedbackForm");
+      const email = document.getElementById("email");
+      const feedback = document.getElementById("feedback");
+      const message = document.getElementById("formMessage");
+
+      // ✅ Real-time email validation
+      email.addEventListener("input", (e) => {
+        if (!email.checkValidity()) {
+          email.setCustomValidity(
+            "Please use your company email ending with @sampleCompany.com"
+          );
+        } else {
+          email.setCustomValidity(""); // clear error if valid
+        }
+        email.reportValidity();
+      });
+
+      // ✅ Real-time feedback validation
+      feedback.addEventListener("input", () => {
+        if (feedback.value.length < 10) {
+          feedback.setCustomValidity(
+            "Feedback must be at least 10 characters long."
+          );
+        } else {
+          feedback.setCustomValidity("");
+        }
+        feedback.reportValidity();
+      });
+
+      // ✅ Handle form submission
+      form.addEventListener("submit", (e) => {
+        e.preventDefault(); // stop default reload
+
+        if (!form.checkValidity()) {
+          message.textContent =
+            "❌ Please correct the errors before submitting.";
+          message.className = "error";
+          return;
+        }
+
+        // If everything is valid
+        message.textContent = "✅ Thank you! Your feedback has been submitted.";
+        message.className = "success";
+
+        // Here you can send data to server using fetch/AJAX instead of reloading
+        console.log("Form Data:", {
+          email: email.value,
+          feedback: feedback.value,
+        });
+
+        // form.reset(); // optional: clear inputs after submission
+      });
+    </script>
+  </body>
+</html>
