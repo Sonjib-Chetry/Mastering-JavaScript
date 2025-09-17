@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Advanced Dice Game - User Stories & Test Cases</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      h2 {
+        color: #333;
+      }
+      ul,
+      ol {
+        margin-left: 20px;
+      }
+      code {
+        background-color: #f4f4f4;
+        padding: 2px 6px;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to my **90 Days of JavaScript Revision Challenge**!</h1>
+    <h2 style="color: red">
+      Please read the script file and understand the project and try to build at
+      your own.
+    </h2>
+    <h3>
+      Algorithmic thinking involves the ability to break down complex problems
+      into a sequence of well-defined, step-by-step instructions. In this Dice
+      game project, you’ll learn how to manage game state, implement game logic
+      for rolling dice, keeping score, and applying rules for various
+      combinations. This project covers concepts such as event handling, array
+      manipulation, conditional logic, and updating the user interface
+      dynamically based on game state.
+    </h3>
+
+    <h1>Dice Game - Instructive User Stories & Test Cases</h1>
+
+    <div>
+      <h2>User Stories</h2>
+      <ul>
+        <li>
+          Create 5 dice elements (class <code>.die</code>) to display dice
+          values.
+        </li>
+        <li>
+          Create a score options section (<code>#score-options</code>)
+          containing radio buttons and span labels for score display.
+        </li>
+        <li>
+          Display game stats:
+          <ul>
+            <li>Current round (<code>#current-round</code>)</li>
+            <li>Current rolls (<code>#current-round-rolls</code>)</li>
+            <li>Total score (<code>#total-score</code>)</li>
+          </ul>
+        </li>
+        <li>
+          Create a history log (<code>#score-history</code>) to list each
+          round’s achieved score.
+        </li>
+        <li>
+          Add buttons:
+          <ul>
+            <li>
+              <code>#roll-dice-btn</code>: Roll dice (max 3 times per round)
+            </li>
+            <li><code>#keep-score-btn</code>: Submit chosen score</li>
+            <li>
+              <code>#rules-btn</code>: Show/hide rules
+              (<code>.rules-container</code>)
+            </li>
+          </ul>
+        </li>
+        <li>
+          When "Roll Dice" is clicked:
+          <ul>
+            <li>Generate 5 random values (1–6).</li>
+            <li>Update dice display.</li>
+            <li>
+              Enable relevant score options:
+              <ul>
+                <li>Three of a Kind → sum of dice</li>
+                <li>Four of a Kind → sum of dice</li>
+                <li>Full House → 25 points</li>
+                <li>Small Straight → 30 points</li>
+                <li>Large Straight → 40 points</li>
+                <li>Fallback → 0 points</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          When "Keep Score" is clicked:
+          <ul>
+            <li>Selected score is added to total score.</li>
+            <li>Round increases by 1 (max 6 rounds).</li>
+            <li>Score is added to history.</li>
+            <li>
+              If 6 rounds are completed → show "Game Over" and reset game.
+            </li>
+          </ul>
+        </li>
+        <li>
+          Rules button toggles rules display with text changing between
+          <code>Show rules</code> and <code>Hide rules</code>.
+        </li>
+        <li>Game resets to initial state after completion or manual reset.</li>
+      </ul>
+    </div>
+
+    <div>
+      <h2>Test Cases</h2>
+      <ul>
+        <li>
+          <b>Initial State:</b> Dice show <code>0</code>, total score =
+          <code>0</code>, round = <code>1</code>, rolls = <code>0</code>.
+        </li>
+        <li>
+          <b>Rolling Dice:</b> Clicking <code>#roll-dice-btn</code> generates 5
+          numbers between 1–6 and increments roll counter.
+        </li>
+        <li>
+          <b>Roll Limit:</b> After 3 rolls, further clicks on
+          <code>#roll-dice-btn</code> show an alert.
+        </li>
+        <li>
+          <b>Three of a Kind:</b> If at least 3 dice show the same value → radio
+          option for "Three of a Kind" is enabled with sum score.
+        </li>
+        <li>
+          <b>Four of a Kind:</b> If at least 4 dice match → "Four of a Kind" is
+          enabled with sum score.
+        </li>
+        <li>
+          <b>Full House:</b> If 3 dice match one number and 2 match another →
+          "Full House" option is enabled with 25 points.
+        </li>
+        <li>
+          <b>Straights:</b>
+          <ul>
+            <li>
+              Small straight (4 consecutive numbers) → 30 points option enabled.
+            </li>
+            <li>
+              Large straight (5 consecutive numbers) → both 30 and 40 points
+              options enabled.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <b>Fallback:</b> Always enable "0 points" option in case no other
+          score applies.
+        </li>
+        <li>
+          <b>Keeping Score:</b> Selecting a score and clicking
+          <code>#keep-score-btn</code> adds score to total and round increases
+          by 1.
+        </li>
+        <li>
+          <b>History Log:</b> Each chosen score is appended to
+          <code>#score-history</code> list.
+        </li>
+        <li>
+          <b>Game Over:</b> After round 6, an alert shows final score and game
+          resets to round 1, score 0.
+        </li>
+        <li>
+          <b>Rules Toggle:</b> Clicking <code>#rules-btn</code> alternates rules
+          container visibility and button label.
+        </li>
+        <li>
+          <b>Reset Game:</b> After game over → dice reset to 0, score reset to
+          0, round reset to 1, rolls reset to 0, history cleared.
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

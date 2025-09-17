@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Weather App- User Stories & Test Cases</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      h2 {
+        color: #333;
+      }
+      ul,
+      ol {
+        margin-left: 20px;
+      }
+      code {
+        background-color: #f4f4f4;
+        padding: 2px 6px;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to my **90 Days of JavaScript Revision Challenge**!</h1>
+    <h2 style="color: red">
+      Please read the script file and understand the project and try to build at
+      your own.
+    </h2>
+    <h3>
+      In this mini project, you'll build an app that provides weather
+      information from different cities.
+    </h3>
+
+    <h2>Sample Weather API Response</h2>
+    <pre>
+{
+  "weather": [
+    {
+      "main": "Clear",
+      "description": "clear sky",
+      "icon": "https://cdn.freecodecamp.org/weather-icons/01n.png"
+    }
+  ],
+  "main": {
+    "temp": 2.62,
+    "feels_like": 0.84,
+    "temp_min": 1.72,
+    "temp_max": 3.49,
+    "pressure": 1010,
+    "humidity": 81
+  },
+  "visibility": 10000,
+  "wind": {
+    "speed": 1.79,
+    "deg": 285,
+    "gust": 3.13
+  },
+  "name": "London"
+}
+  </pre
+    >
+
+    <div class="section">
+      <h2>📖 User Stories</h2>
+      <ul>
+        <li>
+          You should have a button element with an id of
+          <code>get-weather-btn</code>.
+        </li>
+        <li>
+          You should have a <code>&lt;select&gt;</code> element with seven
+          <code>&lt;option&gt;</code> elements nested inside:
+          <ul>
+            <li>
+              The first option must have an empty <code>value</code> and empty
+              text.
+            </li>
+            <li>
+              The remaining six options must be:
+              <b>New York, Los Angeles, Chicago, Paris, Tokyo, London</b>. Each
+              option’s <code>value</code> must be lowercase (e.g.,
+              <code>new york</code> → <code>new york</code>).
+            </li>
+          </ul>
+        </li>
+        <li>If no city is selected, clicking the button should do nothing.</li>
+        <li>
+          If a city is selected, weather elements should be displayed:
+          <ul>
+            <li><code>#weather-icon</code> → image of the weather icon.</li>
+            <li>
+              <code>#main-temperature</code> → main temperature in Celsius.
+            </li>
+            <li><code>#feels-like</code> → feels like temperature.</li>
+            <li><code>#humidity</code> → humidity percentage.</li>
+            <li><code>#wind</code> → wind speed in m/s.</li>
+            <li><code>#wind-gust</code> → wind gust in m/s.</li>
+            <li>
+              <code>#weather-main</code> → main weather type (e.g., Clear,
+              Clouds).
+            </li>
+            <li><code>#location</code> → name of the location.</li>
+          </ul>
+        </li>
+        <li>
+          You should have an asynchronous function <code>getWeather</code> that:
+          <ul>
+            <li>Accepts <code>city</code> as argument.</li>
+            <li>
+              Fetches data from
+              <code
+                >https://weather-proxy.freecodecamp.rocks/api/city/&lt;CITY&gt;</code
+              >.
+            </li>
+            <li>Returns the parsed JSON weather data.</li>
+            <li>
+              Handles errors using <code>try...catch</code> and logs them to the
+              console.
+            </li>
+          </ul>
+        </li>
+        <li>
+          You should have an asynchronous function
+          <code>showWeather</code> that:
+          <ul>
+            <li>Accepts <code>city</code> as argument.</li>
+            <li>Calls <code>getWeather(city)</code> to retrieve data.</li>
+            <li>
+              If <code>getWeather</code> fails, displays an
+              <code>alert("Something went wrong, please try again later")</code
+              >.
+            </li>
+            <li>If data is available, updates all required DOM elements.</li>
+            <li>
+              If any data field is <code>undefined</code>, displays
+              <b>N/A</b> in the respective element.
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>✅ Test Cases</h2>
+      <ol>
+        <li>You should have a button with id <code>get-weather-btn</code>.</li>
+        <li>You should have a <code>&lt;select&gt;</code> element.</li>
+        <li>
+          The first child of the select should be an
+          <code>&lt;option&gt;</code> with empty <code>value</code>.
+        </li>
+        <li>
+          The select should contain 6 more <code>&lt;option&gt;</code> elements
+          for: Paris, London, Tokyo, Los Angeles, Chicago, New York.
+        </li>
+        <li>
+          You should have an <code>&lt;img&gt;</code> with id
+          <code>weather-icon</code>.
+        </li>
+        <li>
+          You should have an element with id <code>main-temperature</code>.
+        </li>
+        <li>You should have an element with id <code>feels-like</code>.</li>
+        <li>You should have an element with id <code>humidity</code>.</li>
+        <li>You should have an element with id <code>wind</code>.</li>
+        <li>You should have an element with id <code>wind-gust</code>.</li>
+        <li>You should have an element with id <code>weather-main</code>.</li>
+        <li>You should have an element with id <code>location</code>.</li>
+        <li>You should have a function <code>showWeather</code>.</li>
+        <li>You should have a function <code>getWeather</code>.</li>
+        <li>
+          <code>getWeather</code> should accept a city argument and return JSON
+          from the API.
+        </li>
+        <li><code>showWeather</code> should call <code>getWeather</code>.</li>
+        <li>
+          <code>showWeather</code> should handle the case when
+          <code>getWeather</code> returns <code>undefined</code>.
+        </li>
+        <li>
+          Selecting New York should display data from the API (or N/A for
+          missing values).
+        </li>
+        <li>
+          Selecting Chicago should display data from the API (or N/A for missing
+          values).
+        </li>
+        <li>
+          Selecting London should display data from the API (or N/A for missing
+          values).
+        </li>
+        <li>
+          Selecting Tokyo should display data from the API (or N/A for missing
+          values).
+        </li>
+        <li>
+          Selecting Los Angeles should display data from the API (or N/A for
+          missing values).
+        </li>
+        <li>
+          If there is an error, <code>getWeather</code> should log it to the
+          console.
+        </li>
+        <li>
+          Selecting Paris should trigger an alert saying
+          <b>Something went wrong, please try again later</b>.
+        </li>
+      </ol>
+    </div>
+  </body>
+</html>

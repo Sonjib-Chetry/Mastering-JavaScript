@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Spreadsheet - User Stories & Test Cases</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      h2 {
+        color: #333;
+      }
+      ul,
+      ol {
+        margin-left: 20px;
+      }
+      code {
+        background-color: #f4f4f4;
+        padding: 2px 6px;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to my **90 Days of JavaScript Revision Challenge**!</h1>
+    <h2 style="color: red">
+      Please read the script file and understand the project and try to build at
+      your own.
+    </h2>
+
+    <h3>
+      Functional Programming is a popular approach to software development. In
+      Functional Programming, developers organize code into smaller functions,
+      then combine those functions to build complex programs. In this
+      spreadsheet application project, you'll learn about parsing and evaluating
+      mathematical expressions, implementing spreadsheet functions, handling
+      cell references, and creating interactive web interfaces. You'll learn how
+      to dynamically update the page based on user input. This project will
+      cover concepts like the map(), find(), and includes() methods and the
+      parseInt() function.
+    </h3>
+
+    <h2>📝 User Stories</h2>
+    <ul>
+      <li>
+        You should dynamically generate a spreadsheet grid of cells:
+        <ul>
+          <li>Columns labeled from <code>A</code> to <code>J</code>.</li>
+          <li>Rows labeled from <code>1</code> to <code>99</code>.</li>
+          <li>
+            Each cell should be an <code>&lt;input&gt;</code> element with a
+            unique <code>id</code> (e.g., <code>A1</code>, <code>B2</code>).
+          </li>
+        </ul>
+      </li>
+      <li>
+        You should implement formulas using an <code>=</code> sign at the
+        beginning of a cell value.
+      </li>
+      <li>
+        You should support basic arithmetic operators:
+        <ul>
+          <li><code>+</code> for addition</li>
+          <li><code>-</code> for subtraction</li>
+          <li><code>*</code> for multiplication</li>
+          <li><code>/</code> for division</li>
+        </ul>
+      </li>
+      <li>
+        You should implement spreadsheet-like functions:
+        <ul>
+          <li><code>sum(...)</code> → Returns the sum of numbers.</li>
+          <li><code>average(...)</code> → Returns the average.</li>
+          <li><code>median(...)</code> → Returns the median.</li>
+          <li><code>even(...)</code> → Filters even numbers.</li>
+          <li>
+            <code>someeven(...)</code> → True if at least one number is even.
+          </li>
+          <li><code>everyeven(...)</code> → True if all numbers are even.</li>
+          <li><code>firsttwo(...)</code> → Returns the first two numbers.</li>
+          <li><code>lasttwo(...)</code> → Returns the last two numbers.</li>
+          <li>
+            <code>has2(...)</code> → Returns true if the list contains the
+            number 2.
+          </li>
+          <li><code>increment(...)</code> → Increments each number by 1.</li>
+          <li>
+            <code>random(x,y)</code> → Returns a random number between
+            <code>x</code> and <code>y</code>.
+          </li>
+          <li>
+            <code>range(x,y)</code> → Returns a numeric range between
+            <code>x</code> and <code>y</code>.
+          </li>
+          <li><code>nodupes(...)</code> → Removes duplicates from the list.</li>
+        </ul>
+      </li>
+      <li>
+        You should support cell ranges:
+        <ul>
+          <li>
+            For example: <code>=sum(A1:A5)</code> should sum values from
+            <code>A1</code> through <code>A5</code>.
+          </li>
+          <li>
+            For example: <code>=average(B2:C4)</code> should calculate the
+            average of that 2D range.
+          </li>
+        </ul>
+      </li>
+      <li>
+        You should update cell values automatically when a formula is entered
+        (only if input starts with <code>=</code>).
+      </li>
+      <li>
+        You should prevent circular references (a cell referencing itself).
+      </li>
+    </ul>
+
+    <h2>✅ Test Cases</h2>
+    <ul>
+      <li>
+        <strong>Test 1: Basic Arithmetic</strong>
+        <ul>
+          <li>
+            Input in <code>A1</code>: <code>=2+3</code> → Expected output:
+            <code>5</code>.
+          </li>
+          <li>
+            Input in <code>B1</code>: <code>=10-4</code> → Expected output:
+            <code>6</code>.
+          </li>
+          <li>
+            Input in <code>C1</code>: <code>=2*5</code> → Expected output:
+            <code>10</code>.
+          </li>
+          <li>
+            Input in <code>D1</code>: <code>=20/4</code> → Expected output:
+            <code>5</code>.
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <strong>Test 2: SUM Function</strong>
+        <ul>
+          <li>
+            Enter <code>1</code> in <code>A1</code>, <code>2</code> in
+            <code>A2</code>, <code>3</code> in <code>A3</code>.
+          </li>
+          <li>
+            Input in <code>B1</code>: <code>=sum(A1:A3)</code> → Expected
+            output: <code>6</code>.
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <strong>Test 3: AVERAGE Function</strong>
+        <ul>
+          <li>
+            Values: <code>10</code> in <code>B2</code>, <code>20</code> in
+            <code>B3</code>, <code>30</code> in <code>B4</code>.
+          </li>
+          <li>
+            Input in <code>C1</code>: <code>=average(B2:B4)</code> → Expected
+            output: <code>20</code>.
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <strong>Test 4: MEDIAN Function</strong>
+        <ul>
+          <li>
+            Values: <code>5</code>, <code>15</code>, <code>25</code> in cells
+            <code>C2</code>, <code>C3</code>, <code>C4</code>.
+          </li>
+          <li>
+            Input in <code>D1</code>: <code>=median(C2:C4)</code> → Expected
+            output: <code>15</code>.
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <strong>Test 5: Range Expansion</strong>
+        <ul>
+          <li>
+            Values: <code>1</code> in <code>A1</code>, <code>2</code> in
+            <code>A2</code>, <code>3</code> in <code>A3</code>,
+            <code>4</code> in <code>A4</code>, <code>5</code> in
+            <code>A5</code>.
+          </li>
+          <li>
+            Input in <code>B2</code>: <code>=sum(A1:A5)</code> → Expected
+            output: <code>15</code>.
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <strong>Test 6: Increment Function</strong>
+        <ul>
+          <li>
+            Values: <code>4</code>, <code>5</code>, <code>6</code> in cells
+            <code>E1</code>, <code>E2</code>, <code>E3</code>.
+          </li>
+          <li>
+            Input in <code>F1</code>: <code>=increment(E1:E3)</code> → Expected
+            output: <code>5, 6, 7</code>.
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <strong>Test 7: Removing Duplicates</strong>
+        <ul>
+          <li>
+            Values: <code>2</code>, <code>2</code>, <code>3</code>,
+            <code>3</code> in <code>G1:G4</code>.
+          </li>
+          <li>
+            Input in <code>H1</code>: <code>=nodupes(G1:G4)</code> → Expected
+            output: <code>2, 3</code>.
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <strong>Test 8: Random Function</strong>
+        <ul>
+          <li>
+            Input in <code>I1</code>: <code>=random(1,10)</code> → Expected
+            output: Any integer between <code>1</code> and <code>10</code>.
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <strong>Test 9: Cell Reference</strong>
+        <ul>
+          <li>Put <code>50</code> in <code>J1</code>.</li>
+          <li>
+            Input in <code>J2</code>: <code>=J1+25</code> → Expected output:
+            <code>75</code>.
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <strong>Test 10: Prevent Circular Reference</strong>
+        <ul>
+          <li>
+            Input in <code>K1</code>: <code>=K1+1</code> → Should
+            <strong>not</strong> evaluate (prevents infinite loop).
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </body>
+</html>

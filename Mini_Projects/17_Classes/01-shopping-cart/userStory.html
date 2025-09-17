@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Shopping Cart - User Stories & Test Cases</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      h2 {
+        color: #333;
+      }
+      ul,
+      ol {
+        margin-left: 20px;
+      }
+      code {
+        background-color: #f4f4f4;
+        padding: 2px 6px;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to my **90 Days of JavaScript Revision Challenge**!</h1>
+    <h2 style="color: red">
+      Please read the script file and understand the project and try to build at
+      your own.
+    </h2>
+    <h3>
+      In this mini project you'll create a shopping cart using JavaScript classes.
+      You will practice how to use the this keyword, create class instances,
+      implement methods for data manipulation and more.
+    </h3>
+
+    <h1>Dessert Shop Cart - JavaScript Development Guide</h1>
+
+    <h2>Overview</h2>
+    <p>
+      This project implements a dessert shopping cart using JavaScript. You will
+      dynamically display products, allow users to add items to their cart,
+      update totals, and clear the cart. HTML and CSS are already provided — you
+      will write <strong>only the JavaScript</strong>.
+    </p>
+
+    <hr />
+
+    <h2>Step-by-Step Instructions</h2>
+
+    <h3>1. Select DOM Elements</h3>
+    <p>
+      Create variables using <code>document.getElementById()</code> to store
+      references to HTML elements you will interact with. You must create the
+      following:
+    </p>
+    <ul>
+      <li>
+        <code>cartContainer</code> → The entire cart UI section
+        (<code>#cart-container</code>).
+      </li>
+      <li>
+        <code>productsContainer</code> → Where cart items will be listed
+        (<code>#products-container</code>).
+      </li>
+      <li>
+        <code>dessertCards</code> → Container holding all dessert product cards
+        (<code>#dessert-card-container</code>).
+      </li>
+      <li>
+        <code>cartBtn</code> → Button to show/hide the cart
+        (<code>#cart-btn</code>).
+      </li>
+      <li>
+        <code>clearCartBtn</code> → Button to remove all items from cart
+        (<code>#clear-cart-btn</code>).
+      </li>
+      <li>
+        <code>totalNumberOfItems</code> → Span showing total item count
+        (<code>#total-items</code>).
+      </li>
+      <li>
+        <code>cartSubTotal</code> → Span showing subtotal price
+        (<code>#subtotal</code>).
+      </li>
+      <li>
+        <code>cartTaxes</code> → Span showing tax amount (<code>#taxes</code>).
+      </li>
+      <li>
+        <code>cartTotal</code> → Span showing total amount
+        (<code>#total</code>).
+      </li>
+      <li>
+        <code>showHideCartSpan</code> → Span changing text between “Show” and
+        “Hide” (<code>#show-hide-cart</code>).
+      </li>
+    </ul>
+    <p>
+      Also create a variable <code>isCartShowing</code> and set it to
+      <code>false</code> initially to track cart visibility.
+    </p>
+
+    <h3>2. Create Products Array</h3>
+    <p>
+      Create a constant <code>products</code> — an array of objects. Each object
+      should have:
+    </p>
+    <ul>
+      <li><code>id</code> (number) → Unique identifier for the product.</li>
+      <li><code>name</code> (string) → Dessert name.</li>
+      <li><code>price</code> (number) → Price in dollars.</li>
+      <li>
+        <code>category</code> (string) → Dessert category (e.g., Cupcake,
+        Macaron).
+      </li>
+    </ul>
+
+    <h3>3. Render Product Cards</h3>
+    <p>
+      Loop through <code>products</code> and append HTML to
+      <code>dessertCards.innerHTML</code>. Each card should include:
+    </p>
+    <ul>
+      <li>Product name in an <code>&lt;h2&gt;</code>.</li>
+      <li>Price prefixed with "$".</li>
+      <li>Category label.</li>
+      <li>
+        “Add to cart” button with:
+        <ul>
+          <li><code>class="add-to-cart-btn"</code></li>
+          <li><code>id</code> set to the product’s <code>id</code></li>
+        </ul>
+      </li>
+    </ul>
+
+    <h3>4. Create ShoppingCart Class</h3>
+    <p>
+      The <code>ShoppingCart</code> class will handle cart logic. It should
+      include:
+    </p>
+    <ul>
+      <li>
+        <strong>Properties</strong>:
+        <ul>
+          <li><code>items</code> → array storing all added products.</li>
+          <li><code>total</code> → numeric value for the grand total.</li>
+          <li><code>taxRate</code> → set to <code>8.25</code> (percentage).</li>
+        </ul>
+      </li>
+      <li>
+        <strong>Methods</strong>:
+        <ul>
+          <li>
+            <code>addItem(id, products)</code> → finds product by
+            <code>id</code>, adds it to <code>items</code>, and updates quantity
+            in DOM if already present.
+          </li>
+          <li>
+            <code>getCounts()</code> → returns total number of items in cart.
+          </li>
+          <li>
+            <code>clearCart()</code> → confirms with user, clears
+            <code>items</code>, resets totals, and empties cart display.
+          </li>
+          <li>
+            <code>calculateTaxes(amount)</code> → returns calculated tax for
+            given subtotal.
+          </li>
+          <li>
+            <code>calculateTotal()</code> → updates <code>#subtotal</code>,
+            <code>#taxes</code>, and <code>#total</code> based on
+            <code>items</code>.
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <h3>5. Add Event Listeners</h3>
+    <ul>
+      <li>
+        For each “Add to cart” button:
+        <ul>
+          <li>
+            On click, call <code>cart.addItem()</code> with the product ID.
+          </li>
+          <li>
+            Update <code>#total-items</code> with <code>cart.getCounts()</code>.
+          </li>
+          <li>Call <code>cart.calculateTotal()</code> to refresh totals.</li>
+        </ul>
+      </li>
+      <li>
+        For <code>#cart-btn</code>:
+        <ul>
+          <li>Toggle <code>isCartShowing</code>.</li>
+          <li>Change <code>#show-hide-cart</code> text accordingly.</li>
+          <li>Show or hide <code>#cart-container</code>.</li>
+        </ul>
+      </li>
+      <li>
+        For <code>#clear-cart-btn</code>:
+        <ul>
+          <li>
+            Bind <code>cart.clearCart</code> so it runs with correct
+            <code>this</code> context.
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <hr />
+
+    <h2>Test Cases</h2>
+
+    <table border="1" cellpadding="5" cellspacing="0">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Action</th>
+          <th>Expected Result</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Load page</td>
+          <td>
+            All products from <code>products</code> array are displayed as
+            dessert cards.
+          </td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Click “Add to cart” on a product</td>
+          <td>
+            Product appears in <code>#products-container</code> and
+            <code>#total-items</code> increments by 1.
+          </td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Click “Add to cart” again for same product</td>
+          <td>Quantity indicator updates (e.g., 2x) without duplicate row.</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Click <code>#cart-btn</code></td>
+          <td>
+            Cart toggles visibility and <code>#show-hide-cart</code> text
+            changes between “Show” and “Hide”.
+          </td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>Add items and check totals</td>
+          <td>
+            Subtotal, taxes (8.25%), and total are calculated and displayed
+            correctly.
+          </td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>Click “Clear Cart” when not empty and confirm</td>
+          <td>
+            All items removed, totals reset to $0.00,
+            <code>#total-items</code> resets to 0.
+          </td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>Click “Clear Cart” when empty</td>
+          <td>An alert appears: “Your shopping cart is already empty”.</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

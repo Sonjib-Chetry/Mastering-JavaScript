@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Recipe Ingredient Converter - User Stories & Test Cases</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      h2 {
+        color: #333;
+      }
+      ul,
+      ol {
+        margin-left: 20px;
+      }
+      code {
+        background-color: #f4f4f4;
+        padding: 2px 6px;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to my **90 Days of JavaScript Revision Challenge**!</h1>
+    <h2 style="color: red">
+      Please read the script file and understand the project and try to build at
+      your own.
+    </h2>
+    <h3>
+      In this mini project, you will apply the functional programming concepts
+      you have learned in the previous lectures to build an ingredient converter
+      app.
+    </h3>
+
+    <h2>User Stories:</h2>
+    <ul>
+      <li>
+        You should define a constant <code>conversionTable</code> that stores
+        the conversion rates between units:
+        <ul>
+          <li>
+            Units should include: <code>cup</code>, <code>gram</code>,
+            <code>ounce</code>, and <code>teaspoon</code>.
+          </li>
+          <li>
+            Each unit should have nested key-value pairs for conversion to other
+            units.
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        You should define a curried function <code>convertQuantity</code> that:
+        <ul>
+          <li>Takes a <strong>fromUnit</strong> as the first argument.</li>
+          <li>
+            Returns a function that takes a <strong>toUnit</strong> as the
+            second argument.
+          </li>
+          <li>
+            Returns another function that takes <strong>quantity</strong> as the
+            third argument.
+          </li>
+          <li>
+            Looks up the conversion rate from <code>conversionTable</code> and
+            returns the converted quantity.
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        You should define another curried function
+        <code>adjustForServings</code> that:
+        <ul>
+          <li>Takes <strong>baseQuantity</strong> as the first argument.</li>
+          <li>
+            Returns a function that takes <strong>newServings</strong> as the
+            second argument.
+          </li>
+          <li>
+            Adjusts the quantity proportionally to match the new servings.
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        You should define a function <code>processIngredient</code> that:
+        <ul>
+          <li>
+            Takes <code>baseQuantity</code>, <code>baseUnit</code>,
+            <code>newUnit</code>, and <code>newServings</code> as parameters.
+          </li>
+          <li>
+            Adjusts the quantity for the new servings using
+            <code>adjustForServings</code>.
+          </li>
+          <li>
+            Converts the adjusted quantity to the new unit using
+            <code>convertQuantity</code>.
+          </li>
+          <li>Returns the converted value rounded to two decimal places.</li>
+        </ul>
+      </li>
+
+      <li>
+        You should connect the DOM elements:
+        <ul>
+          <li><code>ingredientName</code> – text input for ingredient name.</li>
+          <li>
+            <code>ingredientQuantity</code> – number input for ingredient
+            amount.
+          </li>
+          <li>
+            <code>unitToConvert</code> – dropdown for selecting the base unit.
+          </li>
+          <li><code>numberOfServings</code> – number input for servings.</li>
+          <li><code>recipeForm</code> – the form containing the inputs.</li>
+          <li>
+            <code>resultList</code> – the list to display the converted
+            ingredient values.
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        You should define an <code>updateResultsList</code> function that:
+        <ul>
+          <li>Clears the <code>resultList</code> before updating it.</li>
+          <li>
+            Loops over all units in the <code>units</code> array except the
+            currently selected unit.
+          </li>
+          <li>
+            For each unit, calls <code>processIngredient</code> and appends the
+            converted result to the list.
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        You should add a <code>submit</code> event listener to
+        <code>recipeForm</code> that:
+        <ul>
+          <li>Prevents default form submission.</li>
+          <li>
+            Calls <code>updateResultsList</code> to display conversion results.
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <hr />
+
+    <h2>Tests:</h2>
+    <ul>
+      <li>
+        1. You should define a <code>conversionTable</code> object with correct
+        unit mappings.
+      </li>
+      <li>
+        2. You should have a curried function <code>convertQuantity</code> that
+        converts between units.
+      </li>
+      <li>
+        3. <code>convertQuantity("cup")("gram")(2)</code> should return
+        <code>480</code>.
+      </li>
+      <li>
+        4. You should have a curried function
+        <code>adjustForServings</code> that adjusts quantities.
+      </li>
+      <li>
+        5. <code>adjustForServings(4)(6)</code> should return <code>24</code>.
+      </li>
+      <li>
+        6. You should have a function <code>processIngredient</code> that
+        adjusts for servings and converts units.
+      </li>
+      <li>
+        7. You should display conversion results for all other units in
+        <code>updateResultsList</code>.
+      </li>
+      <li>
+        8. Submitting the form should update the <code>resultList</code> with
+        correct conversions.
+      </li>
+    </ul>
+  </body>
+</html>

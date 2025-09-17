@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>fCC Forum Leaderboard - User Stories & Test Cases</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      h2 {
+        color: #333;
+      }
+      ul,
+      ol {
+        margin-left: 20px;
+      }
+      code {
+        background-color: #f4f4f4;
+        padding: 2px 6px;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to my **90 Days of JavaScript Revision Challenge**!</h1>
+    <h2 style="color: red">
+      Please read the script file and understand the project and try to build at
+      your own.
+    </h2>
+    <h3>
+      For this mini project you'll practice asynchronous JavaScript by coding
+      your own freeCodeCamp forum leaderboard..
+    </h3>
+
+    <div class="section">
+      <h2>📖 User Stories</h2>
+      <ul>
+        <li>
+          You should have a function named <code>timeAgo</code> that takes a
+          timestamp in the ISO 8601 format as the argument.
+        </li>
+        <li>
+          The <code>timeAgo</code> function should compute the time difference
+          between the time passed as an argument and the current time and
+          return:
+          <ul>
+            <li>
+              <code>xm ago</code> if the amount of minutes that have passed is
+              less than 60.
+            </li>
+            <li>
+              <code>xh ago</code> if the amount of hours that have passed is
+              less than 24.
+            </li>
+            <li><code>xd ago</code> otherwise.</li>
+          </ul>
+        </li>
+        <li>
+          You should have a function named <code>viewCount</code> that takes the
+          number of views of a post as the argument.
+        </li>
+        <li>
+          If the value of views is greater than or equal to 1000,
+          <code>viewCount</code> should return the value divided by 1000,
+          rounded down, with <b>k</b> appended. Otherwise, return the views
+          value.
+        </li>
+        <li>
+          You should have a function named <code>forumCategory</code> that takes
+          the id of a selected category as the argument.
+        </li>
+        <li>
+          <code>forumCategory</code> should verify that the id is a property of
+          the <code>allCategories</code> object and return an anchor element
+          string with:
+          <ul>
+            <li>Text: category key</li>
+            <li>
+              Class: <code>category</code> + className of selected category
+            </li>
+            <li>
+              Href:
+              <code>&lt;forumCategoryUrl&gt;/&lt;className&gt;/&lt;id&gt;</code>
+            </li>
+          </ul>
+          If id does not exist in <code>allCategories</code>, use
+          <b>General</b> with className <b>general</b>.
+        </li>
+        <li>
+          You should have a function named <code>avatars</code> that takes two
+          arrays: posters and users.
+        </li>
+        <li>
+          <code>avatars</code> should return a string of joined
+          <code>&lt;img&gt;</code> elements for each poster:
+          <ul>
+            <li><code>alt</code> = <code>name</code> of user</li>
+            <li>
+              <code>src</code> = <code>avatar_template</code> with
+              <code>{size}</code> replaced by 30
+            </li>
+            <li>
+              If <code>avatar_template</code> is relative, prefix with
+              <code>&lt;avatarUrl&gt;</code>
+            </li>
+          </ul>
+        </li>
+        <li>
+          You should have a function named <code>showLatestPosts</code> that
+          takes one parameter (the JSON object).
+        </li>
+        <li>
+          <code>showLatestPosts</code> should extract <code>users</code> and
+          <code>topic_list</code> from the argument and process
+          <code>topics</code> array.
+        </li>
+        <li>
+          <code>#posts-container</code> innerHTML should be set to a string of
+          <code>&lt;tr&gt;</code> elements, one for each topic, each containing
+          5 <code>&lt;td&gt;</code>:
+          <ol>
+            <li>
+              First <code>&lt;td&gt;</code>: two anchors → post title and
+              category (via <code>forumCategory</code>).
+            </li>
+            <li>
+              Second <code>&lt;td&gt;</code>: a
+              <code>&lt;div class="avatar-container"&gt;</code> with avatars
+              (via <code>avatars</code>).
+            </li>
+            <li>
+              Third <code>&lt;td&gt;</code>: replies count (<code
+                >posts_count - 1</code
+              >).
+            </li>
+            <li>
+              Fourth <code>&lt;td&gt;</code>: views (via
+              <code>viewCount</code>).
+            </li>
+            <li>
+              Fifth <code>&lt;td&gt;</code>: time since last activity (via
+              <code>timeAgo</code>).
+            </li>
+          </ol>
+        </li>
+        <li>You should have an async function named <code>fetchData</code>.</li>
+        <li>
+          <code>fetchData</code> should request data from
+          <code
+            >https://cdn.freecodecamp.org/curriculum/forum-latest/latest.json</code
+          >, call <code>showLatestPosts</code> with the parsed JSON, and log any
+          error using <code>console.log</code>.
+        </li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>✅ Test Cases</h2>
+      <ol>
+        <li>
+          You should have a function named <code>timeAgo</code> that takes a
+          single argument.
+        </li>
+        <li>
+          When time difference is 50 minutes, <code>timeAgo</code> →
+          <b>50m ago</b>.
+        </li>
+        <li>
+          When time difference is 60 minutes, <code>timeAgo</code> →
+          <b>1h ago</b>.
+        </li>
+        <li>
+          When time difference is 115 minutes, <code>timeAgo</code> →
+          <b>1h ago</b>.
+        </li>
+        <li>
+          When time difference is 15 hours, <code>timeAgo</code> →
+          <b>15h ago</b>.
+        </li>
+        <li>
+          When time difference is 24 hours, <code>timeAgo</code> →
+          <b>1d ago</b>.
+        </li>
+        <li>
+          When time difference is 46 hours, <code>timeAgo</code> →
+          <b>1d ago</b>.
+        </li>
+        <li>
+          When time difference is 3 days, <code>timeAgo</code> → <b>3d ago</b>.
+        </li>
+        <li>You should have a function named <code>viewCount</code>.</li>
+        <li><code>viewCount(597)</code> → <b>597</b>.</li>
+        <li><code>viewCount(1000)</code> → <b>1k</b>.</li>
+        <li><code>viewCount(2730)</code> → <b>2k</b>.</li>
+        <li>You should have a function named <code>forumCategory</code>.</li>
+        <li>
+          <code>forumCategory(299)</code> → anchor with text
+          <b>Career Advice</b>.
+        </li>
+        <li>
+          <code>forumCategory(299)</code> → anchor with href
+          <b>https://forum.freecodecamp.org/c/career/299</b>.
+        </li>
+        <li>
+          <code>forumCategory(299)</code> → anchor with class
+          <b>category career</b>.
+        </li>
+        <li>
+          <code>forumCategory(200)</code> → anchor with text <b>General</b>.
+        </li>
+        <li>
+          <code>forumCategory(200)</code> → anchor with href
+          <b>https://forum.freecodecamp.org/c/general/200</b>.
+        </li>
+        <li>
+          <code>forumCategory(200)</code> → anchor with class
+          <b>category general</b>.
+        </li>
+        <li>You should have a function named <code>avatars</code>.</li>
+        <li>
+          <code>avatars</code> should return joined
+          <code>&lt;img&gt;</code> elements, one per poster.
+        </li>
+        <li>
+          Each <code>&lt;img&gt;</code> should have <code>alt</code> = user’s
+          name.
+        </li>
+        <li>
+          Each <code>&lt;img&gt;</code> should have <code>src</code> with
+          <code>{size}</code> replaced by 30.
+        </li>
+        <li>
+          If <code>avatar_template</code> is relative, <code>src</code> should
+          be prefixed with <code>&lt;avatarUrl&gt;</code>.
+        </li>
+        <li>You should have a function named <code>showLatestPosts</code>.</li>
+        <li>You should have a function named <code>fetchData</code>.</li>
+        <li>
+          <code>fetchData</code> should request data from the forum latest
+          endpoint.
+        </li>
+        <li>
+          <code>fetchData</code> should call <code>showLatestPosts</code>.
+        </li>
+        <li>
+          If error occurs, <code>fetchData</code> should log it with
+          <code>console.log</code>.
+        </li>
+        <li>
+          <code>showLatestPosts</code> should set
+          <code>#posts-container</code> innerHTML to joined
+          <code>&lt;tr&gt;</code> rows.
+        </li>
+        <li>
+          Each <code>&lt;tr&gt;</code> should contain 5
+          <code>&lt;td&gt;</code> cells.
+        </li>
+        <li>
+          First <code>&lt;td&gt;</code>: two anchors → post title and category.
+        </li>
+        <li>
+          Second <code>&lt;td&gt;</code>: avatar-container div with avatars.
+        </li>
+        <li>
+          Third <code>&lt;td&gt;</code>: replies = <code>posts_count - 1</code>.
+        </li>
+        <li>Fourth <code>&lt;td&gt;</code>: views count.</li>
+        <li>
+          Fifth <code>&lt;td&gt;</code>: time since last activity (via
+          <code>timeAgo</code>).
+        </li>
+      </ol>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Bookmark Manager App - User Stories & Test Cases</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      h2 {
+        color: #333;
+      }
+      ul,
+      ol {
+        margin-left: 20px;
+      }
+      code {
+        background-color: #f4f4f4;
+        padding: 2px 6px;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to my **90 Days of JavaScript Revision Challenge**!</h1>
+    <h2 style="color: red">
+      Please read the script file and understand the project and try to build at
+      your own.
+    </h2>
+    <h3>
+      For this mini project, you'll build a bookmark manager app. You'll utilize local
+      storage to store bookmarks, and practice how to add, remove, and display
+      bookmarks.
+    </h3>
+
+    <h2>User Stories:</h2>
+    <p>
+      You should have a getBookmarks function that returns the bookmarks array
+      stored in the local storage. If the bookmarks key has not been set yet, or
+      it doesn't contain a valid array with bookmarks, the getBookmarks function
+      should return an empty array.<br /><br />
+
+      The bookmarks key stored in the local storage should be an array of
+      bookmark objects. Each bookmark object should have three keys: name,
+      category, and url.<br /><br />
+
+      You should have a function named displayOrCloseForm that toggles the
+      hidden class on #main-section and #form-section.<br /><br />
+
+      When you click #add-bookmark-button, you should update the inner text of
+      .category-name to be the value of the selected option from
+      #category-dropdown and call displayOrCloseForm to display the form section
+      and hide the main section.<br /><br />
+
+      When you click #close-form-button, you should run your function to hide
+      the form section and display the main section.<br /><br />
+
+      When you click #add-bookmark-button-form, you should update the bookmarks
+      key stored in the local storage by adding a bookmark object to the end of
+      the array. The object should have name set to the value of the #name
+      input, category set to the value of the selected option from the category
+      dropdown, and url set to the value of the #url input.<br /><br />
+
+      Once the bookmarks key is updated, you should reset the value of #name and
+      #url to an empty string before running your function to hide the form
+      section and show the main section.<br /><br />
+
+      You should have a function named displayOrHideCategory that toggles the
+      hidden class on #main-section and #bookmark-list-section.<br /><br />
+
+      When you click #view-category-button, you should update the inner text of
+      .category-name to be the value of the selected option from
+      #category-dropdown, modify the inner HTML of #category-list according to
+      the user stories below, and call the displayOrHideCategory function.<br /><br />
+
+      If none of the bookmarks in local storage have the category, you should
+      set the inner HTML of the #category-list to a p element with the text No
+      Bookmarks Found.<br /><br />
+
+      If one or more bookmarks in local storage have the selected category, add
+      a radio button for each bookmark to the innerHTML of the #category-list.
+      Give each radio button an id and value set to the bookmark name, and a
+      name that's the same for all the buttons.<br /><br />
+
+      Each radio button should have a corresponding label containing an anchor
+      element with the bookmark name and the href attribute set to the bookmark
+      URL.<br /><br />
+
+      When you click the #close-list-button, you should run your function to
+      hide the #bookmark-list-section and display the main section.<br /><br />
+
+      When you click the #delete-bookmark-button, you should delete the bookmark
+      corresponding to the selected radio button and appropriate category from
+      the local storage and update the displayed bookmark list.
+    </p>
+
+    <h2>Tests:</h2>
+    <p>
+      1. You should have a getBookmarks function.<br />
+      2. Your getBookmarks function should return an array.<br />
+      3. Your getBookmarks function should return the bookmarks key from
+      localStorage.<br />
+      4. When the bookmarks key is not set in localStorage or is an empty array,
+      the getBookmarks function should return an empty array.<br />
+      5. When the bookmarks key in the localStorage does not contain a valid
+      array of bookmark objects, the getBookmarks function should return an
+      empty array.<br />
+      6. You should have a function named displayOrCloseForm.<br />
+      7. Your displayOrCloseForm function should toggle the hidden class on
+      #main-section and #form-section.<br />
+      8. When you click #add-bookmark-button, you should update the inner text
+      of .category-name to be the value of the selected option from
+      #category-dropdown.<br />
+      9. When you click #add-bookmark-button, you should call displayOrCloseForm
+      to display the form section and hide the main section.<br />
+      10. When you click #close-form-button, you should call displayOrCloseForm
+      to hide the form section and display the main section.<br />
+      11. When you click #add-bookmark-button-form, you should update the
+      bookmarks key stored in the local storage by adding an object to the end
+      of the array. The added object should have name set to the value of the
+      #name input, category set to the value of the selected option from the
+      category dropdown, and url set to the value of the #url input.<br />
+      12. When you click #add-bookmark-button-form, you should reset the value
+      of #name and #url to an empty string.<br />
+      13. When you click #add-bookmark-button-form, you should run
+      displayOrCloseForm to hide the form section and show the main section.<br />
+      14. You should have a function named displayOrHideCategory.<br />
+      15. Your displayOrHideCategory function should toggle the hidden class on
+      #main-section and #bookmark-list-section.<br />
+      16. When you click #view-category-button, you should update the inner text
+      of .category-name to be the value of the selected option from
+      #category-dropdown.<br />
+      17. When you click #view-category-button, you should add a p element with
+      the text No Bookmarks Found to #category-list's inner HTML if none of the
+      bookmarks in local storage have the selected category.<br />
+      18. When you click the #view-category-button, you should modify the
+      #category-list element's inner HTML by adding a radio button. The radio
+      button should have the id and value attributes set to the bookmark name
+      for each bookmark in the selected category. Additionally, each radio
+      button should have the same name attribute.<br />
+      19. Each radio button added to #category-list's inner HTML should have a
+      corresponding label containing an anchor element with the bookmark name
+      and the href attribute set to the bookmark URL.<br />
+      20. Each label element should contain an anchor element with the bookmark
+      name as text, and the href attribute set to the bookmark URL.<br />
+      21. When you click #close-list-button, you should hide
+      #bookmark-list-section and display the main section.<br />
+      22. When you click the #close-list-button and then open any category, the
+      #category-list should contain only data relevant for the selected
+      category, without duplicating entries.<br />
+      23. When you click the #delete-bookmark-button, you should delete the
+      bookmark corresponding to the selected radio button and appropriate
+      category from the local storage and update the displayed bookmark list.
+    </p>
+  </body>
+</html>

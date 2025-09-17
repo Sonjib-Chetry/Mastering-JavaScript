@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Sorting Visualizer - User Stories & Test Cases</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      h2 {
+        color: #333;
+      }
+      ul,
+      ol {
+        margin-left: 20px;
+      }
+      code {
+        background-color: #f4f4f4;
+        padding: 2px 6px;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to my **90 Days of JavaScript Revision Challenge**!</h1>
+    <h2 style="color: red">
+      Please read the script file and understand the project and try to build at
+      your own.
+    </h2>
+    <h3>
+      The Bubble Sort algorithm sorts a sequence of integers by comparing
+      couples of adjacent elements starting from the beginning of the sequence.
+      If the first element is greater than the second one, it swaps them. Then,
+      it proceeds with the following couple. When the last element of the
+      sequence is reached, it starts a new cycle from the beginning of the
+      sequence, and repeats the process until the elements are sorted. The
+      algorithm stops after one cycle completes with no swaps.
+    </h3>
+    <h3>
+      For this mini project, you'll use JavaScript to visualize the steps that
+      the Bubble Sort algorithm takes to reorder an array of integers.
+    </h3>
+
+    <h2>User Stories:</h2>
+    <ol>
+      <li>
+        You should have a function named <code>generateElement</code> that
+        returns a random integer between 1 and 100, inclusive.
+      </li>
+      <li>
+        You should have a function named <code>generateArray</code> that uses
+        the <code>generateElement</code> function to return an array containing
+        five random integers.
+      </li>
+      <li>
+        You should have a function named <code>generateContainer</code> that
+        creates and returns an empty <code>&lt;div&gt;</code> element.
+      </li>
+      <li>
+        You should have a function named <code>fillArrContainer</code> that
+        takes an HTML element as the first argument and an array as the second
+        argument.
+      </li>
+      <li>
+        The <code>fillArrContainer</code> function should fill the element
+        passed as the first argument to the function with five
+        <code>&lt;span&gt;</code> elements with the text of an integer from the
+        array passed as the second argument to the function.
+      </li>
+      <li>
+        You should have a function named <code>isOrdered</code> that takes two
+        integers and returns a boolean indicating if the first integer is less
+        than or equal to the second.
+      </li>
+      <li>
+        You should have a function named <code>swapElements</code> that takes an
+        array of integers and a numeric index.
+      </li>
+      <li>
+        The <code>swapElements</code> function should modify the array in place
+        by swapping the element at the passed index and the following element if
+        <code>isOrdered</code> returns false.
+      </li>
+      <li>
+        You should have a function named <code>highlightCurrentEls</code> that
+        takes an HTML element and a numeric index.
+      </li>
+      <li>
+        The <code>highlightCurrentEls</code> function should set the border of
+        the given element's child at the given index, and the child immediately
+        after the index, to have a dashed style, a red color, and a width of
+        your choice.
+      </li>
+      <li>
+        When you click <code>#generate-btn</code> you should use the
+        <code>fillArrContainer</code> function to fill
+        <code>#starting-array</code> with five
+        <code>&lt;span&gt;</code> elements, each with a random number as its
+        text. If present, other elements should be removed from
+        <code>#array-container</code>.
+      </li>
+      <li>
+        You should implement the Bubble Sort algorithm so that after you click
+        <code>#sort-btn</code>, <code>#array-container</code> contains a
+        <code>&lt;div&gt;</code> element for each of the steps required by the
+        Bubble Sort algorithm to sort the starting array, including the
+        <code>&lt;div&gt;</code> representing the starting array and a
+        <code>&lt;div&gt;</code> representing the sorted array. The functions
+        you have created so far can be useful here.
+      </li>
+      <li>
+        Each <code>&lt;div&gt;</code> should contain five
+        <code>&lt;span&gt;</code> elements, representing the array in its
+        current state of being sorted.
+      </li>
+      <li>
+        After you click <code>#sort-btn</code>,
+        <code>#starting-array</code> should represent the starting step with the
+        initial array and the first two integers highlighted.
+      </li>
+      <li>
+        For each sorting step, you should use
+        <code>highlightCurrentEls</code> to highlight the two numbers that are
+        being compared, and swap them in the next step by using
+        <code>swapElements</code>.
+      </li>
+    </ol>
+
+    <h2>Tests:</h2>
+    <ol>
+      <li>1. You should have a function named <code>generateElement</code>.</li>
+      <li>
+        2. Your <code>generateElement</code> function should return a random
+        integer between 1 and 100 inclusive.
+      </li>
+      <li>3. You should have a function named <code>generateArray</code>.</li>
+      <li>
+        4. Your <code>generateArray</code> function should make use of the
+        <code>generateElement</code> function.
+      </li>
+      <li>
+        5. Your <code>generateArray</code> function should return an array
+        containing five random integers between 1 and 100.
+      </li>
+      <li>
+        6. You should have a function named <code>generateContainer</code>.
+      </li>
+      <li>
+        7. Your <code>generateContainer</code> function should return an empty
+        <code>&lt;div&gt;</code> element.
+      </li>
+      <li>
+        8. You should have a function named <code>fillArrContainer</code>.
+      </li>
+      <li>
+        9. Your <code>fillArrContainer()</code> function should fill the element
+        passed as the first argument to the function with five
+        <code>&lt;span&gt;</code> elements with the text of an integer from the
+        array passed as the second argument to the function.
+      </li>
+      <li>10. You should have a function named <code>isOrdered</code>.</li>
+      <li>
+        11. Your <code>isOrdered</code> function should take two integers and
+        should return a boolean indicating if the first integer is less than or
+        equal to the second.
+      </li>
+      <li>12. You should have a function named <code>swapElements</code>.</li>
+      <li>
+        13. Your <code>swapElements</code> function take an array of integers
+        and a numeric index as arguments. It should modify the array passed in
+        place by swapping the element at the given index and the following
+        element if the first element is greater than the second.
+      </li>
+      <li>
+        14. You should have a function named <code>highlightCurrentEls</code>.
+      </li>
+      <li>
+        15. Your <code>highlightCurrentEls</code> function should give the
+        descendants of the specified element, located at the given index and the
+        next index, a border that is dashed, red, and set to a width of your
+        choice.
+      </li>
+      <li>
+        16. When you click the <code>#generate-btn</code> you should fill
+        <code>#starting-array</code> with five
+        <code>&lt;span&gt;</code> elements, each with a random number between 1
+        and 100 as its text.
+      </li>
+      <li>
+        17. When <code>#starting-array</code> already contains a generated
+        array, or <code>#array-container</code> contains the sorted array,
+        clicking the <code>#generate-btn</code> should remove other elements in
+        the <code>#array-container</code>, leaving only
+        <code>#starting-array</code> with newly generated numbers.
+      </li>
+      <li>
+        18. After you click the <code>#sort-btn</code>,
+        <code>#array-container</code> should contain as many
+        <code>&lt;div&gt;</code> elements as the steps required by the Bubble
+        Sort algorithm to sort the starting array, including the
+        <code>&lt;div&gt;</code> representing the starting array and a
+        <code>&lt;div&gt;</code> representing the sorted array.
+      </li>
+      <li>
+        19. After you click the <code>#sort-btn</code>, each
+        <code>&lt;div&gt;</code> within <code>#array-container</code> should
+        contain five <code>&lt;span&gt;</code>, each with a number as its text,
+        and arranged to represent the steps required by Bubble Sort algorithm to
+        sort the starting array.
+      </li>
+      <li>
+        20. When you click the <code>#sort-btn</code>, you should make use of
+        the <code>highlightCurrentEls</code> function to highlight the elements
+        being compared in each step.
+      </li>
+      <li>
+        21. After you click the <code>#sort-btn</code>,
+        <code>#starting-array</code> should represent the starting step with the
+        initial array and the first two integers highlighted using
+        <code>highlightCurrentEls</code>.
+      </li>
+    </ol>
+  </body>
+</html>

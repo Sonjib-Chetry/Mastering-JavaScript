@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Calorie-Counter - User Stories & Test Cases</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      h2 {
+        color: #333;
+      }
+      ul,
+      ol {
+        margin-left: 20px;
+      }
+      code {
+        background-color: #f4f4f4;
+        padding: 2px 6px;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to my **90 Days of JavaScript Revision Challenge**!</h1>
+    <h2 style="color: red">
+      Please read the script file and understand the project and try to build at
+      your own.
+    </h2>
+    <h3>
+      Sometimes when you're coding a web application, you'll need to be able to
+      accept input from a user. In this calorie counter mini project, you'll
+      practice how to validate user input, perform calculations based on that
+      input, and dynamically update your interface to display the results.
+      You'll also practice basic regular expressions, template literals, the
+      addEventListener() method, and more.
+    </h3>
+
+    <section>
+      <h2>User Stories</h2>
+      <ul>
+        <li>As a user, I want to input a daily calorie budget.</li>
+        <li>
+          As a user, I want to add multiple food or exercise entries categorized
+          by meal types (Breakfast, Lunch, Dinner, Snacks, Exercise).
+        </li>
+        <li>
+          As a user, I want to see dynamically added input fields for food or
+          exercise entries based on my selection.
+        </li>
+        <li>
+          As a user, I want to calculate total calories consumed and burned, and
+          see whether I’m in surplus or deficit.
+        </li>
+        <li>
+          As a user, I want the app to prevent invalid input like scientific
+          notation or negative numbers.
+        </li>
+        <li>
+          As a user, I want to clear all fields and reset the form with a single
+          click.
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Test Cases</h2>
+      <ul>
+        <li>
+          ✅ The page should contain an input with id="budget" for entering the
+          calorie budget.
+        </li>
+        <li>
+          ✅ There should be a select element with id="entry-dropdown" to choose
+          the meal type.
+        </li>
+        <li>
+          ✅ Clicking the button with id="add-entry" should append new labeled
+          text and number input fields inside the corresponding
+          `.input-container`.
+        </li>
+        <li>
+          ✅ The form submission should calculate and display:
+          <ul>
+            <li>Budgeted calories</li>
+            <li>Consumed calories (sum of Breakfast, Lunch, Dinner, Snacks)</li>
+            <li>Burned calories (from Exercise)</li>
+            <li>Remaining calories and whether it’s a Deficit or Surplus</li>
+          </ul>
+        </li>
+        <li>
+          ✅ When an invalid calorie input (e.g., 1e6) is entered, an alert with
+          “Invalid Input” should appear and calculation should abort.
+        </li>
+        <li>
+          ✅ Clicking the "Clear" button with id="clear" should:
+          <ul>
+            <li>Clear all input fields</li>
+            <li>Hide the result section</li>
+          </ul>
+        </li>
+        <li>
+          ✅ When valid values are entered and submitted, the results should
+          appear in the #output element and include calorie stats and
+          deficit/surplus.
+        </li>
+        <li>
+          ✅ The `getCaloriesFromInputs()` function should sanitize values and
+          convert them to numbers before summing.
+        </li>
+        <li>
+          ✅ Each entry should have unique ids based on entry type and index
+          (e.g., breakfast-1-name, lunch-2-calories).
+        </li>
+      </ul>
+    </section>
+  </body>
+</html>

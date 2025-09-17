@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>freeCodeCamp News Author Page - User Stories & Test Cases</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      h2 {
+        color: #333;
+      }
+      ul,
+      ol {
+        margin-left: 20px;
+      }
+      code {
+        background-color: #f4f4f4;
+        padding: 2px 6px;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to my **90 Days of JavaScript Revision Challenge**!</h1>
+    <h2 style="color: red">
+      Please read the script file and understand the project and try to build at
+      your own.
+    </h2>
+    <h3>
+      One common aspect of web development is learning how to fetch data from an
+      external API, then work with asynchronous JavaScript. In this mini project
+      you will practice how to use the fetch method, dynamically update the DOM
+      to display the fetched data and paginate your data so you can load results
+      in batches.
+    </h3>
+
+    <div class="section">
+      <h2>📖 User Stories</h2>
+      <ul>
+        <li>
+          You should define variables to reference the following DOM elements:
+          <ul>
+            <li>
+              <code>authorContainer</code> → The container where author cards
+              will be rendered.
+            </li>
+            <li>
+              <code>loadMoreBtn</code> → The button used to load more authors.
+            </li>
+          </ul>
+        </li>
+        <li>
+          You should maintain two numeric variables,
+          <code>startingIndex</code> and <code>endingIndex</code>, initialized
+          to <code>0</code> and <code>8</code> respectively, to handle
+          pagination.
+        </li>
+        <li>
+          You should have an empty array named <code>authorDataArr</code> to
+          store the fetched authors data.
+        </li>
+        <li>
+          You should fetch author data from the endpoint
+          <code
+            >https://cdn.freecodecamp.org/curriculum/news-author-page/authors.json</code
+          >. On success, store the data inside <code>authorDataArr</code> and
+          display the first 8 authors.
+        </li>
+        <li>
+          If fetching fails, you should display the message:
+          <pre>
+&lt;p class="error-msg"&gt;There was an error loading the authors&lt;/p&gt;</pre
+          >
+        </li>
+        <li>
+          You should create a function named <code>displayAuthors</code> that
+          accepts an array of authors. For each author, it should create a user
+          card containing:
+          <ul>
+            <li>The author's name inside an <code>h2</code>.</li>
+            <li>The author's avatar image inside an <code>img</code>.</li>
+            <li>A purple divider <code>div</code>.</li>
+            <li>
+              A paragraph showing the author bio (trimmed to 50 characters,
+              followed by "..." if longer).
+            </li>
+            <li>
+              An <code>a</code> link to the author’s page that opens in a new
+              tab.
+            </li>
+          </ul>
+        </li>
+        <li>
+          You should create a function named <code>fetchMoreAuthors</code> that:
+          <ul>
+            <li>
+              Increases <code>startingIndex</code> and
+              <code>endingIndex</code> by 8.
+            </li>
+            <li>
+              Displays the next set of authors by calling
+              <code>displayAuthors</code>.
+            </li>
+            <li>
+              Disables the <code>loadMoreBtn</code> and changes its text to
+              <b>"No more data to load"</b> when no more authors remain.
+            </li>
+          </ul>
+        </li>
+        <li>
+          You should attach a click event listener to
+          <code>loadMoreBtn</code> that calls <code>fetchMoreAuthors</code>.
+        </li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>✅ Test Cases</h2>
+      <ol>
+        <li>
+          There should be a variable <code>authorContainer</code> referencing
+          the element with id <code>author-container</code>.
+        </li>
+        <li>
+          There should be a variable <code>loadMoreBtn</code> referencing the
+          element with id <code>load-more-btn</code>.
+        </li>
+        <li>
+          You should have numeric variables <code>startingIndex</code> and
+          <code>endingIndex</code>, initialized to <code>0</code> and
+          <code>8</code> respectively.
+        </li>
+        <li>
+          You should have an array variable
+          <code>authorDataArr</code> initialized as an empty array.
+        </li>
+        <li>
+          You should fetch author data from the provided JSON endpoint and store
+          the results in <code>authorDataArr</code>.
+        </li>
+        <li>
+          When data is successfully fetched, <code>displayAuthors</code> should
+          render the first 8 authors inside <code>authorContainer</code>.
+        </li>
+        <li>
+          If fetching fails, the <code>authorContainer</code> should contain the
+          error message <code>There was an error loading the authors</code>.
+        </li>
+        <li>You should have a function named <code>displayAuthors</code>.</li>
+        <li>
+          <code>displayAuthors</code> should create a card with:
+          <ul>
+            <li><code>h2</code> with the author name.</li>
+            <li><code>img</code> with the author’s avatar.</li>
+            <li><code>p</code> with the author bio (trimmed if > 50 chars).</li>
+            <li><code>a</code> with link to the author’s page.</li>
+          </ul>
+        </li>
+        <li>You should have a function named <code>fetchMoreAuthors</code>.</li>
+        <li>
+          Clicking <code>#load-more-btn</code> should render the next 8 authors.
+        </li>
+        <li>
+          When all authors are displayed, the <code>#load-more-btn</code> should
+          be disabled, have cursor set to <code>not-allowed</code>, and display
+          the text <b>No more data to load</b>.
+        </li>
+        <li>
+          An event listener should be attached to
+          <code>#load-more-btn</code> that triggers
+          <code>fetchMoreAuthors</code>.
+        </li>
+      </ol>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Number Sorter - User Stories & Test Cases</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      h2 {
+        color: #333;
+      }
+      ul,
+      ol {
+        margin-left: 20px;
+      }
+      code {
+        background-color: #f4f4f4;
+        padding: 2px 6px;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to my **90 Days of JavaScript Revision Challenge**!</h1>
+    <h2 style="color: red">
+      Please read the script file and understand the project and try to build at
+      your own.
+    </h2>
+
+    <h3>
+      In computer science, there are fundamental sorting algorithms that all
+      developers should learn. In this number sorter project, you'll learn how
+      to implement and visualize different sorting algorithms like bubble sort,
+      selection sort, and insertion sort – all with JavaScript. This project
+      will help you understand the fundamental concepts behind these algorithms,
+      and how you can apply them to sort numerical data in web applications.
+    </h3>
+
+      <h2>📝 User Stories</h2>
+  <ul>
+    <li>Create a <strong>button element</strong> with the id <code>sort</code>. This button will trigger the sorting when clicked.</li>
+    <li>Create multiple <strong>dropdown elements</strong> (HTML <code>&lt;select&gt;</code>) with the class <code>values-dropdown</code>. Each dropdown should allow the user to choose a number.</li>
+    <li>Create output elements with ids in the format <code>output-value-i</code> (example: <code>output-value-0</code>, <code>output-value-1</code>). These elements will display the sorted numbers.</li>
+    <li>In JavaScript, write a function <code>sortInputArray(event)</code> that:
+      <ul>
+        <li>Prevents the default button behavior using <code>event.preventDefault()</code>.</li>
+        <li>Retrieves all dropdown values with <code>document.getElementsByClassName("values-dropdown")</code>.</li>
+        <li>Converts them into an array of numbers.</li>
+        <li>Sorts the array using one sorting algorithm (<code>bubbleSort</code>, <code>selectionSort</code>, or <code>insertionSort</code>).</li>
+        <li>Calls a helper function <code>updateUI(sortedArray)</code> to display the sorted results.</li>
+      </ul>
+    </li>
+    <li>Create a helper function <code>updateUI(array)</code> that:
+      <ul>
+        <li>Loops through the sorted array.</li>
+        <li>Finds the matching <code>output-value-i</code> element.</li>
+        <li>Updates its <code>innerText</code> with the number at that index.</li>
+      </ul>
+    </li>
+    <li>Implement at least three sorting algorithms in separate functions:
+      <ul>
+        <li><code>bubbleSort(array)</code>: Compare and swap adjacent elements until sorted.</li>
+        <li><code>selectionSort(array)</code>: Find the minimum element in the unsorted part and swap it into place.</li>
+        <li><code>insertionSort(array)</code>: Insert each element into its correct position in the sorted portion.</li>
+      </ul>
+    </li>
+    <li>Attach an event listener to the <code>sort</code> button so that <code>sortInputArray</code> runs when clicked.</li>
+  </ul>
+
+  <h2>✅ Instructive Test Cases</h2>
+  <ul>
+    <li><strong>Test 1: UI Elements</strong>
+      <ul>
+        <li>Ensure there is a <code>&lt;button id="sort"&gt;</code>.</li>
+        <li>Ensure there are multiple <code>&lt;select class="values-dropdown"&gt;</code> elements.</li>
+        <li>Ensure there are output elements with ids like <code>output-value-0</code>, <code>output-value-1</code>.</li>
+      </ul>
+    </li>
+
+    <li><strong>Test 2: Sorting Numbers</strong>
+      <ul>
+        <li>If the dropdowns contain <code>3, 1, 2</code> and you click Sort → The output should display <code>1, 2, 3</code>.</li>
+        <li>If the dropdowns contain <code>5, 5, 2</code> and you click Sort → The output should display <code>2, 5, 5</code> (duplicates preserved).</li>
+        <li>If the dropdowns contain <code>10, 7, 8, 1</code> and you click Sort → The output should display <code>1, 7, 8, 10</code>.</li>
+      </ul>
+    </li>
+
+    <li><strong>Test 3: Algorithm Switching</strong>
+      <ul>
+        <li>When you use <code>bubbleSort</code>, results should be in ascending order.</li>
+        <li>When you use <code>selectionSort</code>, results should be the same as bubble sort.</li>
+        <li>When you use <code>insertionSort</code>, results should also match the same ascending output.</li>
+      </ul>
+    </li>
+
+    <li><strong>Test 4: Re-sorting</strong>
+      <ul>
+        <li>Clicking the <code>sort</code> button multiple times should always refresh the output with the newly selected dropdown values sorted correctly.</li>
+      </ul>
+    </li>
+  </ul>
+  </body>
+</html>

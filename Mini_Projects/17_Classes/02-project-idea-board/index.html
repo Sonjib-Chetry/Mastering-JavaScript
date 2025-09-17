@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Project Idea Board - User Stories & Test Cases</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      h2 {
+        color: #333;
+      }
+      ul,
+      ol {
+        margin-left: 20px;
+      }
+      code {
+        background-color: #f4f4f4;
+        padding: 2px 6px;
+        border-radius: 4px;
+      }
+    </style>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <h1>Welcome to my **90 Days of JavaScript Revision Challenge**!</h1>
+    <h2 style="color: red">
+      Please read the script file and understand the project and try to build at
+      your own.
+    </h2>
+
+    <h3>
+      In this mini project, you'll build a project idea board using OOP in
+      JavaScript. You'll practice how to create classes, add methods to classes,
+      and create instances of classes.
+    </h3>
+
+    <h2>User Stories:</h2>
+    <p>
+      You should define an object constant named projectStatus with the three
+      keys: PENDING, SUCCESS, and FAILURE. Each status should be assigned an
+      object with a description key with the value Pending Execution, Executed
+      Successfully, and Execution Failed, respectively.
+    </p>
+    <p>
+      You should define a class named ProjectIdea with a constructor that takes
+      title and description as parameters. Initialize the title and description
+      properties with the provided parameters. The class should also have a
+      property named status that is set to the value projectStatus.PENDING by
+      default.
+    </p>
+    <p>
+      You should define a method named updateProjectStatus inside the
+      ProjectIdea class. This method should accept a newStatus parameter and
+      update the status property to the given value.
+    </p>
+    <p>
+      You should define a ProjectIdeaBoard class with a constructor that accepts
+      a title and initializes an empty array named ideas to hold instances of
+      the ProjectIdea class.
+    </p>
+    <p>
+      You should define a method named pin inside the ProjectIdeaBoard class
+      that accepts an instance of the ProjectIdea class and pushes the given
+      instance to the ideas array.
+    </p>
+    <p>
+      You should define a method named unpin inside the ProjectIdeaBoard class.
+      This method should accept an instance of the ProjectIdea class and removes
+      it from the ideas array.
+    </p>
+    <p>
+      You should define a method named count that returns the number of project
+      ideas in the given ProjectIdeaBoard array.
+    </p>
+    <p>
+      You should define a method named formatToString that returns the name of
+      the projects ideas, their description and status in the format:
+    </p>
+    <pre>
+Example Code
+&lt;ProjectIdeaBoard title&gt; has &lt;ProjectIdeaBoard count&gt; idea(s)
+&lt;ProjectIdea title&gt; (&lt;ProjectIdea status description&gt;) - &lt;ProjectIdea description&gt;
+&lt;ProjectIdea title&gt; (&lt;ProjectIdea status description&gt;) - &lt;ProjectIdea description&gt;
+.
+.
+.
+</pre
+    >
+
+    <pre>
+sample output
+
+Poll Results:
+Turkey: 2 votes
+Morocco: 1 votes
+</pre
+    >
+
+    <hr />
+
+    <h2>Tests</h2>
+    <ul>
+      <li>
+        1. You should define an object constant named projectStatus with the
+        correct project statuses and descriptions.
+      </li>
+      <li>2. You should have a ProjectIdea class.</li>
+      <li>
+        3. Your ProjectIdea class should initialize the title property and
+        description property based on the parameters passed. It should also set
+        the status to projectStatus.PENDING.
+      </li>
+      <li>
+        4. Your ProjectIdea class should have a updateProjectStatus method.
+      </li>
+      <li>5. You should have a ProjectIdeaBoard class.</li>
+      <li>
+        6. Your ProjectIdeaBoard should initialize the title property based on
+        the parameter passed and initialize an empty array named ideas to hold
+        instances of the ProjectIdea class.
+      </li>
+      <li>7. Your ProjectIdeaBoard class should have a pin method.</li>
+      <li>8. Your ProjectIdeaBoard class should have an unpin method.</li>
+      <li>9. Your ProjectIdeaBoard class should have a count method.</li>
+      <li>
+        10. Your ProjectIdeaBoard class should have a formatToString method.
+      </li>
+      <li>
+        11. new ProjectIdea("Smart Window Locks", "An automation project
+        allowing users to lock, unlock windows automatically based on weather
+        conditions.") should return { title: 'Smart Window Locks', description:
+        'An automation project allowing users to lock, unlock windows
+        automatically based on weather conditions.', status: { description:
+        'Pending Execution' } }.
+      </li>
+      <li>
+        12. Calling updateProjectStatus(projectStatus.SUCCESS) on new
+        ProjectIdea("Fitness Tracker App", "An app that tracks user workouts,
+        diet, and sleep patterns.") should update the status to { description:
+        'Executed Successfully' }.
+      </li>
+      <li>
+        13. Calling updateProjectStatus(projectStatus.FAILURE) on new
+        ProjectIdea("Breakfast Chef Robot", "A robot that can follow a given
+        list of instructions and prepare breakfast for the user and let them
+        know through their phone.") should update the status to { description:
+        'Execution Failed' }.
+      </li>
+      <li>
+        14. Calling updateProjectStatus(projectStatus.SUCCESS) on new
+        ProjectIdea("Online Used Video Games Store", "An online platform where
+        users can buy second hand physical copies of video games from other
+        users.") should update the status to { description: 'Executed
+        Successfully' }.
+      </li>
+      <li>
+        15. You should be able to pin a ProjectIdea object to your
+        ProjectIdeaBoard using the pin method.
+      </li>
+      <li>
+        16. You should be able to unpin a ProjectIdea object to your
+        ProjectIdeaBoard using the unpin method.
+      </li>
+      <li>
+        17. When new ProjectIdeaBoard("Empty Board") is empty,
+        emptyBoard.formatToString() should return Empty Board has 0 idea(s)\n.
+      </li>
+      <li>
+        18. When you pin new ProjectIdea("Smart Home System", "An integrated
+        system to control lighting, temperature, and security devices
+        remotely.") to new ProjectIdeaBoard("Tech Projects Board"),
+        techProjects.formatToString() should return Tech Projects Board has 1
+        idea(s)\nSmart Home System (Pending Execution) - An integrated system to
+        control lighting, temperature, and security devices remotely.\n.
+      </li>
+    </ul>
+  </body>
+</html>

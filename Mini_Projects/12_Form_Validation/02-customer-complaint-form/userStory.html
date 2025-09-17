@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Customer Complaint Form - User Stories & Test Cases</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      h2 {
+        color: #333;
+      }
+      ul,
+      ol {
+        margin-left: 20px;
+      }
+      code {
+        background-color: #f4f4f4;
+        padding: 2px 6px;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to my **90 Days of JavaScript Revision Challenge**!</h1>
+    <h2 style="color: red">
+      Please read the script file and understand the project and try to build at
+      your own.
+    </h2>
+    <h3>
+      For this mini project, you'll use JavaScript to validate a customer
+      complaint form. You'll practice how to validate form inputs, display error
+      messages, and prevent the form from submitting if there are errors.
+    </h3>
+
+    <h2>User Stories:</h2>
+    <ul>
+      <li>When the form is submitted, you should ensure that:</li>
+      <ul>
+        <li>#full-name is not empty.</li>
+        <li>#email is a valid email address format.</li>
+        <li>#order-no is a sequence of ten numbers starting with 2024.</li>
+        <li>
+          #product-code follows the pattern XX##-X###-XX#, where X represents
+          either a lowercase letter or an uppercase letter and # represents a
+          number.
+        </li>
+        <li>#quantity is a positive integer.</li>
+        <li>at least one checkbox from #complaints-group is checked.</li>
+        <li>
+          #complaint-description contains at least twenty characters if the
+          Other checkbox is checked.
+        </li>
+        <li>a radio button from #solutions-group is selected.</li>
+        <li>
+          #solution-description contains at least twenty characters if the Other
+          radio button is selected.
+        </li>
+      </ul>
+      <li>
+        You should have a function named validateForm that returns an object
+        containing the following keys: full-name, email, order-no, product-code,
+        quantity, complaints-group, complaint-description, solutions-group, and
+        solution-description. The value of each key should be true if the
+        corresponding form field is correctly filled and false otherwise.
+      </li>
+      <li>
+        You should have a function named isValid that takes the object returned
+        by validateForm as argument and returns true if every form field is
+        correctly filled and false otherwise.
+      </li>
+      <li>
+        If a change event is triggered on a form field and it has a valid value,
+        you should set its border color to green. In case of checkbox and radio
+        button groups, you should set the border color of the parent fieldset.
+      </li>
+      <li>
+        If a change event is triggered on a form field and it has an invalid
+        value, you should set its border color to red. In case of checkbox and
+        radio button groups, you should set the border color of the parent
+        fieldset.
+      </li>
+      <li>
+        When you try to submit the form you should call isValid to validate the
+        form.
+      </li>
+      <li>
+        When you try to submit the form, if the form has any invalid field, each
+        invalid field should be highlighted by setting the border color of each
+        invalid input, textarea or fieldset (in case of checkbox and radio
+        button groups) to red.
+      </li>
+    </ul>
+
+    <h2>Tests</h2>
+    <ol>
+      <li>You should have a function named validateForm.</li>
+      <li>validateForm should return an object.</li>
+      <li>
+        validateForm()["full-name"] should be false when #full-name is empty,
+        and true otherwise.
+      </li>
+      <li>
+        When a change event is triggered on #full-name, you should set its
+        border color to green if it contains a valid value, and red otherwise.
+      </li>
+      <li>
+        validateForm()["email"] should be true when #email contains a valid
+        email address, and false otherwise.
+      </li>
+      <li>
+        When a change event is triggered on #email, you should set its border
+        color to green if it contains a valid email address, and red otherwise.
+      </li>
+      <li>
+        validateForm()["order-no"] should be true when #order-no contains a
+        valid value, and false otherwise.
+      </li>
+      <li>
+        When a change event is triggered on #order-no, you should set its border
+        color to green if it contains a valid value, and red otherwise.
+      </li>
+      <li>
+        validateForm()["product-code"] should be true when #product-code
+        contains a valid value, and false otherwise.
+      </li>
+      <li>
+        When a change event is triggered on #product-code, you should set its
+        border color to green if it contains a valid value, and red otherwise.
+      </li>
+      <li>
+        validateForm()["quantity"] should be true when #quantity contains a
+        valid value, and false otherwise.
+      </li>
+      <li>
+        When a change event is triggered on #quantity, you should set its border
+        color to green if it contains a valid value, and red otherwise.
+      </li>
+      <li>
+        When at least one checkbox from #complaints-group is checked,
+        validateForm()["complaints-group"] should be true.
+      </li>
+      <li>
+        When none of the checkboxes from #complaints-group is checked,
+        validateForm()["complaints-group"] should be false.
+      </li>
+      <li>
+        Once one checkbox from #complaints-group is checked, you should set
+        #complaints-group's border color to green.
+      </li>
+      <li>
+        When all of the checkboxes from #complaints-group are changed to the
+        unchecked state, you should set #complaints-group's border color to red.
+      </li>
+      <li>
+        When #other-complaint is checked and #complaint-description contains at
+        least twenty characters, validateForm()["complaint-description"] should
+        be true.
+      </li>
+      <li>
+        When #other-complaint is checked and #complaint-description contains
+        less than twenty characters, validateForm()["complaint-description"]
+        should be false.
+      </li>
+      <li>
+        When #other-complaint is checked and the value of #complaint-description
+        is changed to a valid value, you should set its border color to green.
+      </li>
+      <li>
+        When #other-complaint is checked and the value of #complaint-description
+        is changed to an invalid value, you should set its border color to red.
+      </li>
+      <li>
+        When a radio button from #solutions-group is checked,
+        validateForm()["solutions-group"] should be true.
+      </li>
+      <li>
+        When none of the radio buttons from #solutions-group is checked,
+        validateForm()["solutions-group"] should be false.
+      </li>
+      <li>
+        Once a radio button from #solutions-group is checked, you should set
+        #solutions-group's border color to green.
+      </li>
+      <li>
+        When the form is submitted and all of the radio buttons from
+        #solutions-group are in the unchecked state, you should set
+        #solutions-group's border color to red.
+      </li>
+      <li>
+        When #other-solution is checked and #solution-description contains at
+        least twenty characters, validateForm()["solution-description"] should
+        be true.
+      </li>
+      <li>
+        When #other-solution is checked and #solution-description contains less
+        than twenty characters, validateForm()["solution-description"] should be
+        false.
+      </li>
+      <li>
+        When #other-solution is checked and the value of #solution-description
+        is changed to a valid value, you should set its border color to green.
+      </li>
+      <li>
+        When #other-solution is checked and the value of #solution-description
+        is changed to an invalid value, you should set its border color to red.
+      </li>
+      <li>You should have a function named isValid.</li>
+      <li>
+        Your isValid function should take the validateForm() as its argument and
+        return true when all the form fields have been filled correctly.
+      </li>
+      <li>
+        Your isValid function should take the validateForm() as its argument and
+        return false when not all the form fields have been filled correctly.
+      </li>
+      <li>You should call isValid when you try to submit the form.</li>
+    </ol>
+  </body>
+</html>

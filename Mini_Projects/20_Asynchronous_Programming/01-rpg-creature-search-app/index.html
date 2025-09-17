@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mythic Creature Compendium</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main>
+    <div class="app-header">
+      <h1>Mythic Creature Compendium</h1>
+      <p class="subtitle">Discover legendary creatures from ancient lore and mythical realms</p>
+    </div>
+    
+    <div class="container">
+      <form role="search" id="search-form">
+        <label for="search-input">Search for Creature Name or ID:</label>
+        <input type="text" name="creature" id="search-input" required placeholder="Enter creature name or ID" />
+        <button id="search-button">Summon</button>
+      </form>
+      
+      <div class="output">
+        <div class="top-container">
+          <div class="name-and-id">
+            <span id="creature-name"></span>
+            <span id="creature-id"></span>
+            <div class="size">
+              <span id="weight"></span>
+              <span id="height"></span>
+            </div>
+          </div>
+          
+          <div id="types">
+            <span class="type dragon"></span>
+            <span class="type fire"></span>
+          </div>
+          
+          <div class="special-ability">
+            <div id="special-name"></div>
+            <div id="special-description"></div>
+          </div>
+        </div>
+        
+        <div class="bottom-container">
+          <table>
+            <tr>
+              <th colspan="2">Base Stats</th>
+            </tr>
+            <tr>
+              <td>HP:</td>
+              <td id="hp"></td>
+            </tr>
+            <tr>
+              <td>Attack:</td>
+              <td id="attack">134</td>
+            </tr>
+            <tr>
+              <td>Defense:</td>
+              <td id="defense">95</td>
+            </tr>
+            <tr>
+              <td>Sp. Attack:</td>
+              <td id="special-attack">100</td>
+            </tr>
+            <tr>
+              <td>Sp. Defense:</td>
+              <td id="special-defense">100</td>
+            </tr>
+            <tr>
+              <td>Speed:</td>
+              <td id="speed" class="speed">80</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    
+    <div class="available-creatures">
+      <a href="https://rpg-creature-api.freecodecamp.rocks/" target="_blank">View Available Creatures</a>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

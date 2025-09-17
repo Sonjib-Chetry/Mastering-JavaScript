@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Fancy Cash Register - User Stories & Test Cases</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      h2 {
+        color: #333;
+      }
+      ul,
+      ol {
+        margin-left: 20px;
+      }
+      code {
+        background-color: #f4f4f4;
+        padding: 2px 6px;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to my **90 Days of JavaScript Revision Challenge**!</h1>
+    <h2 style="color: red">
+      Please read the script file and understand the project and try to build at
+      your own.
+    </h2>
+
+ <h1>Cash Register App</h1>
+
+  <div class="section">
+    <h2>Overview</h2>
+    <p>
+      Here you'll build a cash register app that will return change to the customer 
+      based on the price of the item, the amount of cash provided by the customer, 
+      and the amount of cash in the cash drawer. 
+    </p>
+    <p>
+      You'll also need to show different messages to the user in different scenarios, 
+      such as when the customer provides too little cash or when the cash drawer 
+      doesn't have enough to issue the correct change.
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>Provided Variables</h2>
+    <ul>
+      <li><code>price</code>: the price of the item</li>
+      <li><code>cid</code>: the cash-in-drawer, which is a 2D array listing the available currency in the drawer</li>
+      <li><code>cash</code>: (to be added) the amount of cash provided by the customer, provided via an input element</li>
+    </ul>
+    <p>
+      If you'd like to test your application with different values for <code>price</code> and <code>cid</code>, 
+      make sure to declare them with the <code>let</code> keyword so they can be reassigned by our tests.
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>Application Behavior</h2>
+    <p>Your application should show different messages depending on conditions:</p>
+    <ul>
+      <li><b>Status: INSUFFICIENT_FUNDS</b>: if cash-in-drawer is less than the change due, or if you cannot return the exact change.</li>
+      <li><b>Status: CLOSED</b>: if cash-in-drawer is equal to the change due.</li>
+      <li><b>Status: OPEN</b>: if cash-in-drawer is greater than the change due and you can return change, with the change due in coins and bills sorted in highest to lowest order.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Currency Units</h2>
+    <table>
+      <tr><th>Currency Unit</th><th>Amount</th></tr>
+      <tr><td>Penny</td><td>$0.01 (PENNY)</td></tr>
+      <tr><td>Nickel</td><td>$0.05 (NICKEL)</td></tr>
+      <tr><td>Dime</td><td>$0.10 (DIME)</td></tr>
+      <tr><td>Quarter</td><td>$0.25 (QUARTER)</td></tr>
+      <tr><td>Dollar</td><td>$1 (ONE)</td></tr>
+      <tr><td>Five Dollars</td><td>$5 (FIVE)</td></tr>
+      <tr><td>Ten Dollars</td><td>$10 (TEN)</td></tr>
+      <tr><td>Twenty Dollars</td><td>$20 (TWENTY)</td></tr>
+      <tr><td>One Hundred Dollars</td><td>$100 (ONE HUNDRED)</td></tr>
+    </table>
+  </div>
+
+
+      <div>
+    <h2>User Stories</h2>
+    <ul>
+      <li>You should have an input element with an id of <code>cash</code>.</li>
+      <li>You should have a div, span or p element with an id of <code>change-due</code>.</li>
+      <li>You should have a button element with an id of <code>purchase-btn</code>.</li>
+      <li>When the value in the #cash element is less than price, an alert should appear with the text <b>"Customer does not have enough money to purchase the item"</b>.</li>
+      <li>When the value in the #cash element is equal to price, the value in the #change-due element should be <b>"No change due - customer paid with exact cash"</b>.</li>
+      <li>When price is 19.5, the value in the #cash element is 20, cid is 
+        <code>[["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]</code>,
+        and the #purchase-btn element is clicked, the value in the #change-due element should be <b>"Status: OPEN QUARTER: $0.5"</b>.
+      </li>
+      <li>When price is 3.26, the value in the #cash element is 100, cid is 
+        <code>[["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]</code>,
+        and the #purchase-btn element is clicked, the value in the #change-due element should be <b>"Status: OPEN TWENTY: $60 TEN: $20 FIVE: $15 ONE: $1 QUARTER: $0.5 DIME: $0.2 PENNY: $0.04"</b>.
+      </li>
+      <li>When price is 19.5, the value in the #cash element is 20, cid is 
+        <code>[["PENNY", 0.01], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]</code>,
+        and the #purchase-btn element is clicked, the value in the #change-due element should be <b>"Status: INSUFFICIENT_FUNDS"</b>.
+      </li>
+      <li>When price is 19.5, the value in the #cash element is 20, cid is 
+        <code>[["PENNY", 0.01], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 1], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]</code>,
+        and the #purchase-btn element is clicked, the value in the #change-due element should be <b>"Status: INSUFFICIENT_FUNDS"</b>.
+      </li>
+      <li>When price is 19.5, the value in the #cash element is 20, cid is 
+        <code>[["PENNY", 0.5], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]</code>,
+        and the #purchase-btn element is clicked, the value in the #change-due element should be <b>"Status: CLOSED PENNY: $0.5"</b>.
+      </li>
+    </ul>
+  </div>
+
+  <div>
+    <h2>Tests</h2>
+    <ul>
+      <li>You should have the HTML file link to the JavaScript file.</li>
+      <li>You should have a global variable called price.</li>
+      <li>You should have a global variable called cid.</li>
+      <li>You should have an input element with an id of "cash".</li>
+      <li>You should have a div, span, or p element with an id of "change-due".</li>
+      <li>You should have a button element with an id of "purchase-btn".</li>
+      <li>When price is 20, the value in the #cash element is 10, and the #purchase-btn element is clicked, an alert should appear with the text <b>"Customer does not have enough money to purchase the item"</b>.</li>
+      <li>When the value in the #cash element is less than price, and the #purchase-btn element is clicked, an alert should appear with the text <b>"Customer does not have enough money to purchase the item"</b>.</li>
+      <li>When price is 11.95, the value in the #cash element is 11.95, and the #purchase-btn element is clicked, the value in the #change-due element should be <b>"No change due - customer paid with exact cash"</b>.</li>
+      <li>When the value in the #cash element is equal to price, and the #purchase-btn element is clicked, the value in the #change-due element should be <b>"No change due - customer paid with exact cash"</b>.</li>
+      <li>When price is 19.5, the value in the #cash element is 20, cid is <code>[["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]</code>, and the #purchase-btn element is clicked, the value in the #change-due element should be <b>"Status: OPEN QUARTER: $0.5"</b>.</li>
+      <li>When price is 3.26, the value in the #cash element is 100, cid is <code>[["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]</code>, and the #purchase-btn element is clicked, the value in the #change-due element should be <b>"Status: OPEN TWENTY: $60 TEN: $20 FIVE: $15 ONE: $1 QUARTER: $0.5 DIME: $0.2 PENNY: $0.04"</b>.</li>
+      <li>When price is less than the value in the #cash element, total cash in drawer cid is greater than the change due, individual denomination amounts allows for returning change due, and the #purchase-btn element is clicked, the value in the #change-due element should be <b>"Status: OPEN" with required change due in coins and bills sorted in highest to lowest order</b>.</li>
+      <li>When price is 19.5, the value in the #cash element is 20, cid is <code>[["PENNY", 0.01], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]</code>, and the #purchase-btn element is clicked, the value in the #change-due element should be <b>"Status: INSUFFICIENT_FUNDS"</b>.</li>
+      <li>When the price is less than the value in the #cash element and the total cash in the drawer (cid) is insufficient to cover the change due, the purchase should not proceed. When the #purchase-btn is clicked under these conditions, the #change-due element should display <b>"Status: INSUFFICIENT_FUNDS"</b>.</li>
+      <li>When price is 19.5, the value in the #cash element is 20, cid is <code>[["PENNY", 0.01], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 1], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]</code>, and the #purchase-btn element is clicked, the value in the #change-due element should be <b>"Status: INSUFFICIENT_FUNDS"</b>.</li>
+      <li>When price is less than the value in the #cash element, total cash in drawer cid is greater than change due, but the individual denomination amounts make it impossible to return needed change, when the #purchase-btn element is clicked, the value in the #change-due element should be <b>"Status: INSUFFICIENT_FUNDS"</b>.</li>
+      <li>When price is 19.5, the value in the #cash element is 20, cid is <code>[["PENNY", 0.5], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]</code>, and the #purchase-btn element is clicked, the value in the #change-due element should be <b>"Status: CLOSED PENNY: $0.5"</b>.</li>
+      <li>When price is less than the value in the #cash element, total cash in drawer cid is equal to change due, and the #purchase-btn element is clicked, the value in the #change-due element should be <b>"Status: CLOSED" with change due in coins and bills sorted in highest to lowest order</b>.</li>
+    </ul>
+  </div>
+
+
+  </body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Todo App - User Stories & Test Cases</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      h2 {
+        color: #333;
+      }
+      ul,
+      ol {
+        margin-left: 20px;
+      }
+      code {
+        background-color: #f4f4f4;
+        padding: 2px 6px;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to my **90 Days of JavaScript Revision Challenge**!</h1>
+    <h2 style="color: red">
+      Please read the script file and understand the project and try to build at
+      your own.
+    </h2>
+    <h3>
+      Local storage is a web browser feature that lets web applications store
+      key-value pairs persistently within a user's browser. This allows web apps
+      to save data during one session, then retrieve it in a later page session.
+    </h3>
+    <h3>
+      In this mini project, you'll learn how to handle form inputs, manage local
+      storage, perform CRUD (Create, Read, Update, Delete) operations on tasks,
+      implement event listeners, and toggle UI elements.
+    </h3>
+
+    <h2>User Story</h2>
+<pre>
+As a user, I want to manage a list of tasks so that I can add, edit, delete, and view tasks easily.
+
+Requirements:
+1. The application should store tasks in localStorage so they persist after refresh.
+2. The user can open a form to add a new task by clicking "Open Task Form".
+3. The form should have:
+   - Title (required)
+   - Date
+   - Description
+4. When the user submits the form:
+   - If Title is empty, show an alert "Please provide a title".
+   - A new task object is created with:
+        id: a unique string based on title and timestamp
+        title: title without special characters
+        date: entered date
+        description: description without special characters
+   - If editing an existing task, update it instead of adding a new one.
+5. Tasks are displayed with:
+   - Title
+   - Date
+   - Description
+   - Edit and Delete buttons
+6. Clicking "Edit" loads the task into the form for editing.
+7. Clicking "Delete" removes the task from UI and localStorage.
+8. If the form is closed with unsaved changes, show a confirmation dialog with Cancel/Discard.
+9. The UI should update dynamically whenever tasks are added, edited, or deleted.
+10. Input values should be sanitized by trimming whitespace and removing special characters except letters, numbers, spaces, and hyphens.
+</pre>
+
+<h2>Test Cases</h2>
+<pre>
+1. Adding a Task:
+   - Given the title "My Task", date "2025-08-10", description "Sample work"
+   - When the form is submitted
+   - Then the task should appear in the task list and in localStorage.
+
+2. Title Validation:
+   - Given an empty title field
+   - When the form is submitted
+   - Then an alert "Please provide a title" should be shown and the task should not be added.
+
+3. Editing a Task:
+   - Given a task exists
+   - When "Edit" is clicked, form fields should be populated with the task data.
+   - After editing title and clicking "Update Task"
+   - Then the updated task should replace the old one in the list and localStorage.
+
+4. Deleting a Task:
+   - Given a task exists
+   - When "Delete" is clicked
+   - Then the task should be removed from the UI and localStorage.
+
+5. Close Form Without Saving:
+   - Given the form is open with unsaved changes
+   - When "Close" is clicked
+   - Then a confirmation dialog should appear with "Cancel" and "Discard".
+   - If "Cancel" is clicked, the form remains open.
+   - If "Discard" is clicked, form closes and changes are lost.
+
+6. Data Persistence:
+   - Given multiple tasks are added
+   - When the page is refreshed
+   - Then tasks should still appear from localStorage.
+
+7. Input Sanitization:
+   - Given a title with special characters "Hello@World!"
+   - When saved
+   - Then it should be stored and displayed as "HelloWorld".
+
+8. Unique ID:
+   - Given two tasks with the same title
+   - When added at different times
+   - Then their IDs should still be unique because of timestamp.
+</pre>
+  </body>
+</html>

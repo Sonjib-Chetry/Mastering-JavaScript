@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Platformer Game - User Stories & Test Cases</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      h2 {
+        color: #333;
+      }
+      ul,
+      ol {
+        margin-left: 20px;
+      }
+      code {
+        background-color: #f4f4f4;
+        padding: 2px 6px;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to my **90 Days of JavaScript Revision Challenge**!</h1>
+    <h2 style="color: red">
+      Please read the script file and understand the project and try to build at
+      your own.
+    </h2>
+    <h3>
+      Coding a game is a great way to grasp fundamental programming principles,
+      while also creating an interactive gaming experience. In this platformer
+      game project, you'll continue to learn about classes, objects,
+      inheritance, and encapsulation. You'll also learn how to design and
+      organize game elements efficiently and gain insights into problem-solving
+      and code reusability.
+    </h3>
+
+    <div>
+      <h2>User Stories</h2>
+      <ul>
+        <li>
+          Create a <code>Start Screen</code> with a button
+          <code>#start-btn</code>. When clicked, it should hide the start screen
+          and display a <code>&lt;canvas&gt;</code> element where the game runs.
+        </li>
+
+        <li>
+          Initialize the <code>canvas</code> to the full width and height of the
+          browser window. Get the <code>2D context</code> using
+          <code>canvas.getContext("2d")</code>.
+        </li>
+
+        <li>
+          Define a <code>Player</code> class that:
+          <ul>
+            <li>
+              Has properties: <code>position</code>, <code>velocity</code>,
+              <code>width</code>, <code>height</code>.
+            </li>
+            <li>
+              Has a <code>draw()</code> method to render the player as a
+              rectangle.
+            </li>
+            <li>
+              Has an <code>update()</code> method to apply gravity, update
+              position, and prevent leaving canvas boundaries.
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          Define a <code>Platform</code> class that:
+          <ul>
+            <li>Draws a green rectangle on the canvas at given coordinates.</li>
+            <li>Acts as a surface where the player can land.</li>
+          </ul>
+        </li>
+
+        <li>
+          Define a <code>CheckPoint</code> class that:
+          <ul>
+            <li>Draws a gold rectangle at given coordinates.</li>
+            <li>Can be “claimed” (hidden) when the player collides with it.</li>
+            <li>Displays a checkpoint message on screen when collected.</li>
+          </ul>
+        </li>
+
+        <li>
+          Create arrays of platform positions and checkpoint positions. Loop
+          through them to create <code>Platform</code> and
+          <code>CheckPoint</code> objects.
+        </li>
+
+        <li>
+          Write an <code>animate()</code> function that:
+          <ul>
+            <li>Clears the canvas every frame.</li>
+            <li>Draws all platforms and checkpoints.</li>
+            <li>Updates the player position and movement.</li>
+            <li>Handles collisions with platforms and checkpoints.</li>
+            <li>
+              Scrolls the world (platforms and checkpoints shift) as the player
+              moves left/right.
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          Add keyboard event listeners for <code>keydown</code> and
+          <code>keyup</code>:
+          <ul>
+            <li><code>ArrowLeft</code>: move player left.</li>
+            <li><code>ArrowRight</code>: move player right.</li>
+            <li>
+              <code>ArrowUp</code> or <code>Space</code>: make player jump
+              upward.
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          Show a message <code>"You reached a checkpoint!"</code> when hitting a
+          checkpoint, and <code>"You reached the final checkpoint!"</code> when
+          reaching the last checkpoint. Disable movement after the last
+          checkpoint.
+        </li>
+      </ul>
+    </div>
+
+    <div>
+      <h2>Test Cases</h2>
+      <ul>
+        <li>
+          <b>Start Game:</b> Clicking <code>#start-btn</code> hides the start
+          screen and shows the canvas.
+        </li>
+        <li>
+          <b>Player Rendering:</b> On load, a blue square appears at the
+          starting position.
+        </li>
+        <li>
+          <b>Player Movement:</b> Pressing <code>ArrowRight</code> moves the
+          player right, <code>ArrowLeft</code> moves left.
+        </li>
+        <li>
+          <b>Jumping:</b> Pressing <code>ArrowUp</code> or
+          <code>Space</code> moves the player upward briefly (jump).
+        </li>
+        <li>
+          <b>Gravity:</b> The player falls down if not on a platform, but stops
+          when landing on the ground or a platform.
+        </li>
+        <li>
+          <b>Boundaries:</b> The player cannot move outside the left or right
+          edges of the canvas.
+        </li>
+        <li>
+          <b>Platform Collision:</b> The player lands on platforms and does not
+          fall through them.
+        </li>
+        <li>
+          <b>Checkpoint Collision:</b> When touching a checkpoint, it disappears
+          and a message is displayed.
+        </li>
+        <li>
+          <b>Checkpoint Order:</b> Later checkpoints only activate if previous
+          ones were claimed.
+        </li>
+        <li>
+          <b>Final Checkpoint:</b> When the last checkpoint is collected,
+          message “You reached the final checkpoint!” is shown and movement is
+          disabled.
+        </li>
+        <li>
+          <b>World Scrolling:</b> As the player moves right, platforms and
+          checkpoints shift left, creating scrolling effect. Moving left shifts
+          them back.
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Bank Account Management Program - User Stories & Test Cases</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      h2 {
+        color: #333;
+      }
+      ul,
+      ol {
+        margin-left: 20px;
+      }
+      code {
+        background-color: #f4f4f4;
+        padding: 2px 6px;
+        border-radius: 4px;
+      }
+    </style>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <h1>Welcome to my **90 Days of JavaScript Revision Challenge**!</h1>
+    <h2 style="color: red">
+      Please read the script file and understand the project and try to build at
+      your own.
+    </h2>
+
+    <h3>
+      In this mini project, you'll build a simple transaction management system
+      for a bank account.
+    </h3>
+
+    <h2>User Stories:</h2>
+
+    <p>
+      You should define a class named BankAccount with a constructor. The
+      constructor should set the default balance to 0 and initialize an empty
+      array named transactions to store transaction records as objects.
+    </p>
+
+    <p>
+      Each transaction stored in the transactions array should be an object with
+      two properties: type and amount. The type property should be either
+      deposit or withdraw, and the amount property should be the amount
+      deposited or withdrawn.
+    </p>
+
+    <p>
+      You should define a method named deposit that takes the deposit amount as
+      a parameter. When the deposit amount is greater than 0, it should:
+    </p>
+    <ul>
+      <li>
+        Push a new object to the transactions array with a type of deposit and
+        the amount deposited.
+      </li>
+      <li>Update the balance.</li>
+      <li>
+        Return "Successfully deposited $[amount]. New balance: $[balance]".
+      </li>
+    </ul>
+    <p>
+      If the amount is less than or equal to 0, the deposit method should return
+      "Deposit amount must be greater than zero.".
+    </p>
+
+    <p>
+      You should define a method named withdraw that takes an amount as a
+      parameter. This method should update the current balance according to
+      withdrawals. When the amount to be withdrawn is greater than 0 and less
+      than or equal to the current balance, it should:
+    </p>
+    <ul>
+      <li>
+        Push a new object to the transactions array with a type of withdraw and
+        the amount withdrawn.
+      </li>
+      <li>Update the balance.</li>
+      <li>
+        Return "Successfully withdrew $[amount]. New balance: $[balance]".
+      </li>
+    </ul>
+    <p>
+      If the amount to be withdrawn is less than or equal to 0 or greater than
+      the current balance, the withdraw method should return "Insufficient
+      balance or invalid amount.".
+    </p>
+
+    <p>
+      You should define a method named checkBalance that returns the current
+      balance in the format "Current balance: $[balance]".
+    </p>
+
+    <p>
+      You should define a method named listAllDeposits that iterates through the
+      transactions array and returns all deposits in the format "Deposits:
+      amount,amount,...".
+    </p>
+
+    <p>
+      You should define a method named listAllWithdrawals that iterates through
+      the transactions array and returns all withdrawals in the format
+      "Withdrawals: amount,amount,...".
+    </p>
+
+    <p>You should create a new instance of BankAccount named myAccount.</p>
+
+    <p>Your myAccount bank account should have at least five transactions.</p>
+
+    <p>Your myAccount bank account should have at least two deposits.</p>
+
+    <p>Your myAccount bank account should have at least two withdrawals.</p>
+
+    <p>Your myAccount bank account should have a balance greater than $100.</p>
+
+    <hr />
+
+    <h2>Tests</h2>
+    <ul>
+      <li>1. You should define a class named BankAccount.</li>
+      <li>
+        2. The BankAccount object should initially have a balance of 0 and an
+        empty array transactions to store transaction records.
+      </li>
+      <li>
+        3. You should have a deposit method that takes the deposit amount as a
+        parameter.
+      </li>
+      <li>
+        4. You should have a withdraw method that takes the withdrawal amount as
+        a parameter.
+      </li>
+      <li>
+        5. You should have a checkBalance method that checks the current
+        balance.
+      </li>
+      <li>
+        6. You should have a listAllDeposits method that lists all deposits.
+      </li>
+      <li>
+        7. You should have a listAllWithdrawals method that lists all
+        withdrawals.
+      </li>
+      <li>
+        8. BankAccount.deposit(100) should return "Successfully deposited $100.
+        New balance: $100".
+      </li>
+      <li>
+        9. BankAccount.deposit(-50) should return "Deposit amount must be
+        greater than zero.".
+      </li>
+      <li>
+        10. BankAccount.deposit(0) should return "Deposit amount must be greater
+        than zero.".
+      </li>
+      <li>
+        11. When the account balance is 100, BankAccount.withdraw(150) should
+        return "Insufficient balance or invalid amount.".
+      </li>
+      <li>
+        12. BankAccount.withdraw(-50) should return "Insufficient balance or
+        invalid amount.".
+      </li>
+      <li>
+        13. BankAccount.withdraw(0) should return "Insufficient balance or
+        invalid amount.".
+      </li>
+      <li>
+        14. When the account balance is 200, BankAccount.withdraw(150) should
+        return "Successfully withdrew $150. New balance: $50".
+      </li>
+      <li>
+        15. When the account balance is 200, BankAccount.checkBalance() should
+        return "Current balance: $200".
+      </li>
+      <li>
+        16. When you deposit 10, 35, 90, the listAllDeposits method should
+        return "Deposits: 10,35,90".
+      </li>
+      <li>
+        17. When you withdraw 20, 50, 100, the listAllWithdrawals method should
+        return "Withdrawals: 20,50,100".
+      </li>
+      <li>18. You should have an instance of BankAccount named myAccount.</li>
+      <li>
+        19. Your myAccount bank account should have at least five transactions.
+      </li>
+      <li>
+        20. Your myAccount bank account should have at least two deposits.
+      </li>
+      <li>
+        21. Your myAccount bank account should have at least two withdrawals.
+      </li>
+      <li>
+        22. Your myAccount bank account should have a balance greater than $100.
+      </li>
+    </ul>
+  </body>
+</html>

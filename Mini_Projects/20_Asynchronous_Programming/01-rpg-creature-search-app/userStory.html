@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mythic Creature Compendium - User Stories & Test Cases</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      h2 {
+        color: #333;
+      }
+      ul,
+      ol {
+        margin-left: 20px;
+      }
+      code {
+        background-color: #f4f4f4;
+        padding: 2px 6px;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to my **90 Days of JavaScript Revision Challenge**!</h1>
+    <h2 style="color: red">
+      Please read the script file and understand the project and try to build at
+      your own.
+    </h2>
+
+      <div>
+    <h2>User Stories</h2>
+    <ul>
+      <li>You should have an input element with an id of <code>search-input</code>, and is required.</li>
+      <li>You should have a button element with an id of <code>search-button</code>.</li>
+      <li>You should have an element with an id of <code>creature-name</code>.</li>
+      <li>You should have an element with an id of <code>creature-id</code>.</li>
+      <li>You should have an element with an id of <code>weight</code>.</li>
+      <li>You should have an element with an id of <code>height</code>.</li>
+      <li>You should have an element with an id of <code>types</code>.</li>
+      <li>You should have an element with an id of <code>hp</code>.</li>
+      <li>You should have an element with an id of <code>attack</code>.</li>
+      <li>You should have an element with an id of <code>defense</code>.</li>
+      <li>You should have an element with an id of <code>special-attack</code>.</li>
+      <li>You should have an element with an id of <code>special-defense</code>.</li>
+      <li>You should have an element with an id of <code>speed</code>.</li>
+      <li>When the <code>#search-input</code> element contains the value <b>Red</b> and the <code>#search-button</code> element is clicked, an alert should appear with the text <b>"Creature not found"</b>.</li>
+      <li>When the <code>#search-input</code> element contains the value <b>Pyrolynx</b> and the <code>#search-button</code> element is clicked, the values in the UI should be: <br>
+        <ul>
+          <li><code>#creature-name</code>: PYROLYNX</li>
+          <li><code>#creature-id</code>: #1 or 1</li>
+          <li><code>#weight</code>: Weight: 42 or 42</li>
+          <li><code>#height</code>: Height: 32 or 32</li>
+          <li><code>#hp</code>: 65</li>
+          <li><code>#attack</code>: 80</li>
+          <li><code>#defense</code>: 50</li>
+          <li><code>#special-attack</code>: 90</li>
+          <li><code>#special-defense</code>: 55</li>
+          <li><code>#speed</code>: 100</li>
+        </ul>
+      </li>
+      <li>When searching for Pyrolynx, a single element should be added within the <code>#types</code> element containing <b>FIRE</b>. The <code>#types</code> content should be cleared between searches.</li>
+      <li>When the <code>#search-input</code> element contains the value <b>2</b> and the <code>#search-button</code> element is clicked, the values in the UI should be: <br>
+        <ul>
+          <li><code>#creature-name</code>: AQUOROC</li>
+          <li><code>#creature-id</code>: #2 or 2</li>
+          <li><code>#weight</code>: Weight: 220 or 220</li>
+          <li><code>#height</code>: Height: 53 or 53</li>
+          <li><code>#hp</code>: 85</li>
+          <li><code>#attack</code>: 90</li>
+          <li><code>#defense</code>: 120</li>
+          <li><code>#special-attack</code>: 60</li>
+          <li><code>#special-defense</code>: 70</li>
+          <li><code>#speed</code>: 40</li>
+        </ul>
+      </li>
+      <li>When searching for ID 2, two elements should be added within the <code>#types</code> element containing <b>WATER</b> and <b>ROCK</b>. The <code>#types</code> content should be cleared between searches.</li>
+      <li>When the <code>#search-input</code> element contains an invalid creature name, and the <code>#search-button</code> is clicked, an alert should appear with the text <b>"Creature not found"</b>.</li>
+      <li>When the <code>#search-input</code> element contains a valid creature ID and the <code>#search-button</code> is clicked, the UI should be filled with the correct data.</li>
+    </ul>
+  </div>
+
+  <div>
+    <h2>Tests</h2>
+    <ol>
+      <li>You should have an input element with an id of <code>search-input</code>. The input should be marked as required.</li>
+      <li>You should have a button element with an id of <code>search-button</code>.</li>
+      <li>You should have an element with an id of <code>creature-name</code>.</li>
+      <li>You should have an element with an id of <code>creature-id</code>.</li>
+      <li>You should have an element with an id of <code>weight</code>.</li>
+      <li>You should have an element with an id of <code>height</code>.</li>
+      <li>You should have an element with an id of <code>types</code>.</li>
+      <li>You should have an element with an id of <code>hp</code>.</li>
+      <li>You should have an element with an id of <code>attack</code>.</li>
+      <li>You should have an element with an id of <code>defense</code>.</li>
+      <li>You should have an element with an id of <code>special-attack</code>.</li>
+      <li>You should have an element with an id of <code>special-defense</code>.</li>
+      <li>You should have an element with an id of <code>speed</code>.</li>
+      <li>When the search input contains <b>Red</b> and the search button is clicked, an alert should appear with <b>"Creature not found"</b>.</li>
+      <li>When the search input contains <b>Pyrolynx</b> and search button is clicked, the UI should show the expected values for all stats.</li>
+      <li>When searching for Pyrolynx, the <code>#types</code> element should contain only <b>FIRE</b>.</li>
+      <li>When the search input contains <b>2</b> and search button is clicked, the UI should show the expected values for AQUOROC.</li>
+      <li>When searching for ID 2, <code>#types</code> should contain <b>WATER</b> and <b>ROCK</b>.</li>
+      <li>When the input is invalid, alert should display <b>"Creature not found"</b>.</li>
+      <li>When the search input contains a valid ID, UI should be filled with correct data.</li>
+      <li>When the search button is clicked, the app should send a <code>fetch</code> request to the correct endpoint for the creature name or ID.</li>
+    </ol>
+  </div>
+
+
+  </body>
+</html>

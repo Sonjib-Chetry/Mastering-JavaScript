@@ -1,0 +1,10 @@
+.weather-container {
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  max-width: 400px;
+}
+.weather-item {
+  margin: 8px 0;
+}
