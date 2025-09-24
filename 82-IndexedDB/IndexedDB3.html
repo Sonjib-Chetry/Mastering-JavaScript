@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>IndexedDB CRUD with Live Table</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    input, button {
+      margin: 5px;
+      padding: 6px;
+    }
+    table {
+      width: 100%;
+      margin-top: 20px;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 8px;
+      border: 1px solid #ccc;
+      text-align: left;
+    }
+    th {
+      background: #f0f0f0;
+    }
+    button.action {
+      margin: 2px;
+      padding: 4px 8px;
+    }
+  </style>
+</head>
+<body>
+  <h2>IndexedDB CRUD Demo (with Live Table)</h2>
+
+  <form id="customerForm">
+    <input type="number" id="id" placeholder="ID" required />
+    <input type="text" id="name" placeholder="Name" required />
+    <input type="email" id="email" placeholder="Email" required />
+    <button type="submit">Add / Update</button>
+  </form>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody id="customerTableBody">
+      <!-- Rows will be injected here -->
+    </tbody>
+  </table>
+
+  <script type="module">
+    import { openDB } from "https://unpkg.com/idb?module";
+
+    // Open DB
+    const db = await openDB("SampleDB", 3, {
+      upgrade(db) {
+        if (!db.objectStoreNames.contains("customers")) {
+          db.createObjectStore("customers", { keyPath: "id" });
+        }
+      },
+    });
+
+    const form = document.getElementById("customerForm");
+    const tableBody = document.getElementById("customerTableBody");
+
+    // Refresh the table
+    async function refreshTable() {
+      const customers = await db.getAll("customers");
+      tableBody.innerHTML = "";
+      customers.forEach(c => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td>${c.id}</td>
+          <td>${c.name}</td>
+          <td>${c.email}</td>
+          <td>
+            <button class="action" onclick="editCustomer(${c.id})">✏️ Edit</button>
+            <button class="action" onclick="deleteCustomer(${c.id})">🗑️ Delete</button>
+          </td>
+        `;
+        tableBody.appendChild(row);
+      });
+    }
+
+    // Add or Update customer
+    form.onsubmit = async (e) => {
+      e.preventDefault();
+      const id = Number(document.getElementById("id").value);
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+
+      await db.put("customers", { id, name, email });
+      form.reset();
+      await refreshTable();
+    };
+
+    // Edit customer (fill form with values)
+    window.editCustomer = async (id) => {
+      const customer = await db.get("customers", id);
+      if (customer) {
+        document.getElementById("id").value = customer.id;
+        document.getElementById("name").value = customer.name;
+        document.getElementById("email").value = customer.email;
+      }
+    };
+
+    // Delete customer
+    window.deleteCustomer = async (id) => {
+      await db.delete("customers", id);
+      await refreshTable();
+    };
+
+    // Initial table load
+    refreshTable();
+  </script>
+</body>
+</html>

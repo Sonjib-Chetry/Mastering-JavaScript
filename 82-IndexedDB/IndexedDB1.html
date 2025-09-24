@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>IndexedDB Demo with idb</title>
+</head>
+<body>
+  <h2>IndexedDB (idb) Demo</h2>
+
+  <button id="addBtn">Add Customer</button>
+  <button id="getBtn">Get Customer (ID=1)</button>
+  <button id="getAllBtn">Get All Customers</button>
+  <button id="deleteBtn">Delete Customer (ID=1)</button>
+
+  <pre id="output"></pre>
+
+  <script type="module">
+    import { openDB } from "https://unpkg.com/idb?module";
+
+    // Open database
+    const db = await openDB("SampleDB", 1, {
+      upgrade(db) {
+        if (!db.objectStoreNames.contains("customers")) {
+          db.createObjectStore("customers", { keyPath: "id" });
+        }
+      },
+    });
+
+    const output = document.getElementById("output");
+
+    // Helper function to log results
+    function log(message, data = null) {
+      output.textContent += message + (data ? " " + JSON.stringify(data, null, 2) : "") + "\n";
+    }
+
+    // Add customer
+    document.getElementById("addBtn").onclick = async () => {
+      try {
+        await db.add("customers", {
+          id: 1,
+          name: "John Doe",
+          email: "john@example.com",
+        });
+        log("✅ Customer added");
+      } catch (err) {
+        log("⚠️ Error adding customer:", err);
+      }
+    };
+
+    // Get customer with ID=1
+    document.getElementById("getBtn").onclick = async () => {
+      const customer = await db.get("customers", 1);
+      if (customer) {
+        log("📌 Customer found:", customer);
+      } else {
+        log("❌ No customer with ID=1");
+      }
+    };
+
+    // Get all customers
+    document.getElementById("getAllBtn").onclick = async () => {
+      const all = await db.getAll("customers");
+      log("📋 All customers:", all);
+    };
+
+    // Delete customer with ID=1
+    document.getElementById("deleteBtn").onclick = async () => {
+      await db.delete("customers", 1);
+      log("🗑️ Customer with ID=1 deleted");
+    };
+  </script>
+</body>
+</html>

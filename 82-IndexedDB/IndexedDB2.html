@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>IndexedDB CRUD App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    input, button {
+      margin: 5px;
+      padding: 6px;
+    }
+    #output {
+      margin-top: 20px;
+      padding: 10px;
+      background: #f7f7f7;
+      border: 1px solid #ccc;
+      max-height: 300px;
+      overflow-y: auto;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+  <h2>IndexedDB CRUD Demo (with idb)</h2>
+
+  <form id="customerForm">
+    <input type="number" id="id" placeholder="ID" required />
+    <input type="text" id="name" placeholder="Name" required />
+    <input type="email" id="email" placeholder="Email" required />
+    <br/>
+    <button type="submit">Add / Update</button>
+  </form>
+
+  <button id="getBtn">Get Customer by ID</button>
+  <button id="getAllBtn">Get All Customers</button>
+  <button id="deleteBtn">Delete Customer by ID</button>
+
+  <pre id="output"></pre>
+
+  <script type="module">
+    import { openDB } from "https://unpkg.com/idb?module";
+
+    // Open DB
+    const db = await openDB("SampleDB", 2, {
+      upgrade(db) {
+        if (!db.objectStoreNames.contains("customers")) {
+          db.createObjectStore("customers", { keyPath: "id" });
+        }
+      },
+    });
+
+    const form = document.getElementById("customerForm");
+    const output = document.getElementById("output");
+
+    function log(message, data = null) {
+      output.textContent += message + (data ? " " + JSON.stringify(data, null, 2) : "") + "\n";
+    }
+
+    // Add or Update customer
+    form.onsubmit = async (e) => {
+      e.preventDefault();
+      const id = Number(document.getElementById("id").value);
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+
+      await db.put("customers", { id, name, email });
+      log("✅ Customer added/updated:", { id, name, email });
+
+      form.reset();
+    };
+
+    // Get customer by ID
+    document.getElementById("getBtn").onclick = async () => {
+      const id = Number(prompt("Enter customer ID to fetch:"));
+      if (!id) return;
+      const customer = await db.get("customers", id);
+      if (customer) {
+        log("📌 Customer found:", customer);
+      } else {
+        log("❌ No customer with ID " + id);
+      }
+    };
+
+    // Get all customers
+    document.getElementById("getAllBtn").onclick = async () => {
+      const all = await db.getAll("customers");
+      log("📋 All customers:", all);
+    };
+
+    // Delete customer by ID
+    document.getElementById("deleteBtn").onclick = async () => {
+      const id = Number(prompt("Enter customer ID to delete:"));
+      if (!id) return;
+      await db.delete("customers", id);
+      log("🗑️ Customer with ID " + id + " deleted");
+    };
+  </script>
+</body>
+</html>
