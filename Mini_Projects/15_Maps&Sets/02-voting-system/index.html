@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Voting System- User Stories & Test Cases</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      h2 {
+        color: #333;
+      }
+      ul,
+      ol {
+        margin-left: 20px;
+      }
+      code {
+        background-color: #f4f4f4;
+        padding: 2px 6px;
+        border-radius: 4px;
+      }
+    </style>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <h1>Welcome to my **90 Days of JavaScript Revision Challenge**!</h1>
+    <h2 style="color: red">
+      Please read the script file and understand the project and try to build at
+      your own.
+    </h2>
+    <h3>
+      In this mini project, you'll build a voting system using Maps and Sets.
+      You'll practice how to use the Map object to store key-value pairs and the
+      Set object to store unique values.
+    </h3>
+
+    <h2>User Stories:</h2>
+    <pre>
+You should initialize a poll variable to a new Map object.
+
+You should have a function addOption that accepts a parameter option.
+
+In the addOption function:
+
+If the option does not already exist in the poll, it should be added to the poll with an empty Set as its value to track voters. You should also return the message Option "&lt;option&gt;" added to the poll.
+
+If the option already exists, it should return the message Option "&lt;option&gt;" already exists..
+
+If you try to add an empty option, the function should return the message Option cannot be empty..
+
+You should have a function vote that accepts two parameters, option (the option to vote for) and voterId (a unique ID for the voter).
+
+In the vote function:
+
+If the option does not exist in the poll, the function should return the message Option "&lt;option&gt;" does not exist..
+
+If the option exists, the function should check if the voterId has already voted for this option.
+
+If the voter has already voted, the function should display the message Voter &lt;voterId&gt; has already voted for "&lt;option&gt;".
+
+If the voter has not voted, voterId should be added to the Set of voters for this option. The function should return the message Voter &lt;voterId&gt; voted for "&lt;option&gt;".
+
+You should have at least three options in your poll.
+
+Your poll should have at least three votes.
+
+You should have a function displayResults that returns the poll results in the following format:
+
+Example Code
+Poll Results:
+OptionA: N votes
+OptionB: N votes
+.
+.
+
+sample output
+
+Poll Results:
+Turkey: 2 votes
+Morocco: 1 votes
+</pre
+    >
+
+    <h2>Tests</h2>
+    <pre>
+1. You should have a poll variable initialized to a new Map object.
+2. You should define a function addOption that accepts a parameter option.
+3. You should define a function vote that accepts two parameters, option and voterId.
+4. You should define a function displayResults to display the poll results.
+5. You should have at least three options in your poll.
+6. Your poll should have at least three votes.
+7. You should ensure each voting option maps to a Set object.
+8. addOption("Egypt") should return Option "Egypt" added to the poll.
+9. Adding an empty option should return "Option cannot be empty."
+10. When Turkey is already added, addOption("Turkey") should return Option "Turkey" already exists.
+11. When Malaysia exists in the voting options, vote("Malaysia", "traveler1") should return Voter traveler1 voted for "Malaysia".
+12. vote should update the Set of voters for an option.
+13. When traveler1 tries to vote for Algeria again, vote("Algeria", "traveler1") should return Voter traveler1 has already voted for "Algeria".
+14. Duplicate votes should not increase the size of the Set.
+15. When Nigeria is not in the voting options, vote("Nigeria", "traveler2") should return Option "Nigeria" does not exist.
+16. A unique option should be able to receive multiple votes.
+17. displayResults() should return the results in the correct format.
+</pre
+    >
+  </body>
+</html>

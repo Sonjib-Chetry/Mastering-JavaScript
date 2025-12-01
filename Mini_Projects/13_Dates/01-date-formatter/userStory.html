@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Date Formatter- User Stories & Test Cases</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      h2 {
+        color: #333;
+      }
+      ul,
+      ol {
+        margin-left: 20px;
+      }
+      code {
+        background-color: #f4f4f4;
+        padding: 2px 6px;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to my **90 Days of JavaScript Revision Challenge**!</h1>
+    <h2 style="color: red">
+      Please read the script file and understand the project and try to build at
+      your own.
+    </h2>
+    <h3>
+      Working with dates in JavaScript can be challenging. You have to navigate
+      various methods, formats, and time zones. In this project, you'll learn
+      how to work with the JavaScript Date object, including its methods and
+      properties. You'll also learn how to correctly format dates. This project
+      will cover concepts such as the getDate(), getMonth(), and getFullYear()
+      methods.
+    </h3>
+
+    <h2>📌 User Stories</h2>
+    <ul>
+      <li>
+        You should select DOM elements for displaying the current date and the
+        date format selector:
+        <ul>
+          <li>
+            <code>currentDateParagraph</code> → reference to
+            <code>#current-date</code> paragraph.
+          </li>
+          <li>
+            <code>dateOptionsSelectElement</code> → reference to
+            <code>#date-options</code> select dropdown.
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        You should create a <code>Date</code> object to get today’s date and
+        time.
+      </li>
+
+      <li>
+        You should extract the following components from the Date object:
+        <ul>
+          <li><code>day</code>: the day of the month.</li>
+          <li><code>month</code>: the month (1–12).</li>
+          <li><code>year</code>: the 4-digit year.</li>
+          <li><code>hours</code>: the current hour (0–23).</li>
+          <li><code>minutes</code>: the current minutes (0–59).</li>
+        </ul>
+      </li>
+
+      <li>
+        You should construct a default date string formatted as
+        <strong>DD-MM-YYYY</strong> and assign it to <code>formattedDate</code>.
+      </li>
+
+      <li>
+        You should display <code>formattedDate</code> inside
+        <code>#current-date</code> when the page loads.
+      </li>
+
+      <li>
+        You should add a <code>change</code> event listener to
+        <code>#date-options</code> so that when a new format is selected:
+        <ul>
+          <li>
+            If the format is <strong>yyyy-mm-dd</strong>, display the date in
+            <code>YYYY-MM-DD</code> format.
+          </li>
+          <li>
+            If the format is <strong>mm-dd-yyyy-h-mm</strong>, display the date
+            in <code>MM-DD-YYYY H Hours M Minutes</code> format.
+          </li>
+          <li>
+            Otherwise, display the default <code>DD-MM-YYYY</code> format.
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <h2>✅ Test Cases</h2>
+    <ul>
+      <li>
+        <code>currentDateParagraph</code> should contain today’s date in
+        <strong>DD-MM-YYYY</strong> format when the page loads.
+      </li>
+      <li>
+        Selecting <strong>yyyy-mm-dd</strong> should change the display to
+        <strong>YYYY-MM-DD</strong>.
+      </li>
+      <li>
+        Selecting <strong>mm-dd-yyyy-h-mm</strong> should change the display to
+        <strong>MM-DD-YYYY H Hours M Minutes</strong>.
+      </li>
+      <li>
+        Selecting any other value should revert to
+        <strong>DD-MM-YYYY</strong> format.
+      </li>
+      <li>
+        The <code>month</code> value should be normalized (January = 1, December
+        = 12).
+      </li>
+      <li>
+        The displayed <code>hours</code> and <code>minutes</code> should match
+        the system time when the page loads.
+      </li>
+    </ul>
+  </body>
+</html>

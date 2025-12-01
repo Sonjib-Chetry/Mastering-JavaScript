@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Music Player - User Stories & Test Cases</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      h2 {
+        color: #333;
+      }
+      ul,
+      ol {
+        margin-left: 20px;
+      }
+      code {
+        background-color: #f4f4f4;
+        padding: 2px 6px;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to my **90 Days of JavaScript Revision Challenge**!</h1>
+    <h2 style="color: red">
+      Please read the script file and understand the project and try to build at
+      your own.
+    </h2>
+    <h3>
+      For this mini project you will use the audio element to build a drum
+      machine.
+    </h3>
+
+    <h2>📘 User Story</h2>
+    <ol>
+      <li>
+        You should have a <code>&lt;div&gt;</code> element with an ID of
+        <code>drum-machine</code> that contains all other elements.
+      </li>
+      <li>
+        Inside <code>#drum-machine</code>, there must be a
+        <code>&lt;div&gt;</code> with an ID of <code>pad-bank</code>.
+      </li>
+      <li>
+        Inside <code>#drum-machine</code>, include a
+        <code>&lt;p&gt;</code> element with an ID of <code>display</code>.
+      </li>
+      <li>
+        Inside <code>#pad-bank</code>, create
+        <strong>9 clickable elements</strong> with:
+        <ul>
+          <li>Class: <code>drum-pad</code></li>
+          <li>Unique ID describing the sound</li>
+          <li>
+            InnerText: one of these keys in order —
+            <strong>Q, W, E, A, S, D, Z, X, C</strong>
+          </li>
+        </ul>
+      </li>
+      <li>
+        Each <code>.drum-pad</code> should contain an
+        <code>&lt;audio&gt;</code> element with:
+        <ul>
+          <li>Class: <code>clip</code></li>
+          <li>
+            Unique <code>id</code> that matches its parent's text (e.g. Q, W,
+            E...)
+          </li>
+          <li><code>src</code> pointing to the corresponding sound file</li>
+        </ul>
+      </li>
+      <li>
+        When a <code>.drum-pad</code> is clicked, it should:
+        <ul>
+          <li>Play the audio clip</li>
+          <li>
+            Update <code>#display</code> with a unique sound name (e.g. "Heater
+            1")
+          </li>
+        </ul>
+      </li>
+      <li>
+        When a user presses a key (Q, W, E, A, S, D, Z, X, C), it should:
+        <ul>
+          <li>Trigger the associated <code>.drum-pad</code></li>
+          <li>Play the audio clip</li>
+          <li>Update <code>#display</code> text</li>
+        </ul>
+      </li>
+    </ol>
+
+    <h2>🎵 Sound Clips</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Drum Name</th>
+          <th>Key</th>
+          <th>Audio File</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Heater 1</td>
+          <td>Q</td>
+          <td>Heater-1.mp3</td>
+        </tr>
+        <tr>
+          <td>Heater 2</td>
+          <td>W</td>
+          <td>Heater-2.mp3</td>
+        </tr>
+        <tr>
+          <td>Heater 3</td>
+          <td>E</td>
+          <td>Heater-3.mp3</td>
+        </tr>
+        <tr>
+          <td>Heater 4</td>
+          <td>A</td>
+          <td>Heater-4_1.mp3</td>
+        </tr>
+        <tr>
+          <td>Clap</td>
+          <td>S</td>
+          <td>Heater-6.mp3</td>
+        </tr>
+        <tr>
+          <td>Open-HH</td>
+          <td>D</td>
+          <td>Dsc_Oh.mp3</td>
+        </tr>
+        <tr>
+          <td>Kick-n'-Hat</td>
+          <td>Z</td>
+          <td>Kick_n_Hat.mp3</td>
+        </tr>
+        <tr>
+          <td>Kick</td>
+          <td>X</td>
+          <td>RP4_KICK_1.mp3</td>
+        </tr>
+        <tr>
+          <td>Closed-HH</td>
+          <td>C</td>
+          <td>Cev_H2.mp3</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>🧪 Test Cases</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Test ID</th>
+          <th>Description</th>
+          <th>Expected Behavior</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>T01</td>
+          <td>#drum-machine exists</td>
+          <td>Page has a div with id="drum-machine"</td>
+        </tr>
+        <tr>
+          <td>T02</td>
+          <td>#pad-bank inside #drum-machine</td>
+          <td>Page has a div with id="pad-bank"</td>
+        </tr>
+        <tr>
+          <td>T03</td>
+          <td>#display inside #drum-machine</td>
+          <td>Page has a p element with id="display"</td>
+        </tr>
+        <tr>
+          <td>T04</td>
+          <td>9 .drum-pad elements inside #pad-bank</td>
+          <td>All 9 keys (Q–C) mapped</td>
+        </tr>
+        <tr>
+          <td>T05</td>
+          <td>Each .drum-pad has correct innerText</td>
+          <td>In order: Q, W, E, A, S, D, Z, X, C</td>
+        </tr>
+        <tr>
+          <td>T06</td>
+          <td>Each .drum-pad has audio tag</td>
+          <td>audio class="clip", id matches text, valid src</td>
+        </tr>
+        <tr>
+          <td>T07</td>
+          <td>Clicking a .drum-pad plays sound</td>
+          <td>Corresponding audio plays</td>
+        </tr>
+        <tr>
+          <td>T08</td>
+          <td>Pressing key triggers sound</td>
+          <td>Q → plays Heater 1, etc.</td>
+        </tr>
+        <tr>
+          <td>T09</td>
+          <td>Display updates on trigger</td>
+          <td>#display shows correct sound label</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Palindrome Checker - User Stories & Test Cases</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      h2 {
+        color: #333;
+      }
+      ul,
+      ol {
+        margin-left: 20px;
+      }
+      code {
+        background-color: #f4f4f4;
+        padding: 2px 6px;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to my **90 Days of JavaScript Revision Challenge**!</h1>
+    <h2 style="color: red">
+      Please read the script file and understand the project and try to build at
+      your own.
+    </h2>
+    <h3>
+      For this mini project, you'll build an application that checks whether a
+      given word is a palindrome.
+    </h3>
+    <h3>
+      A palindrome is a word or phrase that can be read the same way forwards
+      and backwards, ignoring punctuation, case, and spacing. Note: You'll need
+      to remove all non-alphanumeric characters (punctuation, spaces and
+      symbols) and turn everything into the same case (lower or upper case) in
+      order to check for palindromes. Fulfill the user stories below and get all
+      the tests to pass to complete the project.
+    </h3>
+    <h2>User Stories:</h2>
+    <ul>
+      <li>You should have an input element with an id of "text-input".</li>
+      <li>You should have a button element with an id of "check-btn".</li>
+      <li>You should have a div, span or p element with an id of "result".</li>
+      <li>
+        When you click on the #check-btn element without entering a value into
+        the #text-input element, an alert should appear with the text Please
+        input a value.
+      </li>
+      <li>
+        When the #text-input element only contains the letter A and the
+        #check-btn element is clicked, the #result element should contain the
+        text A is a palindrome.
+      </li>
+      <li>
+        When the #text-input element contains the text eye and the #check-btn
+        element is clicked, the #result element should contain the text eye is a
+        palindrome.
+      </li>
+      <li>
+        When the #text-input element contains the text _eye and the #check-btn
+        element is clicked, the #result element should contain the text _eye is
+        a palindrome.
+      </li>
+      <li>
+        When the #text-input element contains the text race car and the
+        #check-btn element is clicked, the #result element should contain the
+        text race car is a palindrome.
+      </li>
+      <li>
+        When the #text-input element contains the text not a palindrome and the
+        #check-btn element is clicked, the #result element should contain the
+        text not a palindrome is not a palindrome.
+      </li>
+      <li>
+        When the #text-input element contains the text A man, a plan, a canal.
+        Panama and the #check-btn element is clicked, the #result element should
+        contain the text A man, a plan, a canal. Panama is a palindrome.
+      </li>
+      <li>
+        When the #text-input element contains the text never odd or even and the
+        #check-btn element is clicked, the #result element should contain the
+        text never odd or even is a palindrome.
+      </li>
+      <li>
+        When the #text-input element contains the text nope and the #check-btn
+        element is clicked, the #result element should contain the text nope is
+        not a palindrome.
+      </li>
+      <li>
+        When the #text-input element contains the text almostomla and the
+        #check-btn element is clicked, the #result element should contain the
+        text almostomla is not a palindrome.
+      </li>
+      <li>
+        When the #text-input element contains the text My age is 0, 0 si ega ym.
+        and the #check-btn element is clicked, the #result element should
+        contain the text My age is 0, 0 si ega ym. is a palindrome.
+      </li>
+      <li>
+        When the #text-input element contains the text 1 eye for of 1 eye. and
+        the #check-btn element is clicked, the #result element should contain
+        the text 1 eye for of 1 eye. is not a palindrome.
+      </li>
+      <li>
+        When the #text-input element contains the text 0_0 (: /-\ :) 0-0 and the
+        #check-btn element is clicked, the #result element should contain the
+        text 0_0 (: /-\ :) 0-0 is a palindrome.
+      </li>
+      <li>
+        When the #text-input element contains the text five|\_/|four and the
+        #check-btn element is clicked, the #result element should contain the
+        text five|\_/|four is not a palindrome.
+      </li>
+    </ul>
+
+    <h2>Tests</h2>
+    <ol>
+      <li>You should have an input element with an id of "text-input".</li>
+      <li>You should have a button element with an id of "check-btn".</li>
+      <li>You should have a div, span, or p element with an id of "result".</li>
+      <li>
+        When you click on the #check-btn element without entering a value into
+        the #text-input element, an alert should appear with the text Please
+        input a value.
+      </li>
+      <li>
+        When the #text-input element only contains the letter A and the
+        #check-btn element is clicked, the #result element should contain the
+        text A is a palindrome.
+      </li>
+      <li>
+        When the #text-input element contains the text eye and the #check-btn
+        element is clicked, the #result element should contain the text eye is a
+        palindrome.
+      </li>
+      <li>
+        When the #text-input element contains the text _eye and the #check-btn
+        element is clicked, the #result element should contain the text _eye is
+        a palindrome.
+      </li>
+      <li>
+        When the #text-input element contains the text race car and the
+        #check-btn element is clicked, the #result element should contain the
+        text race car is a palindrome.
+      </li>
+      <li>
+        When the #text-input element contains the text not a palindrome and the
+        #check-btn element is clicked, the #result element should contain the
+        text not a palindrome is not a palindrome.
+      </li>
+      <li>
+        When the #text-input element contains the text A man, a plan, a canal.
+        Panama and the #check-btn element is clicked, the #result element should
+        contain the text A man, a plan, a canal. Panama is a palindrome.
+      </li>
+      <li>
+        When the #text-input element contains the text never odd or even and the
+        #check-btn element is clicked, the #result element should contain the
+        text never odd or even is a palindrome.
+      </li>
+      <li>
+        When the #text-input element contains the text nope and the #check-btn
+        element is clicked, the #result element should contain the text nope is
+        not a palindrome.
+      </li>
+      <li>
+        When the #text-input element contains the text almostomla and the
+        #check-btn element is clicked, the #result element should contain the
+        text almostomla is not a palindrome.
+      </li>
+      <li>
+        When the #text-input element contains the text My age is 0, 0 si ega ym.
+        and the #check-btn element is clicked, the #result element should
+        contain the text My age is 0, 0 si ega ym. is a palindrome.
+      </li>
+      <li>
+        When the #text-input element contains the text 1 eye for of 1 eye. and
+        the #check-btn element is clicked, the #result element should contain
+        the text 1 eye for of 1 eye. is not a palindrome.
+      </li>
+      <li>
+        When the #text-input element contains the text 0_0 (: /-\ :) 0-0 and the
+        #check-btn element is clicked, the #result element should contain the
+        text 0_0 (: /-\ :) 0-0 is a palindrome.
+      </li>
+      <li>
+        When the #text-input element contains the text five|\_/|four and the
+        #check-btn element is clicked, the #result element should contain the
+        text five|\_/|four is not a palindrome.
+      </li>
+      <li>
+        When the #text-input element contains an alphanumeric palindrome, the
+        #result element should correctly identify it as a palindrome.
+      </li>
+      <li>
+        When the #text-input element contains a random sequence of alphanumeric
+        characters that is not a palindrome, the #result element should say it
+        is not a palindrome.
+      </li>
+    </ol>
+  </body>
+</html>

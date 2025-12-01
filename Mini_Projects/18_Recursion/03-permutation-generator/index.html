@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Permutation Generator</title>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <h1>Welcome to my **90 Days of JavaScript Revision Challenge**!</h1>
+    <h2 style="color: red">
+      Please read the script file and understand the project and try to build at
+      your own.
+    </h2>
+
+    <h3>
+      In this mini project, you will build a permutation generator that will
+      take a string and return all possible permutations of the characters in
+      the string. For example, the possible permutations of the string cat are
+      cat, cta, act, atc, tac, and tca.
+    </h3>
+
+    <h2>User Stories:</h2>
+    <ul>
+      <li>You should create a function named <code>permuteString</code>.</li>
+
+      <li>
+        The <code>permuteString</code> function should take
+        <strong>three parameters</strong>:
+        <ul>
+          <li>
+            <strong>string</strong> – the string for which you want to generate
+            permutations.
+          </li>
+          <li>
+            <strong>prefix</strong> – a string value that accumulates characters
+            to form a permutation.
+          </li>
+          <li>
+            <strong>results</strong> – an empty array that will store and return
+            all generated permutations.
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        Inside the function, you should:
+        <ul>
+          <li>
+            Check if the length of the passed string is <code>0</code>.
+            <ul>
+              <li>
+                If it is, push the current <code>prefix</code> into the
+                <code>results</code> array.
+              </li>
+              <li>Return the <code>results</code> array.</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        Iterate over each character in the input string and, for each iteration:
+        <ul>
+          <li>Remove the current character from the string.</li>
+          <li>
+            Call the <code>permuteString</code> function recursively with:
+            <ul>
+              <li>The updated string (with the current character removed).</li>
+              <li>
+                The <code>prefix</code> concatenated with the removed character.
+              </li>
+              <li>The same <code>results</code> array.</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        You should return the final <code>results</code> array from the
+        function.
+      </li>
+
+      <li>
+        You should ensure that the permutations are unique by removing
+        duplicates from the <code>results</code> array.
+      </li>
+    </ul>
+
+    <hr />
+
+    <h2>Tests:</h2>
+    <ul>
+      <li>1. You should have a function <code>permuteString</code>.</li>
+      <li>
+        2. You should use recursion in your <code>permuteString</code> function.
+      </li>
+      <li>
+        3. <code>permuteString("far")</code> should return
+        <code>["far", "fra", "afr", "arf", "rfa", "raf"]</code>.
+      </li>
+      <li>
+        4. <code>permuteString("fcc")</code> should return
+        <code>["fcc", "cfc", "ccf"]</code>.
+      </li>
+      <li>
+        5. <code>permuteString("p")</code> should return <code>["p"]</code>.
+      </li>
+      <li>
+        6. <code>permuteString("")</code> should return <code>[""]</code>.
+      </li>
+      <li>
+        7. <code>permuteString("walk")</code> should return
+        <code
+          >["walk", "wakl", "wlak", "wlka", "wkla", "wkal", "awlk", "awkl",
+          "alwk", "alkw", "aklw", "akwl", "lawk", "lakw", "lwak", "lwka",
+          "lkaw", "lkwa", "kawl", "kalw", "kwal", "kwla", "klaw", "klwa"]</code
+        >.
+      </li>
+      <li>
+        8. <code>permuteString</code> should return the correct results for any
+        given input string.
+      </li>
+    </ul>
+  </body>
+</html>

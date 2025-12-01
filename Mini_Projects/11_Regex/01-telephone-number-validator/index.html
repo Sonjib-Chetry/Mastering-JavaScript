@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telephone Validator | Secure Number Check</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Telephone Number Validator</h1>
+            <p>Verify if a phone number matches the standard US format</p>
+        </header>
+        
+        <div class="input-group">
+            <i class="fas fa-phone-alt"></i>
+            <input type="text" id="user-input" placeholder="Enter a telephone number...">
+        </div>
+        
+        <div class="btn-container">
+            <button id="check-btn">
+                <i class="fas fa-check-circle"></i> Validate
+            </button>
+            <button id="clear-btn">
+                <i class="fas fa-times"></i> Clear
+            </button>
+        </div>
+        
+        <div id="results-div">
+            <p>Enter a number to validate</p>
+        </div>
+        
+        <div class="info-section">
+            <h3><i class="fas fa-info-circle"></i> Valid Formats:</h3>
+            <ul>
+                <li>10-digit number: <span>5555555555</span></li>
+                <li>With country code: <span>1 555-555-5555</span></li>
+                <li>With parentheses: <span>(555)555-5555</span></li>
+                <li>With spaces/dashes: <span>555 555 5555</span></li>
+            </ul>
+        </div>
+        
+        <footer>
+            <p>Secure validation service • All checks performed locally</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

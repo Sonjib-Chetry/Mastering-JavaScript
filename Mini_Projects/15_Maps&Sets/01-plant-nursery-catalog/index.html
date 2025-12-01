@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Plant Nursery Catalog - User Stories & Test Cases</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      h2 {
+        color: #333;
+      }
+      ul,
+      ol {
+        margin-left: 20px;
+      }
+      code {
+        background-color: #f4f4f4;
+        padding: 2px 6px;
+        border-radius: 4px;
+      }
+    </style>
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <h1>Welcome to my **90 Days of JavaScript Revision Challenge**!</h1>
+    <h2 style="color: red">
+      Please read the script file and understand the project and try to build at
+      your own.
+    </h2>
+    <h3>
+      In this mini project, you will practice using Maps and Sets by building a
+      plant nursery catalog.
+    </h3>
+
+    <h2>📘 User Story</h2>
+    <ol>
+      <li>
+        Create several plant objects. Each plant object should have:
+        <ul>
+          <li><code>commonName</code> (string)</li>
+          <li><code>scientificName</code> (string)</li>
+          <li><code>cultivar</code> (string)</li>
+        </ul>
+      </li>
+      <li>
+        Create a <code>Map</code> called <code>catalog</code> where:
+        <ul>
+          <li>The <strong>key</strong> is a plant object</li>
+          <li>
+            The <strong>value</strong> is an object with keys
+            <code>small</code>, <code>medium</code>,
+            <code>large</code> representing stock counts
+          </li>
+        </ul>
+      </li>
+      <li>
+        Implement a function <code>removePlant(plantObject)</code> that:
+        <ul>
+          <li>Removes the plant from the catalog</li>
+          <li>
+            Returns <code>true</code> if successfully removed,
+            <code>false</code> otherwise
+          </li>
+        </ul>
+      </li>
+      <li>
+        Implement a function
+        <code>sellPlants(plantObject, potSize, numberOfPots)</code> that:
+        <ul>
+          <li>Checks if the plant exists in <code>catalog</code></li>
+          <li>If not, returns the string <code>"Item not found."</code></li>
+          <li>
+            If stock for the given size is less than requested, returns a string
+            like: <br /><code
+              >Not enough &lt;potSize&gt; size pots for &lt;scientificName&gt;
+              '&lt;cultivar&gt;'. Only &lt;available&gt; left.</code
+            >
+          </li>
+          <li>
+            If enough stock is available, subtracts the sold quantity from the
+            correct size and updates <code>catalog</code>
+          </li>
+          <li>
+            Returns <code>"Catalog successfully updated."</code> on success
+          </li>
+        </ul>
+      </li>
+      <li>
+        Implement a function <code>displayCatalog()</code> that:
+        <ul>
+          <li>Loops through <code>catalog</code></li>
+          <li>
+            Returns a string listing each plant’s scientific name, cultivar, and
+            stock for each pot size
+          </li>
+        </ul>
+      </li>
+      <li>
+        Implement a function <code>displayPlantsSet()</code> that:
+        <ul>
+          <li>Collects all common names from the catalog</li>
+          <li>Returns them as a <code>Set</code> (no duplicates)</li>
+        </ul>
+      </li>
+    </ol>
+
+    <h2>🧪 Test Cases</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Test</th>
+          <th>Expected Output</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>T01</td>
+          <td>Call <code>removePlant()</code> with an existing plant</td>
+          <td><code>true</code> and plant no longer in catalog</td>
+        </tr>
+        <tr>
+          <td>T02</td>
+          <td>Call <code>removePlant()</code> with a non-existing plant</td>
+          <td><code>false</code></td>
+        </tr>
+        <tr>
+          <td>T03</td>
+          <td>Call <code>sellPlants()</code> with plant not in catalog</td>
+          <td><code>"Item not found."</code></td>
+        </tr>
+        <tr>
+          <td>T04</td>
+          <td>
+            Call <code>sellPlants()</code> with quantity greater than available
+            stock
+          </td>
+          <td>Returns "Not enough &lt;size&gt; size pots for ..." message</td>
+        </tr>
+        <tr>
+          <td>T05</td>
+          <td>
+            Call <code>sellPlants()</code> with quantity less than or equal to
+            available stock
+          </td>
+          <td>
+            Reduces stock, returns <code>"Catalog successfully updated."</code>
+          </td>
+        </tr>
+        <tr>
+          <td>T06</td>
+          <td>
+            After successful <code>sellPlants()</code>,
+            <code>displayCatalog()</code> reflects updated stock
+          </td>
+          <td>Stock count decreased accordingly</td>
+        </tr>
+        <tr>
+          <td>T07</td>
+          <td>Call <code>displayCatalog()</code> initially</td>
+          <td>
+            String listing all plants and stock in format: <br /><code
+              >Lavandula stoechas 'Ballerina': 20 S, 15 M, 12 L</code
+            >
+          </td>
+        </tr>
+        <tr>
+          <td>T08</td>
+          <td>Call <code>displayPlantsSet()</code></td>
+          <td>
+            Returns a <code>Set</code> of all unique
+            <code>commonName</code> values
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

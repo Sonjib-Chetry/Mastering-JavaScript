@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Music Player - User Stories & Test Cases</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      h2 {
+        color: #333;
+      }
+      ul,
+      ol {
+        margin-left: 20px;
+      }
+      code {
+        background-color: #f4f4f4;
+        padding: 2px 6px;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to my **90 Days of JavaScript Revision Challenge**!</h1>
+    <h2 style="color: red">
+      Please read the script file and understand the project and try to build at
+      your own.
+    </h2>
+    <h3>
+      In this mini project, you'll code a basic MP3 player using HTML, CSS, and
+      JavaScript. The project covers fundamental concepts such as handling audio
+      playback, managing a playlist, implementing play, pause, next, and
+      previous functionalities and dynamically update your user interface based
+      on the current song.
+    </h3>
+
+    <h2>✅ User Stories</h2>
+
+    <ol>
+      <li>
+        You must create an instance of <code>Audio</code> and use it to manage
+        playback.
+      </li>
+      <li>
+        Create a playlist array <code>allSongs</code> with each object having
+        <code>id</code>, <code>title</code>, <code>artist</code>,
+        <code>duration</code>, and <code>src</code>.
+      </li>
+      <li>
+        Track current song and playback time using a
+        <code>userData</code> object.
+      </li>
+      <li>
+        When the <code>#play</code> button is clicked:
+        <ul>
+          <li>If no song is selected, play the first song.</li>
+          <li>If a song is already playing, resume from the paused time.</li>
+        </ul>
+      </li>
+      <li>
+        When a playlist button is clicked, play that song from the beginning.
+      </li>
+      <li>
+        The <code>playSong(id, start = true)</code> function should:
+        <ul>
+          <li>
+            Set <code>audio.src</code>, update title and artist display, and
+            play the song.
+          </li>
+        </ul>
+      </li>
+      <li>
+        The <code>#pause</code> button should:
+        <ul>
+          <li>Pause playback and store the current time.</li>
+          <li>Remove the <code>playing</code> class from the play button.</li>
+        </ul>
+      </li>
+      <li>
+        <code>#previous</code> button should play the previous song. If none,
+        play the first.
+      </li>
+      <li>
+        <code>#next</code> button should play the next song. If it’s the last,
+        reset the player.
+      </li>
+      <li>When a song ends, automatically play the next song.</li>
+      <li>
+        <code>setPlayerDisplay()</code> should update the song name and artist
+        in the player UI.
+      </li>
+      <li>
+        <code>highlightCurrentSong()</code> should mark the active playlist
+        button using <code>aria-current="true"</code>.
+      </li>
+      <li>
+        <code>setPlayButtonAccessibleText()</code> should set
+        <code>aria-label</code> of the play button dynamically based on the
+        song.
+      </li>
+    </ol>
+
+    <h2>🧪 Test Cases</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Test ID</th>
+          <th>Description</th>
+          <th>Expected Result</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>T01</td>
+          <td>Create an instance of Audio</td>
+          <td>audio instanceof Audio</td>
+        </tr>
+        <tr>
+          <td>T02</td>
+          <td>allSongs contains song list</td>
+          <td>Array of 5+ objects with correct keys</td>
+        </tr>
+        <tr>
+          <td>T03</td>
+          <td>Click #play with no song</td>
+          <td>First song starts from beginning</td>
+        </tr>
+        <tr>
+          <td>T04</td>
+          <td>Click #play resumes song</td>
+          <td>Song plays from userData.songCurrentTime</td>
+        </tr>
+        <tr>
+          <td>T05</td>
+          <td>Click playlist button</td>
+          <td>That song plays from beginning</td>
+        </tr>
+        <tr>
+          <td>T06</td>
+          <td>playSong updates audio.src</td>
+          <td>audio.src === selectedSong.src</td>
+        </tr>
+        <tr>
+          <td>T07</td>
+          <td>Play button aria-label</td>
+          <td>"Play &lt;Song Title&gt;"</td>
+        </tr>
+        <tr>
+          <td>T08</td>
+          <td>Click #pause stores time</td>
+          <td>userData.songCurrentTime > 0</td>
+        </tr>
+        <tr>
+          <td>T09</td>
+          <td>Pause removes class</td>
+          <td>#play does not have .playing</td>
+        </tr>
+        <tr>
+          <td>T10</td>
+          <td>playPreviousSong plays previous</td>
+          <td>Previous song is played</td>
+        </tr>
+        <tr>
+          <td>T11</td>
+          <td>First song plays again</td>
+          <td>If no previous, first song plays</td>
+        </tr>
+        <tr>
+          <td>T12</td>
+          <td>playNextSong plays next</td>
+          <td>Next song plays</td>
+        </tr>
+        <tr>
+          <td>T13</td>
+          <td>Reset at last song</td>
+          <td>userData.currentSong = null</td>
+        </tr>
+        <tr>
+          <td>T14</td>
+          <td>Auto-play on ended</td>
+          <td>Next song plays automatically</td>
+        </tr>
+        <tr>
+          <td>T15</td>
+          <td>setPlayerDisplay updates text</td>
+          <td>Title and artist shown</td>
+        </tr>
+        <tr>
+          <td>T16</td>
+          <td>highlightCurrentSong sets aria-current</td>
+          <td>Only one item has aria-current</td>
+        </tr>
+        <tr>
+          <td>T17</td>
+          <td>Accessible text updates</td>
+          <td>aria-label matches song</td>
+        </tr>
+        <tr>
+          <td>T18</td>
+          <td>Click #next/#previous early</td>
+          <td>First song plays</td>
+        </tr>
+        <tr>
+          <td>T19</td>
+          <td>Each playlist button works</td>
+          <td>Corresponding song plays</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

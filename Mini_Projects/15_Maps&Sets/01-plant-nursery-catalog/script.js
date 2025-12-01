@@ -1,0 +1,133 @@
+const ballerina = {
+  commonName: "Spanish lavender",
+  scientificName: "Lavandula stoechas",
+  cultivar: "Ballerina",
+};
+
+const prettyPolly = {
+  commonName: "Spanish lavender",
+  scientificName: "Lavandula stoechas",
+  cultivar: "Pretty Polly",
+};
+
+const willowVale = {
+  commonName: "Spanish lavender",
+  scientificName: "Lavandula stoechas",
+  cultivar: "Willow Vale",
+};
+
+const hidcote = {
+  commonName: "English lavender",
+  scientificName: "Lavandula angustifolia",
+  cultivar: "Hidcote",
+};
+
+const imperialGem = {
+  commonName: "English lavender",
+  scientificName: "Lavandula angustifolia",
+  cultivar: "Imperial Gem",
+};
+
+const royalCrown = {
+  commonName: "French lavender",
+  scientificName: "Lavandula dentata",
+  cultivar: "Royal Crown",
+};
+
+const catalog = new Map();
+
+catalog.set(ballerina, { small: 20, medium: 15, large: 12 });
+catalog.set(prettyPolly, { small: 31, medium: 14, large: 24 });
+catalog.set(willowVale, { small: 3, medium: 5, large: 0 });
+catalog.set(hidcote, { small: 33, medium: 13, large: 18 });
+catalog.set(imperialGem, { small: 19, medium: 35, large: 28 });
+catalog.set(royalCrown, { small: 40, medium: 22, large: 9 });
+
+function removePlant(plantObject) {
+  return catalog.delete(plantObject);
+}
+
+
+function sellPlants(plantObject, potSize, numberOfPots) {
+  // Check if plant exists in the catalog
+  if (!catalog.has(plantObject)) {
+    return "Item not found.";
+  }
+
+  const stock = catalog.get(plantObject);
+  const availablePots = stock[potSize];
+
+  if (numberOfPots > availablePots) {
+    return `Not enough ${potSize} size pots for ${plantObject.scientificName} '${plantObject.cultivar}'. Only ${availablePots} left.`;
+  }
+
+  // Update catalog
+  stock[potSize] -= numberOfPots;
+  catalog.set(plantObject, stock);
+
+  return "Catalog successfully updated.";
+}
+
+console.log(sellPlants(ballerina, "small", 10));
+
+
+function displayCatalog() {
+  let catalogString = "";
+
+  catalog.forEach((value, key) => {
+    catalogString += `${key.scientificName} '${key.cultivar}': ${value.small} S, ${value.medium} M, ${value.large} L\n`;
+  });
+
+  return catalogString;
+}
+
+console.log(displayCatalog());
+
+
+const displayPlantsSet = () => {
+  const commonNames = [];
+
+  for (const plant of catalog.keys()) {
+    commonNames.push(plant.commonName);
+  }
+
+  return new Set(commonNames);
+};
+
+const plantsSet = displayPlantsSet();
+console.log(plantsSet);
+
+
+//Alternative
+
+/*
+const sellPlants = (plant, size, potsNo) => {
+    const name = `${plant.scientificName} '${plant.cultivar}'`
+    const pots = catalog.get(plant);
+    if (pots[size] - potsNo < 0) {
+        return `Not enough ${size} size pots for ${name}. Only ${pots[size]} left.`
+    }
+    pots[size] -= potsNo;
+    return `Catalog successfully updated.`
+}
+
+console.log(sellPlants(ballerina, "small", 10));
+console.log(sellPlants(ballerina, "small", 25));
+*/
+
+// function displayCatalog() {
+//   // for (const key of catalog.keys()) {
+//   //   console.log(key);
+//   // }
+
+//   // for (const value of catalog.values()) {
+//   //   console.log(value);
+//   // }
+
+//   for (const entry of catalog.entries()) {
+//     console.log(entry);
+//   }
+// }
+
+// // Call and log
+// console.log(displayCatalog());

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Regex Sandbox - User Stories & Test Cases</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      h2 {
+        color: #333;
+      }
+      ul,
+      ol {
+        margin-left: 20px;
+      }
+      code {
+        background-color: #f4f4f4;
+        padding: 2px 6px;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to my **90 Days of JavaScript Revision Challenge**!</h1>
+    <h2 style="color: red">
+      Please read the script file and understand the project and try to build at
+      your own.
+    </h2>
+    <h3>In this mini project you'll build a regex sandbox.</h3>
+
+    <h2>User Stories</h2>
+    <ol>
+      <li>
+        You should access the <code>#pattern</code>, <code>#test-string</code>,
+        <code>#test-btn</code>, and <code>#result</code> elements and save them
+        in the variables <code>regexPattern</code>, <code>stringToTest</code>,
+        <code>testButton</code>, and <code>testResult</code>, respectively.
+      </li>
+      <li>
+        You should access the <code>#i</code> and <code>#g</code> flag
+        checkboxes and save them in the variables
+        <code>caseInsensitiveFlag</code> and <code>globalFlag</code>,
+        respectively.
+      </li>
+      <li>
+        You should have a function named <code>getFlags</code> that returns a
+        string containing the flags from checked flag checkboxes, or an empty
+        string if none of them have been checked.
+      </li>
+      <li>
+        When you click the <code>testButton</code> button, if the regex pattern
+        matches the test string, the matched text should be highlighted by
+        wrapping it in a <code>&lt;span class="highlight"&gt;</code> tag.
+      </li>
+      <li>
+        When there's a match, the matched text should be displayed inside
+        <code>#result</code>, with multiple matches separated by a comma and a
+        space.
+      </li>
+      <li>
+        When there's no match, the text <code>no match</code> should be
+        displayed inside <code>#result</code>.
+      </li>
+    </ol>
+
+    <h2>Tests</h2>
+    <ol>
+      <li>
+        You should access the <code>#pattern</code> element and save it in the
+        <code>regexPattern</code> variable.
+      </li>
+      <li>
+        You should access the <code>#test-string</code> element and save it in
+        the <code>stringToTest</code> variable.
+      </li>
+      <li>
+        You should access the <code>#test-btn</code> element and save it in the
+        <code>testButton</code> variable.
+      </li>
+      <li>
+        You should access the <code>#result</code> element and save it in the
+        <code>testResult</code> variable.
+      </li>
+      <li>
+        You should access the <code>#i</code> flag checkbox and save it in the
+        <code>caseInsensitiveFlag</code> variable.
+      </li>
+      <li>
+        You should access the <code>#g</code> flag checkbox and save it in the
+        <code>globalFlag</code> variable.
+      </li>
+      <li>You should have a <code>getFlags</code> function.</li>
+      <li>
+        <code>getFlags</code> should return <code>"i"</code> if the
+        <code>#i</code> checkbox is checked.
+      </li>
+      <li>
+        <code>getFlags</code> should return <code>"g"</code> if the
+        <code>#g</code> checkbox is checked.
+      </li>
+      <li>
+        <code>getFlags</code> should return either <code>"ig"</code> or
+        <code>"gi"</code> if both checkboxes are checked.
+      </li>
+      <li>
+        <code>getFlags</code> should return an empty string if both checkboxes
+        are not checked.
+      </li>
+      <li>
+        With <code>stringToTest.innerHTML = "Gu1n34 P1g5"</code>,
+        <code>regexPattern.value = "\\d+"</code>, and no flags checked, clicking
+        <code>testButton</code> should change
+        <code>stringToTest.innerHTML</code> to
+        <code>Gu&lt;span class="highlight"&gt;1&lt;/span&gt;n34 P1g5</code>.
+      </li>
+      <li>
+        With <code>stringToTest.innerHTML = "Gu1n34 P1g5"</code>,
+        <code>regexPattern.value = "\\d+"</code>, and the <code>g</code> flag
+        checked, clicking <code>testButton</code> should change
+        <code>stringToTest.innerHTML</code> to
+        <code
+          >Gu&lt;span class="highlight"&gt;1&lt;/span&gt;n&lt;span
+          class="highlight"&gt;34&lt;/span&gt; P&lt;span
+          class="highlight"&gt;1&lt;/span&gt;g&lt;span
+          class="highlight"&gt;5&lt;/span&gt;</code
+        >.
+      </li>
+      <li>
+        With <code>stringToTest.innerHTML = "Gu1n34 P1g5"</code>,
+        <code>regexPattern.value = "G"</code>, and both flags checked, clicking
+        <code>testButton</code> should change
+        <code>stringToTest.innerHTML</code> to
+        <code
+          >&lt;span class="highlight"&gt;G&lt;/span&gt;u1n34 P1&lt;span
+          class="highlight"&gt;g&lt;/span&gt;5</code
+        >.
+      </li>
+      <li>
+        On match, the matched text must be wrapped in
+        <code>&lt;span class="highlight"&gt;</code> tags.
+      </li>
+      <li>
+        If no match, <code>stringToTest.innerHTML</code> should remain
+        unchanged.
+      </li>
+      <li>
+        With <code>stringToTest.innerHTML = "Gu1n34 P1g5"</code>,
+        <code>regexPattern.value = "\\d+"</code>, and no flags checked, clicking
+        <code>testButton</code> should update <code>#result.innerText</code> to
+        <code>1</code>.
+      </li>
+      <li>
+        With the global flag checked, <code>#result.innerText</code> should
+        become <code>1, 34, 1, 5</code>.
+      </li>
+      <li>
+        When there’s a match, matched values should appear in
+        <code>#result</code>.
+      </li>
+      <li>
+        When no match is found, <code>#result</code> should show the text
+        <code>no match</code>.
+      </li>
+    </ol>
+  </body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Stellar Numerals Converter- User Stories & Test Cases</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      h2 {
+        color: #333;
+      }
+      ul,
+      ol {
+        margin-left: 20px;
+      }
+      code {
+        background-color: #f4f4f4;
+        padding: 2px 6px;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to my **90 Days of JavaScript Revision Challenge**!</h1>
+    <h2 style="color: red">
+      Please read the script file and understand the project and try to build at
+      your own.
+    </h2>
+
+    <h2>📜 Roman to Arabic Mapping</h2>
+    <table border="1" cellpadding="5">
+      <tr>
+        <th>Roman Numerals</th>
+        <th>Arabic Numerals</th>
+      </tr>
+      <tr>
+        <td>M</td>
+        <td>1000</td>
+      </tr>
+      <tr>
+        <td>CM</td>
+        <td>900</td>
+      </tr>
+      <tr>
+        <td>D</td>
+        <td>500</td>
+      </tr>
+      <tr>
+        <td>CD</td>
+        <td>400</td>
+      </tr>
+      <tr>
+        <td>C</td>
+        <td>100</td>
+      </tr>
+      <tr>
+        <td>XC</td>
+        <td>90</td>
+      </tr>
+      <tr>
+        <td>L</td>
+        <td>50</td>
+      </tr>
+      <tr>
+        <td>XL</td>
+        <td>40</td>
+      </tr>
+      <tr>
+        <td>X</td>
+        <td>10</td>
+      </tr>
+      <tr>
+        <td>IX</td>
+        <td>9</td>
+      </tr>
+      <tr>
+        <td>V</td>
+        <td>5</td>
+      </tr>
+      <tr>
+        <td>IV</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td>I</td>
+        <td>1</td>
+      </tr>
+    </table>
+
+    <h2>📌 User Stories</h2>
+    <ul>
+      <li>
+        You should have an <code>&lt;input&gt;</code> element with an id of
+        <code>number</code>.
+      </li>
+      <li>
+        You should have a <code>&lt;button&gt;</code> element with an id of
+        <code>convert-btn</code>.
+      </li>
+      <li>
+        You should have a <code>&lt;div&gt;</code>, <code>&lt;span&gt;</code> or
+        <code>&lt;p&gt;</code> element with an id of <code>output</code>.
+      </li>
+      <li>
+        When you click on the <code>#convert-btn</code> element without entering
+        a value into the <code>#number</code> element, the
+        <code>#output</code> element should contain the text
+        <strong>"Please enter a valid number"</strong>.
+      </li>
+      <li>
+        When the <code>#number</code> element contains the number
+        <code>-1</code> and the <code>#convert-btn</code> element is clicked,
+        the <code>#output</code> element should contain
+        <strong>"Please enter a number greater than or equal to 1"</strong>.
+      </li>
+      <li>
+        When the <code>#number</code> element contains the number
+        <code>4000</code> or greater and the <code>#convert-btn</code> element
+        is clicked, the <code>#output</code> element should contain
+        <strong>"Please enter a number less than or equal to 3999"</strong>.
+      </li>
+      <li>
+        When the <code>#number</code> element contains the number
+        <code>9</code> and the <code>#convert-btn</code> element is clicked, the
+        <code>#output</code> element should contain <strong>"IX"</strong>.
+      </li>
+      <li>
+        When the <code>#number</code> element contains the number
+        <code>16</code>, the <code>#output</code> element should contain
+        <strong>"XVI"</strong>.
+      </li>
+      <li>
+        When the <code>#number</code> element contains the number
+        <code>649</code>, the <code>#output</code> element should contain
+        <strong>"DCXLIX"</strong>.
+      </li>
+      <li>
+        When the <code>#number</code> element contains the number
+        <code>1023</code>, the <code>#output</code> element should contain
+        <strong>"MXXIII"</strong>.
+      </li>
+      <li>
+        When the <code>#number</code> element contains the number
+        <code>3999</code>, the <code>#output</code> element should contain
+        <strong>"MMMCMXCIX"</strong>.
+      </li>
+    </ul>
+
+    <h2>✅ Test Cases</h2>
+    <ul>
+      <li>
+        <strong>Test 1:</strong> You should have an input element with an id of
+        <code>number</code>.
+      </li>
+      <li>
+        <strong>Test 2:</strong> You should have a button element with an id of
+        <code>convert-btn</code>.
+      </li>
+      <li>
+        <strong>Test 3:</strong> You should have a div, span, or p element with
+        an id of <code>output</code>.
+      </li>
+      <li>
+        <strong>Test 4:</strong> Clicking <code>#convert-btn</code> without
+        input → <code>output</code> = "Please enter a valid number".
+      </li>
+      <li>
+        <strong>Test 5:</strong> Input = -1 → <code>output</code> = "Please
+        enter a number greater than or equal to 1".
+      </li>
+      <li>
+        <strong>Test 6:</strong> Input = 4000 → <code>output</code> = "Please
+        enter a number less than or equal to 3999".
+      </li>
+      <li><strong>Test 7:</strong> Input = 9 → <code>output</code> = "IX".</li>
+      <li>
+        <strong>Test 8:</strong> Input = 16 → <code>output</code> = "XVI".
+      </li>
+      <li>
+        <strong>Test 9:</strong> Input = 649 → <code>output</code> = "DCXLIX".
+      </li>
+      <li>
+        <strong>Test 10:</strong> Input = 1023 → <code>output</code> = "MXXIII".
+      </li>
+      <li>
+        <strong>Test 11:</strong> Input = 3999 → <code>output</code> =
+        "MMMCMXCIX".
+      </li>
+      <li>
+        <strong>Test 12:</strong> Random negative number → <code>output</code> =
+        "Please enter a number greater than or equal to 1".
+      </li>
+      <li>
+        <strong>Test 13:</strong> Random number > 4000 → <code>output</code> =
+        "Please enter a number less than or equal to 3999".
+      </li>
+    </ul>
+  </body>
+</html>

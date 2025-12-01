@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Date Conversion</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      h2 {
+        color: #333;
+      }
+      ul,
+      ol {
+        margin-left: 20px;
+      }
+      code {
+        background-color: #f4f4f4;
+        padding: 2px 6px;
+        border-radius: 4px;
+      }
+    </style>
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <h1>Welcome to my **90 Days of JavaScript Revision Challenge**!</h1>
+    <h2 style="color: red">
+      Please read the script file and understand the project and try to build at
+      your own.
+    </h2>
+    <h3>
+      In this mini project, you'll build a program to convert a date from one
+      format to another.
+    </h3>
+
+    <h2>User Stories:</h2>
+    <ul>
+      <li>
+        You should create a variable named <code>currentDate</code> and assign
+        it the current date and time using the <code>Date</code> object.
+      </li>
+      <li>
+        You should create a variable named <code>currentDateFormat</code> and
+        assign it the string <code>Current Date and Time: [current date]</code>.
+        Replace [current date] with the result of the
+        <code>currentDate</code> variable.
+      </li>
+      <li>
+        You should log the value of <code>currentDateFormat</code> to the
+        console.
+      </li>
+      <li>
+        You should create a function named <code>formatDateMMDDYYYY</code> that
+        takes the date object as a parameter. You can name this parameter
+        whatever you like.
+      </li>
+      <li>
+        Your <code>formatDateMMDDYYYY</code> function should convert the current
+        date to <code>month/day/year</code> format and return the string
+        <code>Formatted Date (MM/DD/YYYY): [month]/[day]/[year]</code>.
+      </li>
+      <li>
+        You should create a function named <code>formatDateLong</code> that
+        takes the date object as a parameter.
+      </li>
+      <li>
+        Your <code>formatDateLong</code> function should convert the current
+        date to <code>Month Day, Year</code> format and return the string
+        <code>Formatted Date (Month Day, Year): [formatted date]</code>.
+      </li>
+      <li>
+        <strong>Note:</strong> For the tests to pass, make sure that you use
+        <code>en-US</code> for the locale when formatting the dates.
+      </li>
+    </ul>
+
+    <h2>Tests</h2>
+    <ol>
+      <li>
+        You should have a variable named <code>currentDate</code> that holds the
+        current date and time using the <code>Date</code> object.
+      </li>
+      <li>
+        You should have a variable named <code>currentDateFormat</code> that
+        holds the current date in the format
+        <code
+          >Current Date and Time: &lt;ddd&gt; &lt;MMM&gt; &lt;dd&gt;
+          &lt;yyyy&gt; &lt;HH&gt;:&lt;mm&gt;:&lt;ss&gt; &lt;TIMEZONE&gt;</code
+        >.
+      </li>
+      <li>
+        You should log the value of <code>currentDateFormat</code> to the
+        console.
+      </li>
+      <li>You should have a function <code>formatDateMMDDYYYY</code>.</li>
+      <li>
+        The function <code>formatDateMMDDYYYY</code> should take a single
+        parameter.
+      </li>
+      <li>
+        When the date object holds
+        <code>Fri Sep 27 2024 16:16:11 GMT+0500 (Pakistan Standard Time)</code>,
+        the function <code>formatDateMMDDYYYY</code> should return
+        <code>Formatted Date (MM/DD/YYYY): 9/27/2024</code>.
+      </li>
+      <li>You should have a function <code>formatDateLong</code>.</li>
+      <li>
+        The function <code>formatDateLong</code> should take a single parameter.
+      </li>
+      <li>
+        When the date object holds
+        <code>Fri Sep 27 2024 16:16:11 GMT+0500 (Pakistan Standard Time)</code>,
+        the function <code>formatDateLong</code> should return
+        <code>Formatted Date (Month Day, Year): September 27, 2024</code>.
+      </li>
+    </ol>
+  </body>
+</html>

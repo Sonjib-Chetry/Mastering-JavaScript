@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Decimal to Binary Converter - User Stories & Test Cases</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      h2 {
+        color: #333;
+      }
+      ul,
+      ol {
+        margin-left: 20px;
+      }
+      code {
+        background-color: #f4f4f4;
+        padding: 2px 6px;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to my **90 Days of JavaScript Revision Challenge**!</h1>
+    <h2 style="color: red">
+      Please read the script file and understand the project and try to build at
+      your own.
+    </h2>
+    <h3>
+      Recursion is a programming concept where a function calls itself. This can
+      reduce a complex problem into simpler sub-problems, until they become
+      straightforward to solve. In this mini project, you’ll build a
+      decimal-to-binary converter using JavaScript. You’ll practice the
+      fundamental concepts of recursion, explore the call stack, and build out a
+      visual representation of the recursion process through an animation.
+    </h3>
+
+    <h2>User Stories:</h2>
+
+    <ul>
+      <li>
+        You should have a constant variable <code>numberInput</code> that stores
+        the DOM element with id <code>number-input</code>. This will be used to
+        get the decimal number entered by the user.
+      </li>
+
+      <li>
+        You should have a constant variable <code>convertBtn</code> that stores
+        the DOM element with id <code>convert-btn</code>. This button triggers
+        the conversion process.
+      </li>
+
+      <li>
+        You should have a constant variable <code>result</code> that stores the
+        DOM element with id <code>result</code>. This will display the binary
+        output or animation messages.
+      </li>
+
+      <li>
+        You should have a constant variable <code>animationContainer</code> that
+        stores the DOM element with id <code>animation-container</code>. This
+        will be used to display call stack animation frames for a special case.
+      </li>
+
+      <li>
+        You should have an array constant <code>animationData</code> containing
+        objects with keys <code>inputVal</code>, <code>addElDelay</code>,
+        <code>msg</code>, <code>showMsgDelay</code>, and
+        <code>removeElDelay</code>. This is used to control the step-by-step
+        animation for input <code>5</code>.
+      </li>
+
+      <li>
+        You should have a function <code>decimalToBinary</code> that:
+        <ul>
+          <li>Accepts an integer input.</li>
+          <li>
+            If the input is <code>0</code> or <code>1</code>, returns it as a
+            string (base case).
+          </li>
+          <li>
+            Otherwise, recursively calls itself with
+            <code>Math.floor(input / 2)</code> and appends
+            <code>(input % 2)</code> to the returned value.
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        You should have a function <code>showAnimation</code> that:
+        <ul>
+          <li>
+            Sets the <code>result</code> element text to "Call Stack Animation".
+          </li>
+          <li>
+            Iterates over <code>animationData</code> to:
+            <ul>
+              <li>
+                Add a paragraph element showing
+                <code>decimalToBinary(inputVal)</code> after
+                <code>addElDelay</code> ms.
+              </li>
+              <li>
+                Replace the paragraph text with the <code>msg</code> after
+                <code>showMsgDelay</code> ms.
+              </li>
+              <li>Remove the paragraph after <code>removeElDelay</code> ms.</li>
+            </ul>
+          </li>
+          <li>
+            After 20000 ms, updates <code>result</code> to show the binary
+            conversion of 5.
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        You should have a function <code>checkUserInput</code> that:
+        <ul>
+          <li>Parses the value of <code>numberInput</code> as an integer.</li>
+          <li>
+            If the input is missing, not a number, or negative, shows an alert
+            with the message "Please provide a decimal number greater than or
+            equal to 0".
+          </li>
+          <li>
+            If the input is exactly <code>5</code>, calls
+            <code>showAnimation</code> and returns.
+          </li>
+          <li>
+            Otherwise, calls <code>decimalToBinary</code> and displays the
+            result in <code>result</code>, then clears the input field.
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        You should add an event listener on <code>convertBtn</code> to call
+        <code>checkUserInput</code> when clicked.
+      </li>
+
+      <li>
+        You should add an event listener on <code>numberInput</code> for the
+        "keydown" event so that pressing the Enter key also triggers
+        <code>checkUserInput</code>.
+      </li>
+
+      <li>
+        You should have commented-out alternative implementations:
+        <ul>
+          <li>
+            Array-based iterative approach tracking inputs, quotients, and
+            remainders.
+          </li>
+          <li>
+            Recursive countdown demonstration function
+            <code>countDownAndUp</code>.
+          </li>
+          <li>Optimized iterative approach using string building.</li>
+        </ul>
+      </li>
+    </ul>
+
+    <hr />
+
+    <h2>Tests:</h2>
+    <ul>
+      <li>
+        1. You should have a variable <code>numberInput</code> assigned to the
+        element with id <code>number-input</code>.
+      </li>
+      <li>
+        2. You should have a variable <code>convertBtn</code> assigned to the
+        element with id <code>convert-btn</code>.
+      </li>
+      <li>
+        3. You should have a variable <code>result</code> assigned to the
+        element with id <code>result</code>.
+      </li>
+      <li>
+        4. You should have a variable <code>animationContainer</code> assigned
+        to the element with id <code>animation-container</code>.
+      </li>
+      <li>
+        5. You should have a constant <code>animationData</code> array with the
+        required objects and keys.
+      </li>
+      <li>
+        6. You should have a function <code>decimalToBinary</code> that
+        implements the recursive conversion correctly.
+      </li>
+      <li>7. <code>decimalToBinary(0)</code> should return "0".</li>
+      <li>8. <code>decimalToBinary(1)</code> should return "1".</li>
+      <li>9. <code>decimalToBinary(5)</code> should return "101".</li>
+      <li>
+        10. <code>showAnimation()</code> should display call stack frames for
+        input 5 and end with "101" after 20000 ms.
+      </li>
+      <li>
+        11. <code>checkUserInput()</code> should alert if the input is invalid.
+      </li>
+      <li>
+        12. If the input is 5, <code>checkUserInput()</code> should trigger the
+        animation.
+      </li>
+      <li>
+        13. For other valid inputs, <code>checkUserInput()</code> should display
+        the binary conversion result.
+      </li>
+      <li>
+        14. Clicking <code>convertBtn</code> should trigger
+        <code>checkUserInput()</code>.
+      </li>
+      <li>
+        15. Pressing Enter while focused on <code>numberInput</code> should
+        trigger <code>checkUserInput()</code>.
+      </li>
+    </ul>
+  </body>
+</html>

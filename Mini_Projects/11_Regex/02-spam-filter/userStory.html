@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Spam Filter - User Stories & Test Cases</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      h2 {
+        color: #333;
+      }
+      ul,
+      ol {
+        margin-left: 20px;
+      }
+      code {
+        background-color: #f4f4f4;
+        padding: 2px 6px;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to my **90 Days of JavaScript Revision Challenge**!</h1>
+    <h2 style="color: red">
+      Please read the script file and understand the project and try to build at
+      your own.
+    </h2>
+    <h3>
+      In this mini project, you'll use capture groups, positive lookaheads,
+      negative lookaheads, and other techniques to match any text you want.
+    </h3>
+    <h2>User Stories</h2>
+    <ul>
+      <li>
+        You should have a <code>textarea</code> or <code>input</code> element
+        with the <code>id="message-input"</code> to receive user messages.
+      </li>
+      <li>
+        You should have a <code>p</code> or similar display element with the
+        <code>id="result"</code> to show spam detection output.
+      </li>
+      <li>
+        You should have a <code>button</code> element with the
+        <code>id="check-message-btn"</code> that triggers the spam check when
+        clicked.
+      </li>
+      <li>
+        You should create five regular expressions to detect spam patterns such
+        as:
+        <ul>
+          <li>
+            <strong>"please help"</strong> or <strong>"assist me"</strong>
+          </li>
+          <li>
+            <strong>Currency references</strong> like "1000 dollars", "5 million
+            dollars"
+          </li>
+          <li>
+            <strong>"free money"</strong> with substitutions like "fr33 m0ney"
+          </li>
+          <li>
+            <strong>"stock alert"</strong> with altered characters like "5t0ck
+            @lert"
+          </li>
+          <li><strong>"dear friend"</strong> variations like "d34r fr1end"</li>
+        </ul>
+      </li>
+      <li>
+        You should store all the regex patterns inside a
+        <code>denyList</code> array.
+      </li>
+      <li>
+        You should create a function <code>isSpam(msg)</code> that returns
+        <code>true</code> if any of the spam patterns match the message.
+      </li>
+      <li>
+        When the check button is clicked, you should check the value of the
+        input field.
+      </li>
+      <li>
+        If the field is empty, show an alert that says "Please enter a message."
+      </li>
+      <li>
+        If the message contains spam, display the message:
+        <code>"Oh no! This looks like a spam message."</code>
+      </li>
+      <li>
+        If the message is clean, display the message:
+        <code>"This message does not seem to contain any spam."</code>
+      </li>
+      <li>After checking the message, the input field should be cleared.</li>
+    </ul>
+    <h2>Test Cases</h2>
+    <ol>
+      <li>
+        The <code>textarea</code> or <code>input</code> with
+        <code>id="message-input"</code> should exist in the HTML.
+      </li>
+      <li>
+        The <code>p</code> or <code>div</code> with
+        <code>id="result"</code> should exist in the HTML.
+      </li>
+      <li>
+        The <code>button</code> with <code>id="check-message-btn"</code> should
+        exist in the HTML.
+      </li>
+      <li>
+        Entering <code>"Please help me now!"</code> should return the spam
+        result.
+      </li>
+      <li>
+        Entering <code>"You have won 5 million dollars!"</code> should return
+        the spam result.
+      </li>
+      <li>
+        Entering <code>"Claim your fr33 m0ney now!"</code> should return the
+        spam result.
+      </li>
+      <li>
+        Entering <code>"Hot 5t0ck @lert!"</code> should return the spam result.
+      </li>
+      <li>
+        Entering <code>"D34r fr1end, I need your help."</code> should return the
+        spam result.
+      </li>
+      <li>
+        Entering <code>"Let's meet for lunch today."</code> should return the
+        clean result.
+      </li>
+      <li>
+        If the input field is empty and the button is clicked, an alert should
+        be triggered saying: "Please enter a message."
+      </li>
+      <li>
+        After clicking the check button, the input field should be cleared
+        regardless of spam or clean result.
+      </li>
+    </ol>
+  </body>
+</html>
