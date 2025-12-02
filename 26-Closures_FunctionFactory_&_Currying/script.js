@@ -318,3 +318,21 @@ console.log(addd(2)(3)); // 5
 | Currying         | Breaks a function into a chain of single-argument functions |
 | Common Ground    | Both use **closures** to remember values from outer scope   |
 */
+
+
+//Infinite Currying Example
+
+
+function infiniteAdd(a) {
+  return function(b) {
+    if (b !== undefined) {
+      return infiniteAdd(a + b);
+    } else {
+      return a;
+    }
+  };
+}
+
+console.log(infiniteAdd(1)(2)(3)(4)()); // 10
+
+// Here, infiniteAdd keeps returning functions that remember the accumulated sum until you call it without an argument.
