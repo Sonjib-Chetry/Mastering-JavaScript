@@ -320,7 +320,7 @@ console.log(addd(2)(3)); // 5
 */
 
 
-//Infinite Currying Example
+// ✅ Infinite Currying Example
 
 
 function infiniteAdd(a) {
@@ -336,3 +336,22 @@ function infiniteAdd(a) {
 console.log(infiniteAdd(1)(2)(3)(4)()); // 10
 
 // Here, infiniteAdd keeps returning functions that remember the accumulated sum until you call it without an argument.
+
+
+
+// ✅ Currying using bind method
+
+function multiply(x, y, z) {
+  return x * y * z;
+} 
+
+const curriedMultiply = multiply.bind(null, 2);
+
+console.log(curriedMultiply(3, 4)); // 24 
+
+// Here, we use bind to fix the first argument (x = 2), creating a new function that takes the remaining arguments (y and z).
+// This is another way to achieve currying in JavaScript.
+
+
+
+
